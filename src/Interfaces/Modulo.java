@@ -99,8 +99,6 @@ public class Modulo extends javax.swing.JFrame {
         jMenuItem15 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem16 = new javax.swing.JMenuItem();
-        jMenu9 = new javax.swing.JMenu();
-        jMenuItem17 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MilkSoft");
@@ -138,7 +136,7 @@ public class Modulo extends javax.swing.JFrame {
 
         jScrollPane2.setViewportView(jPanel1);
 
-        jMenu1.setText("Usuario");
+        jMenu1.setText("Archivo");
 
         jMenuItem13.setText("Cerrar sesión");
         jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
@@ -196,7 +194,7 @@ public class Modulo extends javax.swing.JFrame {
         });
         jMenu5.add(jMenuItem6);
 
-        jMenuItem7.setText("Atención veterinaria");
+        jMenuItem7.setText("Atención Veterinaria");
         jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem7ActionPerformed(evt);
@@ -204,7 +202,7 @@ public class Modulo extends javax.swing.JFrame {
         });
         jMenu5.add(jMenuItem7);
 
-        jMenuItem8.setText("Aplicación de tratamientos");
+        jMenuItem8.setText("Tratamientos");
         jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem8ActionPerformed(evt);
@@ -249,7 +247,7 @@ public class Modulo extends javax.swing.JFrame {
         });
         jMenu7.add(jMenuItem10);
 
-        jMenuItem12.setText("Venta de ganado");
+        jMenuItem12.setText("Venta Ganado");
         jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem12ActionPerformed(evt);
@@ -257,7 +255,7 @@ public class Modulo extends javax.swing.JFrame {
         });
         jMenu7.add(jMenuItem12);
 
-        jMenuItem11.setText("Venta de leche");
+        jMenuItem11.setText("Venta Leche");
         jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem11ActionPerformed(evt);
@@ -289,7 +287,7 @@ public class Modulo extends javax.swing.JFrame {
 
         jMenu3.setText("Administración");
 
-        jMenuItem16.setText("Administración de usuarios");
+        jMenuItem16.setText("Administración Usuarios");
         jMenuItem16.setToolTipText("");
         jMenuItem16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -299,18 +297,6 @@ public class Modulo extends javax.swing.JFrame {
         jMenu3.add(jMenuItem16);
 
         jMenuBar1.add(jMenu3);
-
-        jMenu9.setText("Auditoría");
-
-        jMenuItem17.setText("Auditoría por fechas");
-        jMenuItem17.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem17ActionPerformed(evt);
-            }
-        });
-        jMenu9.add(jMenuItem17);
-
-        jMenuBar1.add(jMenu9);
 
         setJMenuBar(jMenuBar1);
 
@@ -403,17 +389,6 @@ public class Modulo extends javax.swing.JFrame {
         jPanel1.repaint();
         jPanel1.revalidate();
     }//GEN-LAST:event_jMenuItem16ActionPerformed
-
-    private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
-        // TODO add your handling code here:
-        jPanel1.removeAll();
-        jPanel1.repaint();
-        jPanel1.revalidate();
-
-        jPanel1.add(new Auditoria());
-        jPanel1.repaint();
-        jPanel1.revalidate();
-    }//GEN-LAST:event_jMenuItem17ActionPerformed
 
     private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
         // TODO add your handling code here:
@@ -523,7 +498,6 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
-    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
@@ -533,7 +507,6 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
-    private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem18;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
