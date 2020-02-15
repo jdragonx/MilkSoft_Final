@@ -36,37 +36,38 @@ public class Ganado extends javax.swing.JPanel {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
+        PantallaInicial = new javax.swing.JPanel();
+        jLabel29 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        areteMadre = new javax.swing.JTextField();
+        Raza = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         Sexo = new javax.swing.JComboBox<>();
-        Raza = new javax.swing.JTextField();
         Salud = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel8 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
         jLabel46 = new javax.swing.JLabel();
-        PantallaInicial = new javax.swing.JPanel();
-        jLabel29 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
-        jComboBox8 = new javax.swing.JComboBox<>();
-        jButton9 = new javax.swing.JButton();
-        jLabel24 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
-        datePicker4 = new com.github.lgooddatepicker.components.DatePicker();
-        jLabel32 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
-        jComboBox9 = new javax.swing.JComboBox<>();
         jButton10 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        Salud1 = new javax.swing.JComboBox<>();
+        jLabel21 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jComboBox3 = new javax.swing.JComboBox<>();
+        jLabel22 = new javax.swing.JLabel();
+        jComboBox4 = new javax.swing.JComboBox<>();
         jLabel50 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
@@ -121,54 +122,6 @@ public class Ganado extends javax.swing.JPanel {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Registro de ganado");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 160, -1, -1));
-
-        jLabel2.setText("Arete");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, -1, -1));
-
-        jTextField1.setEditable(false);
-        jTextField1.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, 169, -1));
-
-        jLabel3.setText("Arete de la madre");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 340, -1, -1));
-
-        areteMadre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                areteMadreActionPerformed(evt);
-            }
-        });
-        jPanel1.add(areteMadre, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 169, -1));
-
-        jLabel4.setText("Sexo");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, -1, -1));
-
-        jLabel5.setText("Raza");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 230, -1, -1));
-
-        jLabel7.setText("Estado de salud");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 390, -1, -1));
-
-        Sexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M", "F" }));
-        jPanel1.add(Sexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 300, 169, -1));
-        jPanel1.add(Raza, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 340, 169, -1));
-
-        Salud.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sano", "Enfermo medio", "Enfermo grave" }));
-        jPanel1.add(Salud, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 390, 169, -1));
-
-        jButton1.setText("Registrar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 430, -1, -1));
-
-        jLabel46.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
-        jLabel46.setText("jLabel12");
-        jPanel1.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 880));
-
         jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
         jLabel29.setText("jLabel12");
 
@@ -195,52 +148,103 @@ public class Ganado extends javax.swing.JPanel {
 
         jPanel1.add(PantallaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 850));
 
+        jLabel1.setText("Registro de ganado");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, -1, -1));
+
+        jLabel2.setText("Arete");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, -1, -1));
+
+        jLabel3.setText("Maduración");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, -1, -1));
+
+        Raza.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RazaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Raza, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 270, 169, -1));
+
+        jLabel4.setText("Género");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 390, -1, -1));
+
+        jLabel5.setText("Raza");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, -1, -1));
+
+        jLabel7.setText("Estado de salud");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, -1, -1));
+
+        Sexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M", "F" }));
+        jPanel1.add(Sexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 390, 169, -1));
+
+        Salud.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "saludable", "enfermedad débil", "enfermedad media", "enfermedad grave", "crítica" }));
+        jPanel1.add(Salud, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, 169, -1));
+
+        jButton1.setText("Registrar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 480, -1, -1));
+
+        jLabel6.setText("Estado de producción");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 350, -1, -1));
+        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 169, -1));
+
+        jTextField3.setEditable(false);
+        jTextField3.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 190, 169, -1));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ternera", "vacona", "vaca" }));
+        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 430, 170, -1));
+
+        jLabel8.setText("Número de partos");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 230, -1, -1));
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "en producción", "vendida", "seca" }));
+        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 350, 170, -1));
+
+        jLabel46.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
+        jLabel46.setText("jLabel12");
+        jPanel1.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 880));
+
         jTabbedPane1.addTab("Registro de ganado", jPanel1);
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel20.setText("Actualización de ganado");
         jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, -1, -1));
-        jPanel2.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, 169, -1));
-
-        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M", "F" }));
-        jPanel2.add(jComboBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 300, 169, -1));
-
-        jButton9.setText("Buscar");
-        jPanel2.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 210, -1, -1));
-
-        jLabel24.setText("Arete");
-        jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, -1, -1));
-        jPanel2.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 220, 169, -1));
-
-        jTextField10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField10ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 260, 169, -1));
-
-        jLabel25.setText("Arete de la madre");
-        jPanel2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 260, -1, -1));
-
-        jLabel30.setText("Sexo");
-        jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, -1, -1));
-
-        jLabel31.setText("Raza");
-        jPanel2.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, -1, -1));
-        jPanel2.add(datePicker4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 380, 169, -1));
-
-        jLabel32.setText("Fecha de nacimiento");
-        jPanel2.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, -1, -1));
-
-        jLabel33.setText("Estado de salud");
-        jPanel2.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 420, -1, -1));
-
-        jComboBox9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sano", "Enfermo medio", "Enfermo grave" }));
-        jPanel2.add(jComboBox9, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 410, 169, -1));
 
         jButton10.setText("Actualizar");
-        jPanel2.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 450, -1, -1));
+        jPanel2.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 420, -1, -1));
+
+        jLabel10.setText("Arete");
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, -1, -1));
+
+        jLabel11.setText("Maduración");
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, -1, -1));
+
+        jLabel14.setText("Estado de salud");
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, -1, -1));
+
+        Salud1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "saludable", "enfermedad débil", "enfermedad media", "enfermedad grave", "crítica" }));
+        jPanel2.add(Salud1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 280, 169, -1));
+
+        jLabel21.setText("Estado de producción");
+        jPanel2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, -1, -1));
+        jPanel2.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 169, -1));
+
+        jTextField5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 190, 169, -1));
+
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ternera", "vacona", "vaca" }));
+        jPanel2.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 360, 170, -1));
+
+        jLabel22.setText("Número de partos");
+        jPanel2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 230, -1, -1));
+
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "en producción", "vendida", "seca" }));
+        jPanel2.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 320, 170, -1));
 
         jLabel50.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
         jLabel50.setText("jLabel12");
@@ -464,35 +468,35 @@ public class Ganado extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void areteMadreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_areteMadreActionPerformed
+    private void RazaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RazaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_areteMadreActionPerformed
+    }//GEN-LAST:event_RazaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         if (Raza.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Ingrese todos  los atributos necesarios ", " informacion", JOptionPane.INFORMATION_MESSAGE);
 
-            areteMadre.setText("");
+            Raza.setText("");
 
             Raza.setText("");
 
         } else {
             int madre = 0;
-            if (num(areteMadre.getText()) && alfnumesp(Raza.getText()) && counter(Raza.getText()) < 30) {
-                if (areteMadre.getText().equals("")) {
+            if (num(Raza.getText()) && alfnumesp(Raza.getText()) && counter(Raza.getText()) < 30) {
+                if (Raza.getText().equals("")) {
                     madre = 0;
                 } else {
-                    madre = Integer.parseInt(areteMadre.getText());
+                    madre = Integer.parseInt(Raza.getText());
                 }
                 try {
                     ProcedimientoGanado.ingresoGanado(madre, Sexo.getSelectedItem().toString(), Raza.getText(), Salud.getSelectedItem().toString());
 
-                    areteMadre.setText("");
+                    Raza.setText("");
 
                     Raza.setText("");
 
-                    areteMadre.requestFocus();
+                    Raza.requestFocus();
                     Raza.requestFocus();
 
                     JOptionPane.showMessageDialog(this, " Los datos  han sido ingresados  correctamente ");
@@ -566,20 +570,15 @@ public class Ganado extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jTabbedPane1MouseClicked
 
-    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField10ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PantallaInicial;
     private javax.swing.JTextField Raza;
     private javax.swing.JComboBox<String> Salud;
+    private javax.swing.JComboBox<String> Salud1;
     private javax.swing.JComboBox<String> Sexo;
-    private javax.swing.JTextField areteMadre;
     private com.github.lgooddatepicker.components.CalendarPanel calendarPanel1;
     private com.github.lgooddatepicker.components.CalendarPanel calendarPanel2;
-    private com.github.lgooddatepicker.components.DatePicker datePicker4;
     private com.github.lgooddatepicker.components.DatePicker datePicker5;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
@@ -588,13 +587,17 @@ public class Ganado extends javax.swing.JPanel {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox10;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JComboBox<String> jComboBox6;
-    private javax.swing.JComboBox<String> jComboBox8;
-    private javax.swing.JComboBox<String> jComboBox9;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
@@ -602,17 +605,13 @@ public class Ganado extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
@@ -624,7 +623,9 @@ public class Ganado extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JList<String> jList1;
     private javax.swing.JList<String> jList4;
     private javax.swing.JPanel jPanel1;
@@ -640,10 +641,10 @@ public class Ganado extends javax.swing.JPanel {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }
