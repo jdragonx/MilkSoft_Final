@@ -1,6 +1,7 @@
 
 package ProduccionGUI;
 
+import static Codes.Validacion.alf;
 import Conexiones.ProcedimientoGanado;
 import java.sql.SQLException;
 import java.util.logging.Level;

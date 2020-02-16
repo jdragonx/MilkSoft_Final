@@ -302,7 +302,7 @@ public class Alimentacion extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         for (int i = 0; i < jTableActualiza.getRowCount(); i++) {
-            System.out.println(jTableActualiza.getValueAt(i, 2).toString());
+            Validacion.alfesp(jTableActualiza.getValueAt(i, 2).toString());
             System.out.println(jTableActualiza.getValueAt(i, 3).toString());
         }
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -356,18 +356,22 @@ public class Alimentacion extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Atributo detalle de alimento en blanco", "Error Message", JOptionPane.ERROR_MESSAGE);
             reg = false;
         }
+        
         if (!Validacion.alfesp(jTextAreaDetalle.getText())) {
             JOptionPane.showMessageDialog(null, "Formato de detalle de alimento erróneo", "Error Message", JOptionPane.ERROR_MESSAGE);
             reg = false;
         }
+        
         if (jTextFieldCantidad.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Atributo cantidad en blanco", "Error Message", JOptionPane.ERROR_MESSAGE);
             reg = false;
         }
+        
         if (!Validacion.num(jTextFieldCantidad.getText())) {
             JOptionPane.showMessageDialog(null, "Formato de cantidad erróneo", "Error Message", JOptionPane.ERROR_MESSAGE);
             reg = false;
         }
+        
         if (reg) {
             JOptionPane.showMessageDialog(null, "Registro exitoso", "Succes Message", JOptionPane.INFORMATION_MESSAGE);
         }
