@@ -29,6 +29,7 @@ public class Login extends javax.swing.JFrame {
         val = conec.ingLogin(Usuario.getText(), Pass.getText());
         System.out.print("\nVAL ES: " + val);
         if (val!= "") {
+            JOptionPane.showMessageDialog(null, "Ingreso al Sistema Exitoso","Mensaje", JOptionPane.INFORMATION_MESSAGE);
             if (val.matches("4")) {
                 this.setEnabled(false);
                 new Auditoria().setVisible(true);
@@ -37,7 +38,7 @@ public class Login extends javax.swing.JFrame {
                 new Modulo(val).setVisible(true);
             }
         } else {
-            JOptionPane.showMessageDialog(null, "LLENAR ERROR CON SRS\n", "Error  de conexion", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Login o Contraseña Invalido", "Error", JOptionPane.ERROR_MESSAGE);
         }
         Usuario.setText("");
         Pass.setText("");
@@ -103,15 +104,19 @@ public class Login extends javax.swing.JFrame {
 
     private void jbLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLoginActionPerformed
         if(Usuario.getText().matches("") || Pass.getText().matches("")){
-                     JOptionPane.showMessageDialog(null, "Llenar atributo(s) en blanco","Error", JOptionPane.ERROR_MESSAGE);   
+                     JOptionPane.showMessageDialog(null, "Llenar atributo(s) en blanco","Error", JOptionPane.ERROR_MESSAGE);  
+                     Usuario.setText("");
+        Pass.setText("");
         }else{
-            if(counter(Usuario.getText())<=128&&counter(Pass.getText())<=128 && counter(Usuario.getText())>=8 && counter(Pass.getText())>=8 && unicode(Usuario.getText()) &&unicode(Pass.getText()) ){
-               JOptionPane.showMessageDialog(null, "Ingreso al Sistema Exitoso","Mensaje", JOptionPane.INFORMATION_MESSAGE);
+            if(counter(Usuario.getText())<=20&&counter(Pass.getText())<=128  && counter(Pass.getText())>=8 && unicode(Usuario.getText()) &&unicode(Pass.getText()) ){
+               
 
                       iniciar();
                 
             }else{
                 JOptionPane.showMessageDialog(null, "Login o Contraseña Invalido","Error", JOptionPane.ERROR_MESSAGE);  
+                Usuario.setText("");
+        Pass.setText("");
             }
         }
         

@@ -35,7 +35,7 @@ public class Conexion {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         } catch (ClassNotFoundException e) {
-            JOptionPane.showMessageDialog(null, "Error 1: \n" + e.getMessage(), "Error  de conexion", JOptionPane.ERROR_MESSAGE);
+            System.out.print("Error 1: \n" + e.getMessage());
         }
         try {
             contacto = DriverManager.getConnection(url, "userAc", "userAc");
@@ -51,7 +51,7 @@ public class Conexion {
               }
             System.out.print("\nvalcon   "+valCon);
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error 2: " + e.getMessage(), "Error de conexion", JOptionPane.ERROR_MESSAGE);
+            System.out.print("Error 2: " + e.getMessage());
         }
         return valCon;
     }

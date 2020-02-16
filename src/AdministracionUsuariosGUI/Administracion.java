@@ -2,7 +2,13 @@
 package AdministracionUsuariosGUI;
 
 import Codes.Validacion;
+import static Codes.Validacion.ced2Dig;
+import static Codes.Validacion.cedVal;
+import static Codes.Validacion.counter;
+import static Codes.Validacion.num;
+import static Codes.Validacion.unicode;
 import Interfaces.Modulo;
+import javax.swing.JOptionPane;
 
 
 public class Administracion extends javax.swing.JPanel {
@@ -17,15 +23,13 @@ public class Administracion extends javax.swing.JPanel {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
-        PantallaInicial = new javax.swing.JPanel();
-        jLabel29 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jtfCon1 = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jtfUser = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        jButton8 = new javax.swing.JButton();
+        jfbRegUser = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
         jtfCedula = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
@@ -34,6 +38,8 @@ public class Administracion extends javax.swing.JPanel {
         jLabel21 = new javax.swing.JLabel();
         jcbRol = new javax.swing.JComboBox<>();
         jLabel30 = new javax.swing.JLabel();
+        PantallaInicial = new javax.swing.JPanel();
+        jLabel29 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
@@ -88,6 +94,50 @@ public class Administracion extends javax.swing.JPanel {
         jPanel1.setPreferredSize(new java.awt.Dimension(1100, 850));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel15.setText("Estado");
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 430, -1, -1));
+        jPanel1.add(jtfCon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, 340, -1));
+
+        jLabel16.setText("Contrasena 1");
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, -1, -1));
+
+        jLabel17.setText("Nombre de Usuario");
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, -1, -1));
+        jPanel1.add(jtfUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, 340, -1));
+
+        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel18.setText("Actualizacion de Contraseña");
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, -1, -1));
+
+        jfbRegUser.setText("Registrar");
+        jfbRegUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jfbRegUserActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jfbRegUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 500, -1, -1));
+
+        jLabel19.setText("Numero de Cedula");
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, -1, -1));
+        jPanel1.add(jtfCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 300, 340, -1));
+
+        jLabel20.setText("Contrasena 2");
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, -1, -1));
+        jPanel1.add(jtfCon2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, 340, -1));
+
+        jcbActivacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Activado", "Desactivado" }));
+        jPanel1.add(jcbActivacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 430, 220, -1));
+
+        jLabel21.setText("Rol");
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, -1, -1));
+
+        jcbRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Administrador", "Contador", "Empleado" }));
+        jPanel1.add(jcbRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 360, 220, -1));
+
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
+        jLabel30.setText("jLabel12");
+        jPanel1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
         jLabel29.setText("jLabel12");
 
@@ -113,50 +163,6 @@ public class Administracion extends javax.swing.JPanel {
         );
 
         jPanel1.add(PantallaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 850));
-
-        jLabel15.setText("Estado");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 430, -1, -1));
-        jPanel1.add(jtfCon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, 340, -1));
-
-        jLabel16.setText("Contrasena 1");
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, -1, -1));
-
-        jLabel17.setText("Nombre de Usuario");
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, -1, -1));
-        jPanel1.add(jtfUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, 340, -1));
-
-        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel18.setText("Actualizacion de Contraseña");
-        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, -1, -1));
-
-        jButton8.setText("Registrar");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 500, -1, -1));
-
-        jLabel19.setText("Numero de Cedula");
-        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, -1, -1));
-        jPanel1.add(jtfCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 300, 340, -1));
-
-        jLabel20.setText("Contrasena 2");
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, -1, -1));
-        jPanel1.add(jtfCon2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, 340, -1));
-
-        jcbActivacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Activado", "Desactivado" }));
-        jPanel1.add(jcbActivacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 430, 220, -1));
-
-        jLabel21.setText("Rol");
-        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, -1, -1));
-
-        jcbRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Administrador", "Contador", "Empleado" }));
-        jPanel1.add(jcbRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 360, 220, -1));
-
-        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
-        jLabel30.setText("jLabel12");
-        jPanel1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jTabbedPane1.addTab("Registrar de Usuario", jPanel1);
 
@@ -291,15 +297,27 @@ public class Administracion extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jTabbedPane1MouseClicked
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void jfbRegUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jfbRegUserActionPerformed
 
-        if (val.alf(jtfUser.getText())==true && val.counter(jtfUser.getText())<=50 && val.counter(jtfUser.getText())>=8){
+    if(jtfUser.getText().matches("")||jtfCon1.getText().matches("")||jtfCon2.getText().matches("")||jtfCedula.getText().matches("")||jcbRol.getSelectedIndex()==0||jcbActivacion.getSelectedIndex()==0){
+        JOptionPane.showMessageDialog(null, "Llenar atributo(s) en blanco","Error", JOptionPane.ERROR_MESSAGE); 
+    }else{
 
+        if(cedVal(jtfCedula.getText()) && ced2Dig(jtfCedula.getText()) && counter(jtfUser.getText())<=20 && unicode(jtfUser.getText()) && counter(jtfCon1.getText())>=8 && counter(jtfCon1.getText())<=128 && counter(jtfCon2.getText())>=8 && counter(jtfCon2.getText())<=128 && counter(jtfCedula.getText())==10 && num(jtfCedula.getText())/* && jcbRol.getSelectedIndex()!=0 && jcbActivacion.getSelectedIndex()!=0*/){
+            if(jtfCon1.getText().matches(jtfCon2.getText())){
+                //SQL REGISTRAR ADMINISTRADOR
+                
+                
+            }else{
+                JOptionPane.showMessageDialog(null, "Contraseñas Diferentes’","Error", JOptionPane.ERROR_MESSAGE); 
+    }
+            
+            
+        }else{
+                JOptionPane.showMessageDialog(null, "‘Formato invalido de atributo(s)’","Error", JOptionPane.ERROR_MESSAGE); 
         }
-
-        System.out.print(jtfUser.getText()+"\n"+jtfCon1.getText()+"\n"+jtfCon2.getText()+"\n"+jtfCedula.getText()+"\nRo: "+
-                               Integer.toString(jcbRol.getSelectedIndex()) +"\nEstado: "+Integer.toString(jcbActivacion.getSelectedIndex()) );
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }
+    }//GEN-LAST:event_jfbRegUserActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -309,7 +327,6 @@ public class Administracion extends javax.swing.JPanel {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -346,6 +363,7 @@ public class Administracion extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField9;
     private javax.swing.JComboBox<String> jcbActivacion;
     private javax.swing.JComboBox<String> jcbRol;
+    private javax.swing.JButton jfbRegUser;
     private javax.swing.JTextField jtfCedula;
     private javax.swing.JTextField jtfCon1;
     private javax.swing.JTextField jtfCon2;
