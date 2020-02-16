@@ -6,7 +6,6 @@ public class Proveedores extends javax.swing.JPanel {
 
     public Proveedores() {
         initComponents();
-        /* XD*/
     }
 
     @SuppressWarnings("unchecked")

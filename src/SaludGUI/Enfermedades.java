@@ -12,7 +12,6 @@ public class Enfermedades extends javax.swing.JPanel {
      */
     public Enfermedades() {
         initComponents();
-        /* XD*/
     }
 
     /**

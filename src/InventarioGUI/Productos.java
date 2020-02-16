@@ -220,11 +220,25 @@ public class Productos extends javax.swing.JPanel {
         jPanel7.setPreferredSize(new java.awt.Dimension(1000, 750));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        PantallaInicial.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Registro de Alimentos");
-        PantallaInicial.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(359, 92, 208, -1));
+
+        javax.swing.GroupLayout PantallaInicialLayout = new javax.swing.GroupLayout(PantallaInicial);
+        PantallaInicial.setLayout(PantallaInicialLayout);
+        PantallaInicialLayout.setHorizontalGroup(
+            PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PantallaInicialLayout.createSequentialGroup()
+                .addGap(359, 359, 359)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(463, Short.MAX_VALUE))
+        );
+        PantallaInicialLayout.setVerticalGroup(
+            PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PantallaInicialLayout.createSequentialGroup()
+                .addGap(92, 92, 92)
+                .addComponent(jLabel1)
+                .addContainerGap(736, Short.MAX_VALUE))
+        );
 
         jPanel7.add(PantallaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 850));
 
@@ -369,11 +383,25 @@ public class Productos extends javax.swing.JPanel {
         jPanel8.setPreferredSize(new java.awt.Dimension(1000, 750));
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        PantallaInicial1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel7.setText("Registro de Alimentos");
-        PantallaInicial1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(363, 108, 208, -1));
+
+        javax.swing.GroupLayout PantallaInicial1Layout = new javax.swing.GroupLayout(PantallaInicial1);
+        PantallaInicial1.setLayout(PantallaInicial1Layout);
+        PantallaInicial1Layout.setHorizontalGroup(
+            PantallaInicial1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PantallaInicial1Layout.createSequentialGroup()
+                .addGap(363, 363, 363)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(459, Short.MAX_VALUE))
+        );
+        PantallaInicial1Layout.setVerticalGroup(
+            PantallaInicial1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PantallaInicial1Layout.createSequentialGroup()
+                .addGap(108, 108, 108)
+                .addComponent(jLabel7)
+                .addContainerGap(720, Short.MAX_VALUE))
+        );
 
         jPanel8.add(PantallaInicial1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 850));
 
@@ -518,11 +546,25 @@ public class Productos extends javax.swing.JPanel {
         jPanel9.setPreferredSize(new java.awt.Dimension(1000, 750));
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        PantallaInicial2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel9.setText("Registro de Alimentos");
-        PantallaInicial2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(363, 108, 208, -1));
+
+        javax.swing.GroupLayout PantallaInicial2Layout = new javax.swing.GroupLayout(PantallaInicial2);
+        PantallaInicial2.setLayout(PantallaInicial2Layout);
+        PantallaInicial2Layout.setHorizontalGroup(
+            PantallaInicial2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PantallaInicial2Layout.createSequentialGroup()
+                .addGap(363, 363, 363)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(459, Short.MAX_VALUE))
+        );
+        PantallaInicial2Layout.setVerticalGroup(
+            PantallaInicial2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PantallaInicial2Layout.createSequentialGroup()
+                .addGap(108, 108, 108)
+                .addComponent(jLabel9)
+                .addContainerGap(720, Short.MAX_VALUE))
+        );
 
         jPanel9.add(PantallaInicial2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 850));
 
@@ -667,11 +709,25 @@ public class Productos extends javax.swing.JPanel {
         jPanel10.setPreferredSize(new java.awt.Dimension(1000, 750));
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        PantallaInicial3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel17.setText("Registro de Alimentos");
-        PantallaInicial3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(363, 108, 208, -1));
+
+        javax.swing.GroupLayout PantallaInicial3Layout = new javax.swing.GroupLayout(PantallaInicial3);
+        PantallaInicial3.setLayout(PantallaInicial3Layout);
+        PantallaInicial3Layout.setHorizontalGroup(
+            PantallaInicial3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PantallaInicial3Layout.createSequentialGroup()
+                .addGap(363, 363, 363)
+                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(459, Short.MAX_VALUE))
+        );
+        PantallaInicial3Layout.setVerticalGroup(
+            PantallaInicial3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PantallaInicial3Layout.createSequentialGroup()
+                .addGap(108, 108, 108)
+                .addComponent(jLabel17)
+                .addContainerGap(720, Short.MAX_VALUE))
+        );
 
         jPanel10.add(PantallaInicial3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 850));
 
