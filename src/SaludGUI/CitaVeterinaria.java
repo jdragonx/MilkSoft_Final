@@ -55,6 +55,7 @@ public class CitaVeterinaria extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jButton4 = new javax.swing.JButton();
         jLabel35 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
@@ -195,6 +196,9 @@ public class CitaVeterinaria extends javax.swing.JPanel {
 
         jPanel6.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 186, 768, 347));
 
+        jButton4.setText("Actualizar");
+        jPanel6.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 570, -1, -1));
+
         jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
         jLabel35.setText("jLabel12");
         jPanel6.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -240,7 +244,15 @@ public class CitaVeterinaria extends javax.swing.JPanel {
             new String [] {
                 "Cedula/Ruc Veterinario", "Fecha Cita Veterinaria", "Estado Salud", "Descripcion", "Tratamiento", "Costo"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane2.setViewportView(jTable2);
 
         jPanel7.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 186, 768, 347));
@@ -278,6 +290,7 @@ public class CitaVeterinaria extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
