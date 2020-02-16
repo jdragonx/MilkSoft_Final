@@ -5,19 +5,19 @@
  */
 package Auditoria;
 
-import Interfaces.Modulo;
-
 /**
  *
  * @author jonhe
  */
-public class Auditoria extends javax.swing.JPanel {
+public class Auditoria extends javax.swing.JFrame {
 
     /**
-     * Creates new form AuditoriaP
+     * Creates new form Audit
      */
     public Auditoria() {
         initComponents();
+        setLocationRelativeTo(null);
+        setResizable(false);
     }
 
     /**
@@ -29,6 +29,8 @@ public class Auditoria extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jPanel1 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         FechaInicio = new com.github.lgooddatepicker.components.CalendarPanel();
@@ -36,20 +38,27 @@ public class Auditoria extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         ConsultarIntervaloDeTiempo = new javax.swing.JButton();
-        jLabel12 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
 
-        setMaximumSize(new java.awt.Dimension(1100, 850));
-        setMinimumSize(new java.awt.Dimension(1100, 850));
-        setPreferredSize(new java.awt.Dimension(1100, 850));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("MilkSoft Auditoría");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+        jPanel1.setMaximumSize(new java.awt.Dimension(1000, 650));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1000, 650));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1000, 650));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel17.setText("Fecha inicio de consulta");
-        add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(627, 22, -1, -1));
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(627, 22, -1, -1));
 
         jLabel18.setText("Fecha fin de consulta");
-        add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 22, -1, -1));
-        add(FechaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(597, 54, -1, 201));
-        add(FechaFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 54, -1, 201));
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 22, -1, -1));
+        jPanel1.add(FechaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(597, 54, -1, 201));
+        jPanel1.add(FechaFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 54, -1, 201));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -93,25 +102,68 @@ public class Auditoria extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 307, 940, 375));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 940, 330));
 
         ConsultarIntervaloDeTiempo.setText("Consultar");
-        add(ConsultarIntervaloDeTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(435, 266, -1, -1));
+        jPanel1.add(ConsultarIntervaloDeTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 270, -1, -1));
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
-        jLabel12.setText("jLabel12");
-        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 790));
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
+        jLabel22.setPreferredSize(new java.awt.Dimension(1000, 800));
+        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, -1));
+
+        jScrollPane2.setViewportView(jPanel1);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 810));
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Auditoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Auditoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Auditoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Auditoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Auditoria().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ConsultarIntervaloDeTiempo;
     private com.github.lgooddatepicker.components.CalendarPanel FechaFin;
     private com.github.lgooddatepicker.components.CalendarPanel FechaInicio;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
