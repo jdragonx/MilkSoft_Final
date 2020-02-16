@@ -9,9 +9,11 @@ import java.util.logging.Logger;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import static Codes.Validacion.num;
+import static Codes.Validacion.counter;
+import Conexiones.Conexion;
 
 public class Ganado extends javax.swing.JPanel {
-
+    Conexion con = new Conexion();
 
     public Ganado() {
         initComponents();
@@ -289,13 +291,20 @@ public class Ganado extends javax.swing.JPanel {
     private void jbRegGanadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRegGanadoActionPerformed
         //Validacion de estar vacio
         if(jtfArete.getText().matches("")||jtfPartos.getText().matches("")||jtfRaza.getText().matches("")||jcbSalud.getSelectedIndex()==0||jcbProduccion.getSelectedIndex()==0||jcbGenero.getSelectedIndex()==0||jcbMaduracion.getSelectedIndex()==0){
-            //Validacion de formato
-            if(num(jtfArete.getText())==true && num(jtfPartos.getText())==true && alf(jtfRaza.getText())==true){
-               
-           }
-            
+           JOptionPane.showMessageDialog(null, "Llenar atributo(s) vacíos", "Error", JOptionPane.ERROR_MESSAGE);
         }else{
-            JOptionPane.showMessageDialog(null, "Llenar atributo(s) vacíos", "Error", JOptionPane.ERROR_MESSAGE);
+            
+             //Validacion de formato
+            if(num(jtfArete.getText())==true && num(jtfPartos.getText())==true && alf(jtfRaza.getText())==true&&  counter(jtfRaza.getText())<=20 &&Integer.parseInt(jtfPartos.getText())>=0&&Integer.parseInt(jtfPartos.getText())<=5){
+               
+            //    con.insert("POR RELLENAR", "userEmpleado", "userEmpleado");
+               JOptionPane.showMessageDialog(null, "Registro de Ganado Exitoso", "Accion Exitosa", JOptionPane.INFORMATION_MESSAGE);
+               
+               
+           }else{
+                JOptionPane.showMessageDialog(null, "Formato de Atributo(s) Invalido", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+            
         }
         
     }//GEN-LAST:event_jbRegGanadoActionPerformed
