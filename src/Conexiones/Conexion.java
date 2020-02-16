@@ -58,7 +58,7 @@ public class Conexion {
 
     //Consulta (ResultSet
     public static ResultSet Consulta(String consulta) {
-        Connection con = getConexion("user", "osopolar");
+        Connection con = getConexion("userAc", "userAc");
         Statement declara;
         try {
             declara = con.createStatement();
@@ -71,8 +71,8 @@ public class Conexion {
     }
 
 //INSERCION 
-    public void insert(String consulta, String user, String pass) {
-        Connection con = getConexion(user, pass);
+    public void insert(String consulta) {
+        Connection con = getConexion( "userAc","userAc");
         Statement declara;
         try {
             declara = con.createStatement();
