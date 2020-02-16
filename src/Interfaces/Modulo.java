@@ -190,6 +190,11 @@ public class Modulo extends javax.swing.JFrame {
         jmSalud.add(jMenuItem6);
 
         jMenuItem8.setText("Consulta Veterinaria");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
         jmSalud.add(jMenuItem8);
 
         jMenuItem7.setText("Veterinarios");
@@ -444,10 +449,21 @@ public class Modulo extends javax.swing.JFrame {
         jPanel1.repaint();
         jPanel1.revalidate();
 
-        jPanel1.add(new CitaVeterinaria());
+        jPanel1.add(new Veterinario());
         jPanel1.repaint();
         jPanel1.revalidate();
     }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // TODO add your handling code here:
+        jPanel1.removeAll();
+        jPanel1.repaint();
+        jPanel1.revalidate();
+
+        jPanel1.add(new CitaVeterinaria());
+        jPanel1.repaint();
+        jPanel1.revalidate();
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel6;
