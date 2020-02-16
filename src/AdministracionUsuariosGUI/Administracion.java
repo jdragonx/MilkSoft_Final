@@ -7,14 +7,19 @@ import static Codes.Validacion.cedVal;
 import static Codes.Validacion.counter;
 import static Codes.Validacion.num;
 import static Codes.Validacion.unicode;
-import Interfaces.Modulo;
+import Conexiones.Conexion;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 
 public class Administracion extends javax.swing.JPanel {
+    Conexion con = new Conexion();
     Validacion val = new Validacion();
     public Administracion() {
         initComponents();
+        jbEstcAct.setEnabled(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -63,10 +68,10 @@ public class Administracion extends javax.swing.JPanel {
         jTextField9 = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jTextField10 = new javax.swing.JTextField();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        jbUsrBus = new javax.swing.JButton();
+        jbEstcAct = new javax.swing.JButton();
+        jrbActivado = new javax.swing.JRadioButton();
+        jrbDesactivado = new javax.swing.JRadioButton();
         jLabel33 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(1000, 750));
@@ -241,8 +246,8 @@ public class Administracion extends javax.swing.JPanel {
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel7.setText("Consulta de Usuarios");
-        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, -1, -1));
+        jLabel7.setText("Activacion/Desactivacion de Usuarios");
+        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, -1, -1));
 
         jLabel13.setText("Nombre de Usuario");
         jPanel4.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, -1, -1));
@@ -254,17 +259,37 @@ public class Administracion extends javax.swing.JPanel {
         jTextField10.setEnabled(false);
         jPanel4.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, 340, -1));
 
-        jButton6.setText("Buscar");
-        jPanel4.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 160, -1, -1));
+        jbUsrBus.setText("Buscar");
+        jbUsrBus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbUsrBusActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jbUsrBus, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 160, -1, -1));
 
-        jButton7.setText("Actualizar");
-        jPanel4.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 390, -1, -1));
+        jbEstcAct.setText("Actualizar");
+        jbEstcAct.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbEstcActActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jbEstcAct, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 390, -1, -1));
 
-        jRadioButton1.setText("Activado");
-        jPanel4.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 305, -1, -1));
+        jrbActivado.setText("Activado");
+        jrbActivado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrbActivadoActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jrbActivado, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 305, -1, -1));
 
-        jRadioButton2.setText("Desactivado");
-        jPanel4.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 358, -1, -1));
+        jrbDesactivado.setText("Desactivado");
+        jrbDesactivado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrbDesactivadoActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jrbDesactivado, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 358, -1, -1));
 
         jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
         jLabel33.setText("jLabel12");
@@ -305,19 +330,99 @@ public class Administracion extends javax.swing.JPanel {
 
         if(cedVal(jtfCedula.getText()) && ced2Dig(jtfCedula.getText()) && counter(jtfUser.getText())<=20 && unicode(jtfUser.getText()) && counter(jtfCon1.getText())>=8 && counter(jtfCon1.getText())<=128 && counter(jtfCon2.getText())>=8 && counter(jtfCon2.getText())<=128 && counter(jtfCedula.getText())==10 && num(jtfCedula.getText())/* && jcbRol.getSelectedIndex()!=0 && jcbActivacion.getSelectedIndex()!=0*/){
             if(jtfCon1.getText().matches(jtfCon2.getText())){
-                //SQL REGISTRAR ADMINISTRADOR
+                //SQL REGISTRAR USUARIO
+                con.insert("");
                 
                 
+                JOptionPane.showMessageDialog(null, "Usuario Registrado","Mensaje", JOptionPane.INFORMATION_MESSAGE); 
+                
+                
+                jtfUser.setText("");
+                jtfCon1.setText("");
+                jtfCon2.setText("");
+                jtfCedula.setText("");
+                jcbRol.setSelectedIndex(0);
+                jcbActivacion.setSelectedIndex(0);
             }else{
-                JOptionPane.showMessageDialog(null, "Contraseñas Diferentes’","Error", JOptionPane.ERROR_MESSAGE); 
+                JOptionPane.showMessageDialog(null, "Contraseñas Diferentes","Error", JOptionPane.ERROR_MESSAGE); 
     }
             
             
         }else{
-                JOptionPane.showMessageDialog(null, "‘Formato invalido de atributo(s)’","Error", JOptionPane.ERROR_MESSAGE); 
+                JOptionPane.showMessageDialog(null, "Formato invalido de atributo(s)","Error", JOptionPane.ERROR_MESSAGE); 
         }
     }
     }//GEN-LAST:event_jfbRegUserActionPerformed
+
+    private void jbUsrBusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbUsrBusActionPerformed
+        String valAct="";
+        if(jTextField9.getText().matches("")){
+            JOptionPane.showMessageDialog(null, "Atributo Nombre de usuario en blanco","Error", JOptionPane.ERROR_MESSAGE); 
+        }else{
+            if(counter(jTextField9.getText())<=20 && unicode(jtfUser.getText())){
+                //SQL DE BUSQUEDA DE USER
+                ResultSet activacion = con.Consulta("exec actEstadoUser @login='"+jTextField9.getText()+"'");
+                
+                ///MANEJO DE LO OBTENIDO DE LA CONSULTA
+                try{
+                ResultSetMetaData rsmd = activacion.getMetaData();
+                int columnsNumber = rsmd.getColumnCount();
+                 while (activacion.next()) {
+               for (int i = 1; i <= columnsNumber; i++) {
+                valAct = activacion.getString(i);
+                 }
+                  }
+                System.out.print("\nvalAct:   "+valAct);
+
+                }catch (SQLException e) {
+            System.out.print("Error 2: " + e.getMessage());
+        }
+
+                if(valAct!=""){
+                    
+                    jbUsrBus.setEnabled(false);
+                    jTextField9.setEnabled(false);
+                    jTextField10.setText(valAct);
+                    
+                    //VERIFICAR SI SE SELECCIONO EL NUEVO ESTADO
+                    jbEstcAct.setEnabled(true);
+                    
+                }else{
+                    JOptionPane.showMessageDialog(null, "Usuario Inexistente","Error", JOptionPane.ERROR_MESSAGE); 
+                }
+            }else{
+                JOptionPane.showMessageDialog(null, "Formato de Nombre de Usuario Erróneo","Error", JOptionPane.ERROR_MESSAGE); 
+            }
+        }
+    }//GEN-LAST:event_jbUsrBusActionPerformed
+
+    private void jbEstcActActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEstcActActionPerformed
+        if(jrbActivado.isSelected() || jrbDesactivado.isSelected()){
+                        JOptionPane.showMessageDialog(null, "Actualizacion Exitosa","Mensaje", JOptionPane.INFORMATION_MESSAGE); 
+                        jTextField9.setText("");
+                        jTextField10.setText("");
+                        jrbActivado.setSelected(false);
+                        jrbDesactivado.setSelected(false);
+                        jTextField9.setEnabled(true);
+                        jbEstcAct.setEnabled(false);
+                        jbUsrBus.setEnabled(true);
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Atributo Estado de Activación en blanco","Error", JOptionPane.ERROR_MESSAGE); 
+                        jTextField10.setText("");
+                    }
+    }//GEN-LAST:event_jbEstcActActionPerformed
+
+    private void jrbActivadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbActivadoActionPerformed
+        if(jrbActivado.isSelected()){
+            jrbDesactivado.setSelected(false);
+        }
+    }//GEN-LAST:event_jrbActivadoActionPerformed
+
+    private void jrbDesactivadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbDesactivadoActionPerformed
+        if(jrbDesactivado.isSelected()){
+            jrbActivado.setSelected(false);
+        }
+    }//GEN-LAST:event_jrbDesactivadoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -325,8 +430,6 @@ public class Administracion extends javax.swing.JPanel {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -351,8 +454,6 @@ public class Administracion extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable2;
@@ -361,9 +462,13 @@ public class Administracion extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JButton jbEstcAct;
+    private javax.swing.JButton jbUsrBus;
     private javax.swing.JComboBox<String> jcbActivacion;
     private javax.swing.JComboBox<String> jcbRol;
     private javax.swing.JButton jfbRegUser;
+    private javax.swing.JRadioButton jrbActivado;
+    private javax.swing.JRadioButton jrbDesactivado;
     private javax.swing.JTextField jtfCedula;
     private javax.swing.JTextField jtfCon1;
     private javax.swing.JTextField jtfCon2;
