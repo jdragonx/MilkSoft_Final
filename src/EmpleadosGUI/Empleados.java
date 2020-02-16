@@ -29,6 +29,8 @@ public class Empleados extends javax.swing.JPanel {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
+        PantallaInicial = new javax.swing.JPanel();
+        jLabel34 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -47,6 +49,7 @@ public class Empleados extends javax.swing.JPanel {
         jTextField8 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel35 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jTextField9 = new javax.swing.JTextField();
@@ -66,6 +69,7 @@ public class Empleados extends javax.swing.JPanel {
         jLabel16 = new javax.swing.JLabel();
         jTextField16 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
+        jLabel36 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jTextField17 = new javax.swing.JTextField();
@@ -86,6 +90,7 @@ public class Empleados extends javax.swing.JPanel {
         jTextField24 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jLabel37 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(1100, 850));
         setMinimumSize(new java.awt.Dimension(1100, 850));
@@ -99,6 +104,14 @@ public class Empleados extends javax.swing.JPanel {
         });
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        PantallaInicial.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
+        jLabel34.setText("jLabel12");
+        PantallaInicial.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jPanel1.add(PantallaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 850));
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel18.setText("Registrar Empleados");
@@ -138,6 +151,10 @@ public class Empleados extends javax.swing.JPanel {
 
         jButton1.setText("Registrar");
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 530, -1, -1));
+
+        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
+        jLabel35.setText("jLabel12");
+        jPanel1.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jTabbedPane1.addTab("Registrar Cliente", jPanel1);
 
@@ -196,6 +213,10 @@ public class Empleados extends javax.swing.JPanel {
         jButton2.setText("Buscar");
         jPanel3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 130, -1, -1));
 
+        jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
+        jLabel36.setText("jLabel12");
+        jPanel3.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         jTabbedPane1.addTab("Consultar Cliente", jPanel3);
 
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -244,6 +265,10 @@ public class Empleados extends javax.swing.JPanel {
         jButton4.setText("Buscar");
         jPanel4.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 130, -1, -1));
 
+        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
+        jLabel37.setText("jLabel12");
+        jPanel4.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         jTabbedPane1.addTab("Actualizar Cliente", jPanel4);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -261,14 +286,15 @@ public class Empleados extends javax.swing.JPanel {
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
         // TODO add your handling code here:
         if (jTabbedPane1.getSelectedIndex() == 0 && jPanel1.getX() > evt.getX() && 31 > evt.getY()) {
-
+            PantallaInicial.setVisible(false);
         } else if (jTabbedPane1.getSelectedIndex() != 0){
-
+            PantallaInicial.setVisible(false);
         }
     }//GEN-LAST:event_jTabbedPane1MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel PantallaInicial;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -294,6 +320,10 @@ public class Empleados extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
