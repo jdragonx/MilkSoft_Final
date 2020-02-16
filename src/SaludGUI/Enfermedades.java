@@ -12,7 +12,6 @@ public class Enfermedades extends javax.swing.JPanel {
      */
     public Enfermedades() {
         initComponents();
-        /* XD*/
     }
 
     /**
@@ -64,6 +63,9 @@ public class Enfermedades extends javax.swing.JPanel {
         setMinimumSize(new java.awt.Dimension(1000, 750));
 
         jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        jTabbedPane1.setMaximumSize(new java.awt.Dimension(1100, 850));
+        jTabbedPane1.setMinimumSize(new java.awt.Dimension(1100, 850));
+        jTabbedPane1.setPreferredSize(new java.awt.Dimension(1100, 850));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -148,8 +150,6 @@ public class Enfermedades extends javax.swing.JPanel {
         jLabel29.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel29.setText("Consultar Enfermedad");
         jPanel2.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, 200, 30));
-
-        RazonSocial4.setEnabled(false);
         jPanel2.add(RazonSocial4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 180, 212, -1));
 
         jLabel9.setText("Identificador");
@@ -188,11 +188,11 @@ public class Enfermedades extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
