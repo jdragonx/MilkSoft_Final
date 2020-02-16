@@ -156,7 +156,7 @@ public class Empleados extends javax.swing.JPanel {
         jLabel35.setText("jLabel12");
         jPanel1.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jTabbedPane1.addTab("Registrar Cliente", jPanel1);
+        jTabbedPane1.addTab("Registrar Empleado", jPanel1);
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -217,7 +217,7 @@ public class Empleados extends javax.swing.JPanel {
         jLabel36.setText("jLabel12");
         jPanel3.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jTabbedPane1.addTab("Consultar Cliente", jPanel3);
+        jTabbedPane1.addTab("Consultar Empleado", jPanel3);
 
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -269,7 +269,7 @@ public class Empleados extends javax.swing.JPanel {
         jLabel37.setText("jLabel12");
         jPanel4.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jTabbedPane1.addTab("Actualizar Cliente", jPanel4);
+        jTabbedPane1.addTab("Actualizar Empleado", jPanel4);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

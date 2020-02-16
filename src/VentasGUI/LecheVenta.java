@@ -29,10 +29,10 @@ public class LecheVenta extends javax.swing.JPanel {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
+        PantallaInicial = new javax.swing.JPanel();
+        jLabel29 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -42,71 +42,40 @@ public class LecheVenta extends javax.swing.JPanel {
         Registrar = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
-        jLabel46 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
         Registrar1 = new javax.swing.JButton();
-        jTextField15 = new javax.swing.JTextField();
-        jTextField19 = new javax.swing.JTextField();
-        jTextField20 = new javax.swing.JTextField();
-        jTextField21 = new javax.swing.JTextField();
-        jTextField22 = new javax.swing.JTextField();
-        jTextField23 = new javax.swing.JTextField();
-        jTextField24 = new javax.swing.JTextField();
-        jTextField25 = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jLabel47 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        ConsultarIndividual = new javax.swing.JButton();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField16 = new javax.swing.JTextField();
-        jTextField17 = new javax.swing.JTextField();
-        jTextField18 = new javax.swing.JTextField();
-        jLabel21 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField27 = new javax.swing.JTextField();
+        jTextField28 = new javax.swing.JTextField();
+        jTextField29 = new javax.swing.JTextField();
+        jTextField30 = new javax.swing.JTextField();
         jLabel32 = new javax.swing.JLabel();
-        jTextField26 = new javax.swing.JTextField();
-        jLabel48 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
-        FechaInicio = new com.github.lgooddatepicker.components.CalendarPanel();
-        jLabel18 = new javax.swing.JLabel();
-        FechaFin = new com.github.lgooddatepicker.components.CalendarPanel();
         ConsultarIntervaloDeTiempo = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
         jTextField14 = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
-        jLabel49 = new javax.swing.JLabel();
+        jTextField9 = new javax.swing.JTextField();
+        jTextField10 = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(1100, 850));
         setMinimumSize(new java.awt.Dimension(1100, 850));
@@ -116,43 +85,68 @@ public class LecheVenta extends javax.swing.JPanel {
         jTabbedPane1.setMaximumSize(new java.awt.Dimension(1000, 750));
         jTabbedPane1.setMinimumSize(new java.awt.Dimension(1000, 750));
         jTabbedPane1.setPreferredSize(new java.awt.Dimension(1000, 750));
+        jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabbedPane1MouseClicked(evt);
+            }
+        });
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
+        jLabel29.setText("jLabel12");
+
+        javax.swing.GroupLayout PantallaInicialLayout = new javax.swing.GroupLayout(PantallaInicial);
+        PantallaInicial.setLayout(PantallaInicialLayout);
+        PantallaInicialLayout.setHorizontalGroup(
+            PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1044, Short.MAX_VALUE)
+            .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PantallaInicialLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel29)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        PantallaInicialLayout.setVerticalGroup(
+            PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 900, Short.MAX_VALUE)
+            .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PantallaInicialLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel29)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        jPanel1.add(PantallaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 850));
+
         jLabel1.setText("Número de comprobante");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 92, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, -1, -1));
 
-        jLabel2.setText("Nombre del cliente");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 168, -1, -1));
-
-        jLabel3.setText("Cédula/RUC del cliente");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, -1, -1));
-
-        jLabel4.setText("Dirección del cliente");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 206, -1, -1));
+        jLabel3.setText("Identificación del cliente");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, -1, -1));
 
         jLabel5.setText("Fecha de venta");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 244, -1, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Código", "Item", "Descripción", "Cantidad", "Precio Unitario", "Precio Total"
+                "Item", "Precio Unitario", "Cantidad", "Precio Total"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, true, true, true, true, false
+                true, true, true, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -185,16 +179,8 @@ public class LecheVenta extends javax.swing.JPanel {
                 jTextField1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 89, 374, -1));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 127, 374, -1));
-
-        jTextField3.setEditable(false);
-        jTextField3.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 165, 374, -1));
-
-        jTextField4.setEditable(false);
-        jTextField4.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 203, 374, -1));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, 374, -1));
+        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 200, 374, -1));
 
         jTextField5.setEditable(false);
         jTextField5.setBackground(new java.awt.Color(204, 204, 204));
@@ -213,264 +199,139 @@ public class LecheVenta extends javax.swing.JPanel {
         jPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(558, 589, 126, -1));
 
         jLabel20.setText("Registro de venta de leche");
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 34, -1, -1));
+        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, -1, -1));
 
-        jLabel46.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
-        jLabel46.setText("jLabel12");
-        jPanel1.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 900));
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
+        jLabel30.setText("jLabel12");
+        jPanel1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jTabbedPane1.addTab("Registro de venta", jPanel1);
+        jTabbedPane1.addTab("Registro de venta de leche", jPanel1);
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel23.setText("Número de comprobante");
-        jPanel3.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 92, -1, -1));
-
-        jLabel24.setText("Nombre del cliente");
-        jPanel3.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 212, -1, -1));
-
-        jLabel25.setText("Cédula/RUC del cliente");
-        jPanel3.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 174, -1, -1));
-
-        jLabel26.setText("Dirección del cliente");
-        jPanel3.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, -1, -1));
-
-        jLabel27.setText("Fecha de venta");
-        jPanel3.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 288, -1, -1));
-
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
-            },
-            new String [] {
-                "Código", "Item", "Descripción", "Cantidad", "Precio Unitario", "Precio Total"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true, true, true, true, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane3.setViewportView(jTable3);
-
-        jPanel3.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 323, 554, 188));
-
-        jLabel28.setText("Subtotal");
-        jPanel3.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 532, -1, -1));
-
-        jLabel29.setText("IVA");
-        jPanel3.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 570, -1, -1));
-
-        jLabel30.setText("Total");
-        jPanel3.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(501, 608, -1, -1));
-
-        Registrar1.setText("Actualizar");
+        Registrar1.setText("Consultar");
         Registrar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Registrar1ActionPerformed(evt);
             }
         });
-        jPanel3.add(Registrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(605, 643, -1, -1));
+        jPanel3.add(Registrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, -1, -1));
 
-        jTextField15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField15ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 89, 374, -1));
-        jPanel3.add(jTextField19, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 171, 374, -1));
+        jLabel31.setText("Consulta de venta de leche");
+        jLabel31.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jPanel3.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 80, -1, -1));
 
-        jTextField20.setEditable(false);
-        jTextField20.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel3.add(jTextField20, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 209, 374, -1));
+        jLabel2.setText("Número de comprobante");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, -1, -1));
 
-        jTextField21.setEditable(false);
-        jTextField21.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel3.add(jTextField21, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 247, 374, -1));
+        jLabel4.setText("Identificación del cliente");
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, -1, -1));
 
-        jTextField22.setEditable(false);
-        jTextField22.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel3.add(jTextField22, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 285, 374, -1));
+        jLabel33.setText("Fecha de venta");
+        jPanel3.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, -1, -1));
 
-        jTextField23.setEditable(false);
-        jTextField23.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel3.add(jTextField23, new org.netbeans.lib.awtextra.AbsoluteConstraints(558, 529, 126, -1));
-
-        jTextField24.setEditable(false);
-        jTextField24.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel3.add(jTextField24, new org.netbeans.lib.awtextra.AbsoluteConstraints(558, 567, 126, -1));
-
-        jTextField25.setEditable(false);
-        jTextField25.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel3.add(jTextField25, new org.netbeans.lib.awtextra.AbsoluteConstraints(558, 605, 126, -1));
-
-        jLabel31.setText("Actualización de venta de leche");
-        jPanel3.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 34, -1, -1));
-
-        jButton1.setText("Buscar");
-        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(619, 130, -1, -1));
-
-        jLabel47.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
-        jLabel47.setText("jLabel12");
-        jPanel3.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 900));
-
-        jTabbedPane1.addTab("Actualización de venta", jPanel3);
-
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel9.setText("Número de comprobante");
-        jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(134, 97, -1, -1));
-
-        jLabel10.setText("Nombre del cliente");
-        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(134, 173, -1, -1));
-
-        jLabel11.setText("Cédula/RUC del cliente");
-        jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(134, 135, -1, -1));
-
-        jLabel12.setText("Dirección del cliente");
-        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(134, 211, -1, -1));
-
-        jLabel13.setText("Fecha de venta");
-        jPanel4.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(134, 249, -1, -1));
-
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Código", "Item", "Descripción", "Cantidad", "Precio Unitario", "Precio Total"
+                "Item", "Precio Unitario", "Cantidad", "Precio Total"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane4.setViewportView(jTable4);
 
-        jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(134, 327, 554, 189));
+        jPanel3.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 350, 554, 188));
 
-        jLabel14.setText("Subtotal");
-        jPanel4.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 537, -1, -1));
+        jLabel34.setText("Subtotal");
+        jPanel3.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 560, -1, -1));
 
-        jLabel15.setText("IVA");
-        jPanel4.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 575, -1, -1));
+        jLabel35.setText("IVA");
+        jPanel3.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 600, -1, -1));
 
-        jLabel16.setText("Total");
-        jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 613, -1, -1));
+        jLabel36.setText("Total");
+        jPanel3.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 640, -1, -1));
 
-        ConsultarIndividual.setText("Consultar");
-        ConsultarIndividual.addActionListener(new java.awt.event.ActionListener() {
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ConsultarIndividualActionPerformed(evt);
+                jTextField3ActionPerformed(evt);
             }
         });
-        jPanel4.add(ConsultarIndividual, new org.netbeans.lib.awtextra.AbsoluteConstraints(609, 648, -1, -1));
+        jPanel3.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 374, -1));
 
-        jTextField9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField9ActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(314, 94, 374, -1));
+        jTextField4.setEditable(false);
+        jTextField4.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 260, 374, -1));
 
-        jTextField10.setEditable(false);
-        jTextField10.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel4.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(314, 132, 374, -1));
+        jTextField27.setEditable(false);
+        jTextField27.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.add(jTextField27, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 300, 374, -1));
 
-        jTextField11.setEditable(false);
-        jTextField11.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel4.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(314, 170, 374, -1));
+        jTextField28.setEditable(false);
+        jTextField28.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.add(jTextField28, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 560, 126, -1));
 
-        jTextField12.setEditable(false);
-        jTextField12.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel4.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(314, 208, 374, -1));
+        jTextField29.setEditable(false);
+        jTextField29.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.add(jTextField29, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 590, 126, -1));
 
-        jTextField13.setEditable(false);
-        jTextField13.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel4.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(314, 246, 374, -1));
+        jTextField30.setEditable(false);
+        jTextField30.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.add(jTextField30, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 630, 126, -1));
 
-        jTextField16.setEditable(false);
-        jTextField16.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel4.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(563, 572, 125, -1));
+        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
+        jLabel32.setText("jLabel12");
+        jPanel3.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jTextField17.setEditable(false);
-        jTextField17.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel4.add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(563, 534, 125, -1));
-
-        jTextField18.setEditable(false);
-        jTextField18.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel4.add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(563, 610, 125, -1));
-
-        jLabel21.setText("Consulta individual de venta de leche");
-        jPanel4.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(264, 35, -1, -1));
-
-        jLabel32.setText("Empleado");
-        jPanel4.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(134, 287, -1, -1));
-
-        jTextField26.setEditable(false);
-        jTextField26.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel4.add(jTextField26, new org.netbeans.lib.awtextra.AbsoluteConstraints(314, 284, 374, -1));
-
-        jLabel48.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
-        jLabel48.setText("jLabel12");
-        jPanel4.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 900));
-
-        jTabbedPane1.addTab("Consulta individual", jPanel4);
+        jTabbedPane1.addTab("Consulta individual de venta de leche", jPanel3);
 
         jPanel2.setMaximumSize(new java.awt.Dimension(1000, 750));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel17.setText("Fecha inicio de consulta");
-        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 126, -1, -1));
-        jPanel2.add(FechaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 196, -1, 201));
-
-        jLabel18.setText("Fecha fin de consulta");
-        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(518, 126, -1, -1));
-        jPanel2.add(FechaFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 196, -1, 201));
-
         ConsultarIntervaloDeTiempo.setText("Consultar");
-        jPanel2.add(ConsultarIntervaloDeTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(605, 532, -1, -1));
+        jPanel2.add(ConsultarIntervaloDeTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 310, -1, -1));
 
-        jLabel19.setText("Ganacia en dólares");
-        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(479, 464, -1, -1));
+        jLabel19.setText("Venta en dólares");
+        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 460, -1, -1));
 
         jTextField14.setEditable(false);
         jTextField14.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel2.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(605, 461, 79, -1));
+        jPanel2.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 460, 79, -1));
 
-        jLabel22.setText("Consulta de ganancias por intervalo de tiempo");
-        jPanel2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 49, -1, -1));
+        jLabel22.setText("Consulta de ventas de leche por mes y año");
+        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jPanel2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, -1, -1));
+        jPanel2.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 220, 140, -1));
+        jPanel2.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 140, -1));
 
-        jLabel49.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
-        jLabel49.setText("jLabel12");
-        jPanel2.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 910));
+        jLabel9.setText("Mes");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, -1, -1));
 
-        jTabbedPane1.addTab("Consulta por intervalo de tiempo", jPanel2);
+        jLabel10.setText("Año");
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 180, -1, -1));
+
+        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
+        jLabel37.setText("jLabel12");
+        jPanel2.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jTabbedPane1.addTab("Consulta por mes y año de venta de leche", jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -492,62 +353,46 @@ public class LecheVenta extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void ConsultarIndividualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarIndividualActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ConsultarIndividualActionPerformed
-
-    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField9ActionPerformed
-
     private void Registrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Registrar1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Registrar1ActionPerformed
 
-    private void jTextField15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField15ActionPerformed
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField15ActionPerformed
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
+        // TODO add your handling code here:
+        if (jTabbedPane1.getSelectedIndex() == 0 && jPanel1.getX() > evt.getX() && 31 > evt.getY()) {
+            PantallaInicial.setVisible(false);
+        } else if (jTabbedPane1.getSelectedIndex() != 0) {
+            PantallaInicial.setVisible(false);
+        }
+    }//GEN-LAST:event_jTabbedPane1MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ConsultarIndividual;
     private javax.swing.JButton ConsultarIntervaloDeTiempo;
-    private com.github.lgooddatepicker.components.CalendarPanel FechaFin;
-    private com.github.lgooddatepicker.components.CalendarPanel FechaInicio;
+    private javax.swing.JPanel PantallaInicial;
     private javax.swing.JButton Registrar;
     private javax.swing.JButton Registrar1;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -556,34 +401,20 @@ public class LecheVenta extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField19;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField20;
-    private javax.swing.JTextField jTextField21;
-    private javax.swing.JTextField jTextField22;
-    private javax.swing.JTextField jTextField23;
-    private javax.swing.JTextField jTextField24;
-    private javax.swing.JTextField jTextField25;
-    private javax.swing.JTextField jTextField26;
+    private javax.swing.JTextField jTextField27;
+    private javax.swing.JTextField jTextField28;
+    private javax.swing.JTextField jTextField29;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField30;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
