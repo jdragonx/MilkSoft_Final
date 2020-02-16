@@ -338,7 +338,7 @@ public class Alimentacion extends javax.swing.JPanel {
         // TODO add your handling code here:
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             if(!Validacion.num(jTextFieldArete.getText())){
-                JOptionPane.showMessageDialog(null,"Formato de identificación del arete erróneo’" , "Error Message" , JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null,"Formato de arete erróneo’" , "Error Message" , JOptionPane.ERROR_MESSAGE);
             } else if (!model.contains(jTextFieldArete.getText())) {
                 model.addElement(jTextFieldArete.getText());
                 jListArete.setModel(model);
