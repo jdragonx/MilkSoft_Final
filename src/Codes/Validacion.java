@@ -59,5 +59,22 @@ public class Validacion {
         }
 
     }
+    
+    
+    public static boolean ascii(String str){
+        if(Pattern.matches("xxx[\\x00-\\x7F]+xxx",str)){
+            return true;
+        } else {
+            return false;
+        }
+    }
 
+    
+    public static boolean unicode(String str){
+        if(Pattern.matches(".*",str)){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

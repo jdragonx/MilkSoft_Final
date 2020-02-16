@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
-import static java.util.logging.Logger.global;
 import javax.swing.JOptionPane;
 
 public class Conexion {
@@ -35,46 +34,30 @@ public class Conexion {
         String url = "jdbc:sqlserver://localhost:1433;databaseName=HaciendaMagdalena";
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-        
-        
-        
-        
-        
         } catch (ClassNotFoundException e) {
             JOptionPane.showMessageDialog(null, "Error 1: \n" + e.getMessage(), "Error  de conexion", JOptionPane.ERROR_MESSAGE);
-
         }
-
         try {
             contacto = DriverManager.getConnection(url, "userAc", "userAc");
             declara = contacto.createStatement();
-          ResultSet respuesta = declara.executeQuery("exec prodLogin @Login='" + user + "',@Pass='" + pass + "'");
-
-  
-            
-               ResultSetMetaData rsmd = respuesta.getMetaData();
-
-   int columnsNumber = rsmd.getColumnCount();
-   while (respuesta.next()) {
-       for (int i = 1; i <= columnsNumber; i++) {
-           if (i > 1) 
+            ResultSet respuesta = declara.executeQuery("exec prodLogin @Login='" + user + "',@Pass='" + pass + "'");
+            System.out.print("exec prodLogin @Login='" + user + "',@Pass='" + pass + "'");
+            ResultSetMetaData rsmd = respuesta.getMetaData();
+            int columnsNumber = rsmd.getColumnCount();
+             while (respuesta.next()) {
+               for (int i = 1; i <= columnsNumber; i++) {
            valCon = respuesta.getString(i);
-
-       }
-   }
-              // .getPassword().toString();
+            }
+              }
             System.out.print("\nvalcon   "+valCon);
-
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error 2: " + e.getMessage(), "Error de conexion", JOptionPane.ERROR_MESSAGE);
-
         }
         return valCon;
     }
 
     //Consulta (ResultSet
     public static ResultSet Consulta(String consulta) {
-
         Connection con = getConexion("user", "osopolar");
         Statement declara;
         try {
@@ -83,20 +66,17 @@ public class Conexion {
             return respuesta;
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error" + e.getMessage(), "Erro de conexion", JOptionPane.ERROR_MESSAGE);
-
         }
         return null;
     }
 
 //INSERCION 
     public void insert(String consulta, String user, String pass) {
-
         Connection con = getConexion(user, pass);
         Statement declara;
         try {
             declara = con.createStatement();
             declara.executeUpdate(consulta);
-
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error" + e.getMessage(), "Erro de conexion", JOptionPane.ERROR_MESSAGE);
 
