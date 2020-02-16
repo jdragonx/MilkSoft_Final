@@ -22,7 +22,7 @@ public class Conexion {
        }
        try {
            contacto= DriverManager.getConnection(url, user ,pass);
-            System.out.println("Ingreso Exitosos");
+            System.out.println("Ingreso Exitoso");
        }
            catch(SQLException e){ 
        }
