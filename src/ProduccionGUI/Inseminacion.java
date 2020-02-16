@@ -30,8 +30,6 @@ public class Inseminacion extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
-        PantallaInicial = new javax.swing.JPanel();
-        jLabel29 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -43,6 +41,8 @@ public class Inseminacion extends javax.swing.JPanel {
         jTextField15 = new javax.swing.JTextField();
         jScrollPane6 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
+        PantallaInicial = new javax.swing.JPanel();
+        jLabel29 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
@@ -55,6 +55,7 @@ public class Inseminacion extends javax.swing.JPanel {
         jLabel31 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
         jLabel47 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -78,6 +79,42 @@ public class Inseminacion extends javax.swing.JPanel {
         });
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setText("Registro de inseminación del ganado");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(348, 40, -1, -1));
+
+        jLabel2.setText("Arete de ganado");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 87, -1, -1));
+        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(403, 84, 176, -1));
+
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Ganado 1", "Ganado 2", "Ganado 3", "Ganado 4", "Ganado 5", "Ganado 6", "Ganado 7", "Ganado 8", "Ganado 9", "Ganado 10" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jList1);
+
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(403, 122, 176, 173));
+
+        jLabel6.setText("Fecha de inseminación");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, -1, -1));
+
+        jButton1.setText("Registrar");
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 640, -1, -1));
+
+        jLabel30.setText("Detalle");
+        jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, -1, -1));
+
+        jTextField15.setEditable(false);
+        jTextField15.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 330, 185, -1));
+
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jScrollPane6.setViewportView(jTextArea2);
+
+        jPanel2.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 430, 260, 170));
 
         jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
         jLabel29.setText("jLabel12");
@@ -104,42 +141,6 @@ public class Inseminacion extends javax.swing.JPanel {
         );
 
         jPanel2.add(PantallaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 850));
-
-        jLabel1.setText("Registro de inseminación del ganado");
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(348, 40, -1, -1));
-
-        jLabel2.setText("Arete de ganado");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 87, -1, -1));
-        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(403, 84, 176, -1));
-
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Ganado 1", "Ganado 2", "Ganado 3", "Ganado 4", "Ganado 5", "Ganado 6", "Ganado 7", "Ganado 8", "Ganado 9", "Ganado 10" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(jList1);
-
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(403, 122, 176, 173));
-
-        jLabel6.setText("Fecha de alimentación");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, -1, -1));
-
-        jButton1.setText("Registrar");
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 640, -1, -1));
-
-        jLabel30.setText("Detalle");
-        jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, -1, -1));
-
-        jTextField15.setEditable(false);
-        jTextField15.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel2.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 330, 185, -1));
-
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane6.setViewportView(jTextArea2);
-
-        jPanel2.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 430, 260, 170));
 
         jLabel46.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
         jLabel46.setText("jLabel12");
@@ -168,7 +169,7 @@ public class Inseminacion extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(jList2);
 
-        jPanel4.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(403, 122, 176, -1));
+        jPanel4.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 160, 176, 80));
 
         jTextArea3.setColumns(20);
         jTextArea3.setRows(5);
@@ -180,11 +181,14 @@ public class Inseminacion extends javax.swing.JPanel {
         jPanel4.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, -1, -1));
 
         jLabel4.setText("Fechas de registro");
-        jPanel4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, -1, -1));
+        jPanel4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel8.setText("Actualización de inseminación");
         jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, -1, -1));
+
+        jButton4.setText("Buscar");
+        jPanel4.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, -1, -1));
 
         jLabel47.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
         jLabel47.setText("jLabel12");
@@ -297,6 +301,7 @@ public class Inseminacion extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel29;
