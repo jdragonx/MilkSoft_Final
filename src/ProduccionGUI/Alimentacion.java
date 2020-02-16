@@ -68,10 +68,10 @@ public class Alimentacion extends javax.swing.JPanel {
         jPanel3 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
-        calendarPanel1 = new com.github.lgooddatepicker.components.CalendarPanel();
+        calendarPanelFechaConsulta = new com.github.lgooddatepicker.components.CalendarPanel();
         jButton5 = new javax.swing.JButton();
         jScrollPane7 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTableConsulta = new javax.swing.JTable();
         jLabel49 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(1100, 850));
@@ -268,12 +268,17 @@ public class Alimentacion extends javax.swing.JPanel {
 
         jLabel27.setText("Fecha de registro");
         jPanel3.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, -1, -1));
-        jPanel3.add(calendarPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, -1, 201));
+        jPanel3.add(calendarPanelFechaConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, -1, 201));
 
         jButton5.setText("Consultar");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         jPanel3.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(378, 291, -1, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableConsulta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -308,7 +313,7 @@ public class Alimentacion extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane7.setViewportView(jTable1);
+        jScrollPane7.setViewportView(jTableConsulta);
 
         jPanel3.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 325, 670, 337));
 
@@ -332,6 +337,10 @@ public class Alimentacion extends javax.swing.JPanel {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        for (int i = 0; i < jTableConsulta.getRowCount(); i++) {
+            System.out.println(jTableConsulta.getModel().getValueAt(i,2).toString());
+            System.out.println(jTableConsulta.getModel().getValueAt(i,3).toString());
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
@@ -410,11 +419,20 @@ public class Alimentacion extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        if (calendarPanelFechaConsulta.getSelectedDate() == null) {
+            JOptionPane.showMessageDialog(null, "Fecha de alimentación en blanco", "Error Message", JOptionPane.ERROR_MESSAGE);
+        } else {
+            System.out.println(calendarPanelFechaConsulta.getSelectedDate().toString());
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
     private javax.swing.DefaultListModel model = new javax.swing.DefaultListModel();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PantallaInicial;
-    private com.github.lgooddatepicker.components.CalendarPanel calendarPanel1;
     private com.github.lgooddatepicker.components.CalendarPanel calendarPanelFechaActualiza;
+    private com.github.lgooddatepicker.components.CalendarPanel calendarPanelFechaConsulta;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -442,8 +460,8 @@ public class Alimentacion extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTableActualiza;
+    private javax.swing.JTable jTableConsulta;
     private javax.swing.JTextArea jTextAreaDetalle;
     private javax.swing.JTextField jTextFieldArete;
     private javax.swing.JTextField jTextFieldCantidad;
