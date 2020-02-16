@@ -56,33 +56,10 @@ public class Alimentacion extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jLabel47 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
-        datePicker2 = new com.github.lgooddatepicker.components.DatePicker();
-        jLabel19 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jList5 = new javax.swing.JList<>();
-        jLabel23 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jTextField14 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
-        jLabel48 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
         calendarPanel1 = new com.github.lgooddatepicker.components.CalendarPanel();
-        calendarPanel2 = new com.github.lgooddatepicker.components.CalendarPanel();
         jButton5 = new javax.swing.JButton();
         jScrollPane7 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -246,88 +223,14 @@ public class Alimentacion extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Actualización de alimentación", jPanel4);
 
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel17.setText("Jornada");
-        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 104, -1, -1));
-
-        jLabel18.setText("Fecha de registro");
-        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 65, -1, -1));
-        jPanel2.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(436, 101, 166, -1));
-
-        jButton4.setText("Buscar");
-        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 130, -1, -1));
-        jPanel2.add(datePicker2, new org.netbeans.lib.awtextra.AbsoluteConstraints(436, 63, -1, -1));
-
-        jLabel19.setText("Consulta individual de alimentación");
-        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 38, -1, -1));
-
-        jTextField11.setEditable(false);
-        jTextField11.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel2.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(436, 495, 166, -1));
-
-        jTextField12.setEditable(false);
-        jTextField12.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel2.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(436, 533, 166, -1));
-
-        jLabel20.setText("Descripcion");
-        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 536, -1, -1));
-
-        jLabel21.setText("Nombre");
-        jPanel2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 460, -1, -1));
-
-        jLabel22.setText("Arete de ganado");
-        jPanel2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 228, -1, -1));
-
-        jList5.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Ganado 1", "Ganado 2", "Ganado 3", "Ganado 4", "Ganado 5", "Ganado 6", "Ganado 7", "Ganado 8", "Ganado 9", "Ganado 10" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jList5.setEnabled(false);
-        jScrollPane5.setViewportView(jList5);
-
-        jPanel2.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(436, 228, 166, 173));
-
-        jLabel23.setText("Tipo de alimento");
-        jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 422, -1, -1));
-
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alimento", "Sobrealimento" }));
-        jComboBox3.setEnabled(false);
-        jPanel2.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(436, 419, 166, -1));
-
-        jLabel24.setText("Cantidad");
-        jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 498, -1, -1));
-
-        jLabel25.setText("Empleado");
-        jPanel2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 574, -1, -1));
-
-        jTextField14.setEditable(false);
-        jTextField14.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel2.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(436, 571, 166, -1));
-
-        jTextField13.setEditable(false);
-        jTextField13.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel2.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(436, 457, 166, -1));
-
-        jLabel48.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
-        jLabel48.setText("jLabel12");
-        jPanel2.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 900));
-
-        jTabbedPane1.addTab("Consulta individual", jPanel2);
-
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel26.setText("Consulta por intervalos de fecha de alimentación");
         jPanel3.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(314, 11, -1, -1));
 
         jLabel27.setText("Fecha inicio");
-        jPanel3.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 43, -1, -1));
-
-        jLabel28.setText("Fecha fin");
-        jPanel3.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(549, 43, -1, -1));
-        jPanel3.add(calendarPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 75, -1, 201));
-        jPanel3.add(calendarPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 75, -1, 201));
+        jPanel3.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, -1, -1));
+        jPanel3.add(calendarPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, -1, 201));
 
         jButton5.setText("Consultar");
         jPanel3.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(378, 291, -1, -1));
@@ -375,7 +278,7 @@ public class Alimentacion extends javax.swing.JPanel {
         jLabel49.setText("jLabel12");
         jPanel3.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 910));
 
-        jTabbedPane1.addTab("Consulta por intervalos de fecha", jPanel3);
+        jTabbedPane1.addTab("Consulta por de fecha de alimentación", jPanel3);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -407,49 +310,31 @@ public class Alimentacion extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PantallaInicial;
     private com.github.lgooddatepicker.components.CalendarPanel calendarPanel1;
-    private com.github.lgooddatepicker.components.CalendarPanel calendarPanel2;
     private com.github.lgooddatepicker.components.CalendarPanel calendarPanel3;
-    private com.github.lgooddatepicker.components.DatePicker datePicker2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JList<String> jList1;
-    private javax.swing.JList<String> jList5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTabbedPane jTabbedPane1;
@@ -457,11 +342,6 @@ public class Alimentacion extends javax.swing.JPanel {
     private javax.swing.JTable jTable2;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField4;
