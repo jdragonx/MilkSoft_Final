@@ -93,8 +93,8 @@ public class CitaVeterinaria extends javax.swing.JPanel {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel2.setText("Registrar Veterianario");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 74, -1, -1));
+        jLabel2.setText("Registrar Veterinario");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 80, -1, -1));
 
         jLabel3.setText("Nombre/Razon Social");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 146, -1, -1));
