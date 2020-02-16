@@ -35,66 +35,9 @@ public class Enfermedades extends javax.swing.JPanel {
         jLabel27 = new javax.swing.JLabel();
         RazonSocial1 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        RazonSocialConsulta = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        ListaClientes = new javax.swing.JList<>();
-        IdentificadorConsulta = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        CorreoElectronicoConsulta = new javax.swing.JTextField();
-        Consultar = new javax.swing.JButton();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel48 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        RazonSocialConsulta3 = new javax.swing.JTextField();
-        jLabel26 = new javax.swing.JLabel();
-        IdentificadorConsulta3 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        CorreoElectronico1 = new javax.swing.JTextField();
-        CorreoElectronicoConsulta3 = new javax.swing.JTextField();
-        jLabel30 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        ListaClientes2 = new javax.swing.JList<>();
-        jLabel31 = new javax.swing.JLabel();
-        Registar1 = new javax.swing.JButton();
-        jSeparator2 = new javax.swing.JSeparator();
-        jLabel23 = new javax.swing.JLabel();
-        Actualizar2 = new javax.swing.JButton();
-        CorreoElectronico2 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        ListaClientes4 = new javax.swing.JList<>();
-        RazonSocialConsulta4 = new javax.swing.JTextField();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        ListaClientes5 = new javax.swing.JList<>();
-        jLabel32 = new javax.swing.JLabel();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        ListaClientes6 = new javax.swing.JList<>();
-        jLabel33 = new javax.swing.JLabel();
-        IdentificadorConsulta4 = new javax.swing.JTextField();
-        jLabel49 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        RazonSocialConsulta1 = new javax.swing.JTextField();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        ListaClientes3 = new javax.swing.JList<>();
-        IdentificadorConsulta1 = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        CorreoElectronicoConsulta1 = new javax.swing.JTextField();
-        Consultar1 = new javax.swing.JButton();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        CorreoElectronicoConsulta4 = new javax.swing.JTextField();
-        jLabel50 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel48 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(1000, 750));
         setMinimumSize(new java.awt.Dimension(1000, 750));
@@ -135,47 +78,11 @@ public class Enfermedades extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Registrar Enfermedad", jPanel1);
 
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jTabbedPane1.addTab("Actualizar Enfermedad", jPanel5);
+
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel9.setText("Nombre");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, -1, -1));
-        jPanel2.add(RazonSocialConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 180, 212, -1));
-
-        ListaClientes.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Enfermedad 1", "Enfermedad 2", "Enfermedad 3", "Enfermedad 4", "Enfermedad 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(ListaClientes);
-
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, 212, 182));
-
-        IdentificadorConsulta.setEditable(false);
-        IdentificadorConsulta.setBackground(new java.awt.Color(204, 204, 204));
-        IdentificadorConsulta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IdentificadorConsultaActionPerformed(evt);
-            }
-        });
-        jPanel2.add(IdentificadorConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 420, 212, -1));
-
-        jLabel13.setText("Tipo");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 420, -1, -1));
-
-        jLabel12.setText("Gravedad");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, -1, -1));
-
-        CorreoElectronicoConsulta.setEditable(false);
-        CorreoElectronicoConsulta.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel2.add(CorreoElectronicoConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 450, 212, -1));
-
-        Consultar.setText("Consultar");
-        jPanel2.add(Consultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 510, -1, -1));
-
-        jLabel14.setText("Consulta de enfermedad");
-        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(339, 125, -1, -1));
-
-        jLabel48.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
         jLabel48.setText("jLabel12");
         jLabel48.setMaximumSize(new java.awt.Dimension(1401, 200));
         jLabel48.setMinimumSize(new java.awt.Dimension(1401, 200));
@@ -183,189 +90,6 @@ public class Enfermedades extends javax.swing.JPanel {
         jPanel2.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 790));
 
         jTabbedPane1.addTab("Consultar enfermedad", jPanel2);
-
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jTabbedPane1.addTab("Actualizar Enfermedad", jPanel5);
-
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel3.add(RazonSocialConsulta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 430, 212, -1));
-
-        jLabel26.setText("Medicina");
-        jPanel3.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 560, 88, -1));
-        jPanel3.add(IdentificadorConsulta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 560, 212, -1));
-
-        jLabel5.setText("Dosis");
-        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, -1, -1));
-
-        jLabel29.setText("Dosis");
-        jPanel3.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 660, -1, -1));
-
-        CorreoElectronico1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CorreoElectronico1ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(CorreoElectronico1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, 212, -1));
-        jPanel3.add(CorreoElectronicoConsulta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 650, 212, -1));
-
-        jLabel30.setText("Registro de nuevo tratamiento");
-        jPanel3.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, -1, -1));
-
-        ListaClientes2.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Enfermedad 1", "Enfermedad 2", "Enfermedad 3", "Enfermedad 4", "Enfermedad 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane3.setViewportView(ListaClientes2);
-
-        jPanel3.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 470, 212, 36));
-
-        jLabel31.setText("Actualización de información de tratamiento");
-        jPanel3.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 400, -1, -1));
-
-        Registar1.setText("Registrar");
-        Registar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Registar1ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(Registar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 350, -1, -1));
-        jPanel3.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 850, 10));
-
-        jLabel23.setText("Enfermedad");
-        jPanel3.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 430, -1, -1));
-
-        Actualizar2.setText("Actualizar");
-        Actualizar2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Actualizar2ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(Actualizar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 730, -1, -1));
-        jPanel3.add(CorreoElectronico2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 320, 212, -1));
-
-        jLabel7.setText("Descripción");
-        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, -1, -1));
-        jPanel3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 690, 212, -1));
-
-        jLabel8.setText("Descripción");
-        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 690, -1, -1));
-
-        jButton1.setText("Buscar");
-        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 520, -1, -1));
-
-        ListaClientes4.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Medicina 1", "Medicina 2", "Medicina 3", "Medicina 4" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane5.setViewportView(ListaClientes4);
-
-        jPanel3.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 600, 212, 36));
-        jPanel3.add(RazonSocialConsulta4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 40, 212, -1));
-
-        ListaClientes5.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Enfermedad 1", "Enfermedad 2", "Enfermedad 3", "Enfermedad 4", "Enfermedad 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane6.setViewportView(ListaClientes5);
-
-        jPanel3.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, 212, 70));
-
-        jLabel32.setText("Enfermedad");
-        jPanel3.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, -1, -1));
-
-        ListaClientes6.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Medicina 1", "Medicina 2", "Medicina 3", "Medicina 4" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane7.setViewportView(ListaClientes6);
-
-        jPanel3.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, 212, 36));
-
-        jLabel33.setText("Medicina");
-        jPanel3.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 88, -1));
-        jPanel3.add(IdentificadorConsulta4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 190, 212, -1));
-
-        jLabel49.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
-        jLabel49.setText("jLabel12");
-        jLabel49.setMaximumSize(new java.awt.Dimension(1401, 200));
-        jLabel49.setMinimumSize(new java.awt.Dimension(1401, 200));
-        jLabel49.setPreferredSize(new java.awt.Dimension(1401, 200));
-        jPanel3.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 790));
-
-        jTabbedPane1.addTab("Registrar Tratamiento", jPanel3);
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 940, Short.MAX_VALUE)
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 790, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Consultar Tratamiento", jPanel6);
-
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel10.setText("Enfermedad");
-        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, -1, -1));
-        jPanel4.add(RazonSocialConsulta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, 212, -1));
-
-        ListaClientes3.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Enfermedad 1", "Enfermedad 2", "Enfermedad 3", "Enfermedad 4", "Enfermedad 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane4.setViewportView(ListaClientes3);
-
-        jPanel4.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 230, 212, 182));
-
-        IdentificadorConsulta1.setEditable(false);
-        IdentificadorConsulta1.setBackground(new java.awt.Color(204, 204, 204));
-        IdentificadorConsulta1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IdentificadorConsulta1ActionPerformed(evt);
-            }
-        });
-        jPanel4.add(IdentificadorConsulta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 430, 212, -1));
-
-        jLabel15.setText("Medicina");
-        jPanel4.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, -1, -1));
-
-        jLabel16.setText("Dosis");
-        jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 470, -1, -1));
-
-        CorreoElectronicoConsulta1.setEditable(false);
-        CorreoElectronicoConsulta1.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel4.add(CorreoElectronicoConsulta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 470, 212, -1));
-
-        Consultar1.setText("Consultar");
-        jPanel4.add(Consultar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 570, -1, -1));
-
-        jLabel17.setText("Consulta de tratamientos conocidos");
-        jPanel4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 135, -1, -1));
-
-        jLabel18.setText("Descripción");
-        jPanel4.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 510, -1, -1));
-
-        CorreoElectronicoConsulta4.setEditable(false);
-        CorreoElectronicoConsulta4.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel4.add(CorreoElectronicoConsulta4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 500, 212, -1));
-
-        jLabel50.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
-        jLabel50.setText("jLabel12");
-        jLabel50.setMaximumSize(new java.awt.Dimension(1401, 200));
-        jLabel50.setMinimumSize(new java.awt.Dimension(1401, 200));
-        jLabel50.setPreferredSize(new java.awt.Dimension(1401, 200));
-        jPanel4.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 790));
-
-        jTabbedPane1.addTab("Actualizar Tratamiento", jPanel4);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -379,103 +103,26 @@ public class Enfermedades extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void IdentificadorConsulta1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdentificadorConsulta1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_IdentificadorConsulta1ActionPerformed
-
-    private void Actualizar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Actualizar2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Actualizar2ActionPerformed
-
-    private void Registar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Registar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Registar1ActionPerformed
-
-    private void CorreoElectronico1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CorreoElectronico1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CorreoElectronico1ActionPerformed
-
-    private void IdentificadorConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdentificadorConsultaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_IdentificadorConsultaActionPerformed
-
     private void RegistarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_RegistarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Actualizar2;
-    private javax.swing.JButton Consultar;
-    private javax.swing.JButton Consultar1;
     private javax.swing.JTextField CorreoElectronico;
-    private javax.swing.JTextField CorreoElectronico1;
-    private javax.swing.JTextField CorreoElectronico2;
-    private javax.swing.JTextField CorreoElectronicoConsulta;
-    private javax.swing.JTextField CorreoElectronicoConsulta1;
-    private javax.swing.JTextField CorreoElectronicoConsulta3;
-    private javax.swing.JTextField CorreoElectronicoConsulta4;
     private javax.swing.JTextField Identificador;
-    private javax.swing.JTextField IdentificadorConsulta;
-    private javax.swing.JTextField IdentificadorConsulta1;
-    private javax.swing.JTextField IdentificadorConsulta3;
-    private javax.swing.JTextField IdentificadorConsulta4;
-    private javax.swing.JList<String> ListaClientes;
-    private javax.swing.JList<String> ListaClientes2;
-    private javax.swing.JList<String> ListaClientes3;
-    private javax.swing.JList<String> ListaClientes4;
-    private javax.swing.JList<String> ListaClientes5;
-    private javax.swing.JList<String> ListaClientes6;
     private javax.swing.JTextField RazonSocial;
     private javax.swing.JTextField RazonSocial1;
-    private javax.swing.JTextField RazonSocialConsulta;
-    private javax.swing.JTextField RazonSocialConsulta1;
-    private javax.swing.JTextField RazonSocialConsulta3;
-    private javax.swing.JTextField RazonSocialConsulta4;
     private javax.swing.JButton Registar;
-    private javax.swing.JButton Registar1;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

@@ -15,8 +15,8 @@ import ProduccionGUI.Alimentacion;
 import ProduccionGUI.Ganado;
 import ProduccionGUI.Inseminacion;
 import ProduccionGUI.Ordeño;
-import SaludGUI.AplicacionDeTratamientos;
-import SaludGUI.AtencionVeterinaria;
+import SaludGUI.Veterinario;
+import SaludGUI.CitaVeterinaria;
 import SaludGUI.Enfermedades;
 import VentasGUI.Clientes;
 import VentasGUI.GanadoVenta;
@@ -418,7 +418,7 @@ public class Modulo extends javax.swing.JFrame {
         jPanel1.repaint();
         jPanel1.revalidate();
 
-        jPanel1.add(new AplicacionDeTratamientos());
+        jPanel1.add(new Veterinario());
         jPanel1.repaint();
         jPanel1.revalidate();
     }//GEN-LAST:event_jMenuItem8ActionPerformed
@@ -484,7 +484,7 @@ public class Modulo extends javax.swing.JFrame {
         jPanel1.repaint();
         jPanel1.revalidate();
 
-        jPanel1.add(new AtencionVeterinaria());
+        jPanel1.add(new CitaVeterinaria());
         jPanel1.repaint();
         jPanel1.revalidate();
     }//GEN-LAST:event_jMenuItem7ActionPerformed
