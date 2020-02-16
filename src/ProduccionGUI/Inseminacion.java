@@ -270,7 +270,6 @@ public class Inseminacion extends javax.swing.JPanel {
         if (jTabbedPane1.getSelectedIndex() == 0 && jPanel1.getX() > evt.getX() && 31 > evt.getY()) {
             PantallaInicial.setVisible(false);
         } else if (jTabbedPane1.getSelectedIndex() != 0){
-            System.out.println(" Ola que hace");
             PantallaInicial.setVisible(false);
         }
     }                                         

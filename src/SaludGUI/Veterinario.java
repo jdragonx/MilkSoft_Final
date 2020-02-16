@@ -16,7 +16,6 @@ public class Veterinario extends javax.swing.JPanel {
      */
     public Veterinario() {
         initComponents();
-        /* XD*/
     }
 
     /**

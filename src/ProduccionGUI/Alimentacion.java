@@ -16,7 +16,6 @@ public class Alimentacion extends javax.swing.JPanel {
      */
     public Alimentacion() {
         initComponents();
-        /* XD*/
     }
 
     /**

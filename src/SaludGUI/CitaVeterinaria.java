@@ -16,7 +16,6 @@ public class CitaVeterinaria extends javax.swing.JPanel {
      */
     public CitaVeterinaria() {
         initComponents();
-        /* XD*/
     }
 
     /**
