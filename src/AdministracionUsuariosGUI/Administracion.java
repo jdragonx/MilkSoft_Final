@@ -1,6 +1,7 @@
 
 package AdministracionUsuariosGUI;
 
+import Codes.Validacion;
 import Interfaces.Modulo;
 
 
@@ -243,8 +244,12 @@ public class Administracion extends javax.swing.JPanel {
     }//GEN-LAST:event_jTabbedPane1MouseClicked
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        val.   
-        System.out.print(Integer.toString(jcbRol.getItemCount())+jtfUser.getText()+"\n"+jtfCon1.getText()+"\n"+jtfCon2.getText()+"\n"+jtfCedula.getText()+"\nRo: "+
+
+        if (val.alfnum(jtfUser.getText())==true && val.counter(jtfUser.getText())<=50 && val.counter(jtfUser.getText())>=8){
+
+        }
+
+        System.out.print(jtfUser.getText()+"\n"+jtfCon1.getText()+"\n"+jtfCon2.getText()+"\n"+jtfCedula.getText()+"\nRo: "+
                                Integer.toString(jcbRol.getSelectedIndex()) +"\nEstado: "+Integer.toString(jcbActivacion.getSelectedIndex()) );
     }//GEN-LAST:event_jButton8ActionPerformed
 

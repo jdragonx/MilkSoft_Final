@@ -10,7 +10,7 @@ public class Validacion {
 
 
     
-        public static void counter (String str){
+        public int counter (String str){
         int count =0;
                 for(int i = 0; i < str.length(); i++) {    
             if(str.charAt(i) != ' ')    
@@ -18,10 +18,10 @@ public class Validacion {
             
         }    
                 System.out.print("\nValidation C: "+count);
- 
+                return count;
     }
         //Regex Alfanumerico + Espacio
-        public static boolean alfnumesp(String str){
+        public boolean alfnumesp(String str){
             
             if (Pattern.matches("^[a-zA-Z ]*", str)){
             return true;
@@ -32,8 +32,7 @@ public class Validacion {
         }
         
         //Regex Alfanumerico
-        //Regex Alfanumerico + Espacio
-        public static boolean alfnum(String str){
+        public boolean alfnum(String str){
             
             if (Pattern.matches("^[a-zA-Z]*", str)){
             return true;
@@ -45,7 +44,7 @@ public class Validacion {
         
         
         //Regex Numerico
-        public static boolean num(String str){
+        public boolean num(String str){
             
             if (Pattern.matches("^[0-9]*", str)){
             return true;
@@ -56,7 +55,7 @@ public class Validacion {
         }
         
         //Regex Direccion
-        public static boolean direccion(String str){
+        public boolean direccion(String str){
             
             if (Pattern.matches("^[a-zA-Z-.]*", str)){
             return true;
