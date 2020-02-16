@@ -231,7 +231,7 @@ public class Ordeno extends javax.swing.JPanel {
         jButton4.setText("Buscar");
         jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, -1, -1));
 
-        jLabel19.setText("Consulta individual de ordeño");
+        jLabel19.setText("Consulta individual de alimentación");
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(321, 67, -1, -1));
         jPanel2.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 130, 176, -1));
