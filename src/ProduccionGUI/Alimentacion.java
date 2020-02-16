@@ -9,6 +9,7 @@ package ProduccionGUI;
 import Codes.Validacion;
 import java.awt.event.KeyEvent;
 import java.time.format.DateTimeFormatter;
+import java.util.Enumeration;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -301,9 +302,31 @@ public class Alimentacion extends javax.swing.JPanel {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        boolean act = true;
         for (int i = 0; i < jTableActualiza.getRowCount(); i++) {
-            Validacion.alfesp(jTableActualiza.getValueAt(i, 2).toString());
-            System.out.println(jTableActualiza.getValueAt(i, 3).toString());
+            if (jTableActualiza.getValueAt(i, 2).toString().equals("")) {
+                JOptionPane.showMessageDialog(null, "Atributo detalle de alimento en blanco", "Error Message", JOptionPane.ERROR_MESSAGE);
+                act = false;
+            }
+
+            if (!Validacion.alfesp(jTableActualiza.getValueAt(i, 2).toString()) || Validacion.counter(jTextAreaDetalle.getText()) > 50) {
+                JOptionPane.showMessageDialog(null, "Formato de detalle de alimento erróneo", "Error Message", JOptionPane.ERROR_MESSAGE);
+                act = false;
+            }
+
+            if (jTableActualiza.getValueAt(i, 3).toString().equals("")) {
+                JOptionPane.showMessageDialog(null, "Atributo cantidad en blanco", "Error Message", JOptionPane.ERROR_MESSAGE);
+                act = false;
+            }
+
+            if (!Validacion.num(jTableActualiza.getValueAt(i, 3).toString())) {
+                JOptionPane.showMessageDialog(null, "Formato de cantidad erróneo", "Error Message", JOptionPane.ERROR_MESSAGE);
+                act = false;
+            }
+            
+            if(act){
+                JOptionPane.showMessageDialog(null, "Actualización exitosa", "Succes Message", JOptionPane.INFORMATION_MESSAGE);
+            }
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -322,7 +345,7 @@ public class Alimentacion extends javax.swing.JPanel {
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             if (!Validacion.num(jTextFieldArete.getText())) {
                 JOptionPane.showMessageDialog(null, "Formato de arete erróneo’", "Error Message", JOptionPane.ERROR_MESSAGE);
-            } else if (!model.contains(jTextFieldArete.getText())) {
+            } else if (!model.contains(jTextFieldArete.getText()) && !jTextFieldArete.getText().equals("")) {
                 model.addElement(jTextFieldArete.getText());
                 jListArete.setModel(model);
             }
@@ -356,30 +379,33 @@ public class Alimentacion extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Atributo detalle de alimento en blanco", "Error Message", JOptionPane.ERROR_MESSAGE);
             reg = false;
         }
-        
-        if (!Validacion.alfesp(jTextAreaDetalle.getText())) {
+
+        if (!Validacion.alfesp(jTextAreaDetalle.getText()) || Validacion.counter(jTextAreaDetalle.getText()) > 50) {
             JOptionPane.showMessageDialog(null, "Formato de detalle de alimento erróneo", "Error Message", JOptionPane.ERROR_MESSAGE);
             reg = false;
         }
-        
+
         if (jTextFieldCantidad.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Atributo cantidad en blanco", "Error Message", JOptionPane.ERROR_MESSAGE);
             reg = false;
         }
-        
+
         if (!Validacion.num(jTextFieldCantidad.getText())) {
             JOptionPane.showMessageDialog(null, "Formato de cantidad erróneo", "Error Message", JOptionPane.ERROR_MESSAGE);
             reg = false;
         }
-        
+
         if (reg) {
+            Enumeration aretes = model.elements();
+            while (aretes.hasMoreElements()) {
+                System.out.println(aretes.nextElement());
+            }
             JOptionPane.showMessageDialog(null, "Registro exitoso", "Succes Message", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        boolean act = true;
         if (calendarPanelFechaActualiza.getSelectedDate() == null) {
             JOptionPane.showMessageDialog(null, "Fecha de alimentación en blanco", "Error Message", JOptionPane.ERROR_MESSAGE);
         } else {
