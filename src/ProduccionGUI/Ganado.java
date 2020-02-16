@@ -77,37 +77,6 @@ public class Ganado extends javax.swing.JPanel {
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
         jLabel47 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
-        jLabel19 = new javax.swing.JLabel();
-        jComboBox6 = new javax.swing.JComboBox<>();
-        jButton5 = new javax.swing.JButton();
-        jLabel48 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel34 = new javax.swing.JLabel();
-        datePicker5 = new com.github.lgooddatepicker.components.DatePicker();
-        jLabel35 = new javax.swing.JLabel();
-        jButton11 = new javax.swing.JButton();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jList4 = new javax.swing.JList<>();
-        jComboBox10 = new javax.swing.JComboBox<>();
-        jLabel36 = new javax.swing.JLabel();
-        jButton12 = new javax.swing.JButton();
-        jLabel51 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jButton8 = new javax.swing.JButton();
-        calendarPanel2 = new com.github.lgooddatepicker.components.CalendarPanel();
-        calendarPanel1 = new com.github.lgooddatepicker.components.CalendarPanel();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel49 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(1100, 850));
         setMinimumSize(new java.awt.Dimension(1100, 850));
@@ -295,136 +264,6 @@ public class Ganado extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Consulta de ganado", jPanel3);
 
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel17.setText("Registro de cambio de etapa de vida");
-        jPanel4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, -1, -1));
-
-        jLabel18.setText("Arete");
-        jPanel4.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, -1, -1));
-        jPanel4.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 140, 130, -1));
-
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Ganado 1", "Ganado 2", "Ganado 3" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane2.setViewportView(jList1);
-
-        jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 180, 130, 70));
-
-        jLabel19.setText("Etapa");
-        jPanel4.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 330, -1, -1));
-
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ternero", "Vacona", "Preñada", "En producción", "Seca" }));
-        jPanel4.add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 330, 130, -1));
-
-        jButton5.setText("Registrar");
-        jPanel4.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 370, -1, -1));
-
-        jLabel48.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
-        jLabel48.setText("jLabel12");
-        jPanel4.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 890));
-
-        jTabbedPane1.addTab("Registro de cambio de etapa de vida", jPanel4);
-
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel34.setText("Actualización de cambio de etapa de vida");
-        jPanel5.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, -1, -1));
-        jPanel5.add(datePicker5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 280, -1, -1));
-
-        jLabel35.setText("Fecha");
-        jPanel5.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, -1, -1));
-
-        jButton11.setText("Buscar");
-        jPanel5.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 320, -1, -1));
-
-        jList4.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Ganado 1", "Ganado 2", "Ganado 3" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane5.setViewportView(jList4);
-
-        jPanel5.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 370, 130, 50));
-
-        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ternero", "Vacona", "Preñada", "En producción", "Seca" }));
-        jPanel5.add(jComboBox10, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 480, 130, -1));
-
-        jLabel36.setText("Etapa");
-        jPanel5.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 480, -1, -1));
-
-        jButton12.setText("Actualizar");
-        jPanel5.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 520, -1, -1));
-
-        jLabel51.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
-        jLabel51.setText("jLabel12");
-        jPanel5.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 880));
-
-        jTabbedPane1.addTab("Actualización de cambio de etapa de vida", jPanel5);
-
-        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Fecha", "Arete", "Etapa anterior", "Etapa nueva", "Empleado"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane7.setViewportView(jTable2);
-
-        jPanel6.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, 620, 337));
-
-        jButton8.setText("Consultar");
-        jPanel6.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 300, -1, -1));
-        jPanel6.add(calendarPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 90, -1, 201));
-        jPanel6.add(calendarPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, -1, 201));
-
-        jLabel28.setText("Fecha fin");
-        jPanel6.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 50, -1, -1));
-
-        jLabel27.setText("Fecha inicio");
-        jPanel6.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, -1, -1));
-
-        jLabel26.setText("Consulta de cambios de etapa de vida");
-        jPanel6.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(308, 20, -1, -1));
-
-        jLabel49.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
-        jLabel49.setText("jLabel12");
-        jPanel6.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 900));
-
-        jTabbedPane1.addTab("Consulta de cambios de etapa de vida", jPanel6);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -550,74 +389,43 @@ public class Ganado extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> Salud;
     private javax.swing.JComboBox<String> Salud1;
     private javax.swing.JComboBox<String> Sexo;
-    private com.github.lgooddatepicker.components.CalendarPanel calendarPanel1;
-    private com.github.lgooddatepicker.components.CalendarPanel calendarPanel2;
-    private com.github.lgooddatepicker.components.DatePicker datePicker5;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton8;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox10;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JList<String> jList4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField7;
     // End of variables declaration//GEN-END:variables
 }
