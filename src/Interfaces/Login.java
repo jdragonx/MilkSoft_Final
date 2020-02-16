@@ -21,10 +21,12 @@ public class Login extends javax.swing.JFrame {
     }
 
     public void iniciar() {
-        String val = conec.ingLogin(Usuario.getText(), Pass.getPassword().toString());
+        String val="";
+        val = conec.ingLogin(Usuario.getText(), Pass.getPassword().toString());
         System.out.print("\nVAL ES: " + val);
-        if (val != "") {
+        if (val!= "") {
             if (val.matches("4")) {
+                this.setEnabled(false);
                 new Auditoria().setVisible(true);
             } else {
                 this.setEnabled(false);
@@ -96,10 +98,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jbLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLoginActionPerformed
-
         iniciar();
-
-
     }//GEN-LAST:event_jbLoginActionPerformed
 
     /**

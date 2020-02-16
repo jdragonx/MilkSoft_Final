@@ -28,7 +28,7 @@ public class Validacion {
     }
 
     //Regex Alfanumerico
-    public static boolean alfnum(String str) {
+    public static boolean alf(String str) {
 
         if (Pattern.matches("^[a-zA-Z]*", str)) {
             return true;
