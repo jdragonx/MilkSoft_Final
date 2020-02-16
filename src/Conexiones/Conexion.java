@@ -3,6 +3,7 @@ package Conexiones;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import static java.util.logging.Logger.global;
@@ -34,6 +35,11 @@ public class Conexion {
         String url = "jdbc:sqlserver://localhost:1433;databaseName=HaciendaMagdalena";
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        
+        
+        
+        
+        
         } catch (ClassNotFoundException e) {
             JOptionPane.showMessageDialog(null, "Error 1: \n" + e.getMessage(), "Error  de conexion", JOptionPane.ERROR_MESSAGE);
 
@@ -42,11 +48,22 @@ public class Conexion {
         try {
             contacto = DriverManager.getConnection(url, "userAc", "userAc");
             declara = contacto.createStatement();
-            ResultSet respuesta = declara.executeQuery("exec prodLogin @Login='" + user + "',@Pass='" + pass + "'");
-            //Recuperacion del tipo de usuario
+          ResultSet respuesta = declara.executeQuery("exec prodLogin @Login='" + user + "',@Pass='" + pass + "'");
+
+  
             
-            valCon = respuesta.toString();
-            System.out.print("\n\nvalCon: " + valCon);
+               ResultSetMetaData rsmd = respuesta.getMetaData();
+
+   int columnsNumber = rsmd.getColumnCount();
+   while (respuesta.next()) {
+       for (int i = 1; i <= columnsNumber; i++) {
+           if (i > 1) 
+           valCon = respuesta.getString(i);
+
+       }
+   }
+              // .getPassword().toString();
+            System.out.print("\nvalcon   "+valCon);
 
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error 2: " + e.getMessage(), "Error de conexion", JOptionPane.ERROR_MESSAGE);

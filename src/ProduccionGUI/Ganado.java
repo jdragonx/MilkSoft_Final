@@ -52,12 +52,13 @@ public class Ganado extends javax.swing.JPanel {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jComboBox6 = new javax.swing.JComboBox<>();
-        jComboBox7 = new javax.swing.JComboBox<>();
-        jComboBox9 = new javax.swing.JComboBox<>();
-        jButton2 = new javax.swing.JButton();
+        jtfActArete = new javax.swing.JTextField();
+        jtfActPartos = new javax.swing.JTextField();
+        jbActGanado = new javax.swing.JButton();
+        jcbSalud1 = new javax.swing.JComboBox<>();
+        jcbProduccion1 = new javax.swing.JComboBox<>();
+        jcbMaduracion1 = new javax.swing.JComboBox<>();
+        jbActBusGanado = new javax.swing.JButton();
         jLabel48 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
@@ -182,31 +183,39 @@ public class Ganado extends javax.swing.JPanel {
         jLabel18.setText("Maduración");
         jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 370, -1, -1));
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        jtfActArete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                jtfActAreteActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 180, 230, -1));
+        jPanel2.add(jtfActArete, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 180, 230, -1));
 
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        jtfActPartos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                jtfActPartosActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, 230, -1));
+        jPanel2.add(jtfActPartos, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, 230, -1));
 
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "saludable", "enfermedad débil", "enfermedad media", "enfermedd grave", "crítica" }));
-        jPanel2.add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 270, 230, -1));
+        jbActGanado.setText("Registrar");
+        jPanel2.add(jbActGanado, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 430, -1, -1));
 
-        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "en producción", "vendida", "seca" }));
-        jPanel2.add(jComboBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 320, 230, -1));
+        jcbSalud1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Saludable", "Enfermedad débil", "Enfermedad Media", "Enfermedd grave", "Crítica" }));
+        jPanel2.add(jcbSalud1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 270, 230, -1));
 
-        jComboBox9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ternera", "vacona", "vaca" }));
-        jPanel2.add(jComboBox9, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 370, 230, -1));
+        jcbProduccion1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "En producción", "Vendida", "Seca" }));
+        jPanel2.add(jcbProduccion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, 230, -1));
 
-        jButton2.setText("Registrar");
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 440, -1, -1));
+        jcbMaduracion1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Ternera", "Vacona", "Vaca" }));
+        jPanel2.add(jcbMaduracion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 370, 230, -1));
+
+        jbActBusGanado.setText("Buscar");
+        jbActBusGanado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbActBusGanadoActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jbActBusGanado, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 180, -1, -1));
 
         jLabel48.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
         jLabel48.setText("jLabel12");
@@ -280,13 +289,13 @@ public class Ganado extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jTabbedPane1MouseClicked
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void jtfActAreteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfActAreteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_jtfActAreteActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void jtfActPartosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfActPartosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_jtfActPartosActionPerformed
 
     private void jbRegGanadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRegGanadoActionPerformed
         //Validacion de estar vacio
@@ -309,14 +318,19 @@ public class Ganado extends javax.swing.JPanel {
         
     }//GEN-LAST:event_jbRegGanadoActionPerformed
 
+    private void jbActBusGanadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbActBusGanadoActionPerformed
+        if(jtfArete.getText().matches("")){
+            JOptionPane.showMessageDialog(null, "Atributo arete de ganado en blanco", "Error", JOptionPane.ERROR_MESSAGE);
+        }else{
+            //BUSQUEDA CON LA BASE DE DATOS
+            
+        }
+    }//GEN-LAST:event_jbActBusGanadoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PantallaInicial;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
-    private javax.swing.JComboBox<String> jComboBox6;
-    private javax.swing.JComboBox<String> jComboBox7;
-    private javax.swing.JComboBox<String> jComboBox9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -344,13 +358,18 @@ public class Ganado extends javax.swing.JPanel {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JButton jbActBusGanado;
+    private javax.swing.JButton jbActGanado;
     private javax.swing.JButton jbRegGanado;
     private javax.swing.JComboBox<String> jcbGenero;
     private javax.swing.JComboBox<String> jcbMaduracion;
+    private javax.swing.JComboBox<String> jcbMaduracion1;
     private javax.swing.JComboBox<String> jcbProduccion;
+    private javax.swing.JComboBox<String> jcbProduccion1;
     private javax.swing.JComboBox<String> jcbSalud;
+    private javax.swing.JComboBox<String> jcbSalud1;
+    private javax.swing.JTextField jtfActArete;
+    private javax.swing.JTextField jtfActPartos;
     private javax.swing.JTextField jtfArete;
     private javax.swing.JTextField jtfPartos;
     private javax.swing.JTextField jtfRaza;

@@ -22,7 +22,7 @@ public class Login extends javax.swing.JFrame {
 
     public void iniciar() {
         String val="";
-        val = conec.ingLogin(Usuario.getText(), Pass.getPassword().toString());
+        val = conec.ingLogin(Usuario.getText(), Pass.getText());
         System.out.print("\nVAL ES: " + val);
         if (val!= "") {
             if (val.matches("4")) {
@@ -37,6 +37,7 @@ public class Login extends javax.swing.JFrame {
         }
         Usuario.setText("");
         Pass.setText("");
+        val="";
     }
 
     @SuppressWarnings("unchecked")
