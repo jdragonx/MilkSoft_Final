@@ -9,7 +9,7 @@ import InventarioGUI.Proveedores;
 import ProduccionGUI.Alimentacion;
 import ProduccionGUI.Ganado;
 import ProduccionGUI.Inseminacion;
-import ProduccionGUI.Ordeño;
+import ProduccionGUI.Ordeno;
 import SaludGUI.Veterinario;
 import SaludGUI.CitaVeterinaria;
 import SaludGUI.Enfermedades;
@@ -422,7 +422,7 @@ public class Modulo extends javax.swing.JFrame {
         jPanel1.repaint();
         jPanel1.revalidate();
 
-        jPanel1.add(new Ordeño());
+        jPanel1.add(new Ordeno());
         jPanel1.repaint();
         jPanel1.revalidate();
     }//GEN-LAST:event_jMenuItem5ActionPerformed
