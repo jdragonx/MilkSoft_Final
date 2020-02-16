@@ -6,8 +6,10 @@
  */
 package ProduccionGUI;
 
+import Codes.Validacion;
 import java.awt.event.KeyEvent;
 import java.time.format.DateTimeFormatter;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -94,6 +96,11 @@ public class Alimentacion extends javax.swing.JPanel {
         jLabel2.setText("Arete de ganado");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 87, -1, -1));
 
+        jTextFieldArete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldAreteActionPerformed(evt);
+            }
+        });
         jTextFieldArete.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextFieldAreteKeyPressed(evt);
@@ -101,11 +108,6 @@ public class Alimentacion extends javax.swing.JPanel {
         });
         jPanel1.add(jTextFieldArete, new org.netbeans.lib.awtextra.AbsoluteConstraints(403, 84, 176, -1));
 
-        jListArete.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Ganado 1", "Ganado 2", "Ganado 3", "Ganado 4", "Ganado 5", "Ganado 6", "Ganado 7", "Ganado 8", "Ganado 9", "Ganado 10" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jListArete.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jListAreteKeyPressed(evt);
@@ -335,7 +337,9 @@ public class Alimentacion extends javax.swing.JPanel {
     private void jTextFieldAreteKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldAreteKeyPressed
         // TODO add your handling code here:
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            if (!model.contains(jTextFieldArete.getText())) {
+            if(!Validacion.num(jTextFieldArete.getText())){
+                JOptionPane.showMessageDialog(null,"Formato de identificación del arete erróneo’" , "Error Message" , JOptionPane.ERROR_MESSAGE);
+            } else if (!model.contains(jTextFieldArete.getText())) {
                 model.addElement(jTextFieldArete.getText());
                 jListArete.setModel(model);
             }
@@ -353,6 +357,10 @@ public class Alimentacion extends javax.swing.JPanel {
     private void jTextFieldFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldFechaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldFechaActionPerformed
+
+    private void jTextFieldAreteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAreteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldAreteActionPerformed
 
     private javax.swing.DefaultListModel model = new javax.swing.DefaultListModel();
     // Variables declaration - do not modify//GEN-BEGIN:variables
