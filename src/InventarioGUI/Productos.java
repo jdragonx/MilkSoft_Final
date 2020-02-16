@@ -29,52 +29,21 @@ public class Productos extends javax.swing.JPanel {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel7 = new javax.swing.JPanel();
-        PantallaInicial = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jLabel52 = new javax.swing.JLabel();
-        jComboBox8 = new javax.swing.JComboBox<>();
-        jTextField33 = new javax.swing.JTextField();
-        Registrar15 = new javax.swing.JButton();
-        jLabel53 = new javax.swing.JLabel();
-        jSeparator10 = new javax.swing.JSeparator();
-        jSeparator11 = new javax.swing.JSeparator();
-        jSeparator12 = new javax.swing.JSeparator();
-        Registrar16 = new javax.swing.JButton();
-        jLabel54 = new javax.swing.JLabel();
-        jTextField34 = new javax.swing.JTextField();
-        jLabel55 = new javax.swing.JLabel();
-        jTextField35 = new javax.swing.JTextField();
-        jLabel56 = new javax.swing.JLabel();
-        jTextField36 = new javax.swing.JTextField();
-        jLabel57 = new javax.swing.JLabel();
-        jLabel58 = new javax.swing.JLabel();
-        jTextField37 = new javax.swing.JTextField();
-        Registrar17 = new javax.swing.JButton();
-        jLabel59 = new javax.swing.JLabel();
-        jTextField38 = new javax.swing.JTextField();
-        jTextField39 = new javax.swing.JTextField();
-        jLabel60 = new javax.swing.JLabel();
-        Registrar18 = new javax.swing.JButton();
-        jLabel61 = new javax.swing.JLabel();
-        jLabel62 = new javax.swing.JLabel();
-        jTextField40 = new javax.swing.JTextField();
-        jComboBox9 = new javax.swing.JComboBox<>();
-        jLabel63 = new javax.swing.JLabel();
-        jLabel64 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jLabel45 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        PantallaInicial = new javax.swing.JPanel();
+        jLabel33 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         PantallaInicial1 = new javax.swing.JPanel();
         jLabel51 = new javax.swing.JLabel();
@@ -260,21 +229,25 @@ public class Productos extends javax.swing.JPanel {
         jPanel7.setMinimumSize(new java.awt.Dimension(1000, 750));
         jPanel7.setPreferredSize(new java.awt.Dimension(1000, 750));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel7.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jLabel3.setText("Tipo");
+        jPanel7.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jLabel5.setText("Raza");
+        jPanel7.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jLabel4.setText("Fecha de Caducidad");
+        jPanel7.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jTextField5.setEnabled(false);
+        jPanel7.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel7.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Registro de Pajuelas");
-
-        jLabel3.setText("Tipo");
-
-        jLabel4.setText("Fecha de Caducidad");
-
-        jLabel5.setText("Raza");
-
-        jLabel6.setText("Cantidad");
-
-        jLabel11.setText("Identificador");
-
-        jTextField5.setEnabled(false);
+        jPanel7.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel7.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jButton1.setText("Registrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -282,202 +255,44 @@ public class Productos extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel7.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jLabel11.setText("Identificador");
+        jPanel7.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel7.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jLabel6.setText("Cantidad");
+        jPanel7.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
+        jLabel34.setText("jLabel12");
+        jPanel7.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
+        jLabel33.setText("jLabel12");
 
         javax.swing.GroupLayout PantallaInicialLayout = new javax.swing.GroupLayout(PantallaInicial);
         PantallaInicial.setLayout(PantallaInicialLayout);
         PantallaInicialLayout.setHorizontalGroup(
             PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PantallaInicialLayout.createSequentialGroup()
-                .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PantallaInicialLayout.createSequentialGroup()
-                        .addGap(402, 402, 402)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PantallaInicialLayout.createSequentialGroup()
-                        .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PantallaInicialLayout.createSequentialGroup()
-                                .addGap(279, 279, 279)
-                                .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)))
-                            .addGroup(PantallaInicialLayout.createSequentialGroup()
-                                .addGap(322, 322, 322)
-                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PantallaInicialLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(264, Short.MAX_VALUE))
+            .addGap(0, 1044, Short.MAX_VALUE)
+            .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PantallaInicialLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel33)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         PantallaInicialLayout.setVerticalGroup(
             PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PantallaInicialLayout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addComponent(jLabel1)
-                .addGap(41, 41, 41)
-                .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42)
-                .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
-                .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42)
-                .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(76, 76, 76)
-                .addComponent(jButton1)
-                .addContainerGap(364, Short.MAX_VALUE))
+            .addGap(0, 900, Short.MAX_VALUE)
+            .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PantallaInicialLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel33)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         jPanel7.add(PantallaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 850));
-
-        jLabel52.setText("Raza");
-        jPanel7.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 149, -1, -1));
-
-        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sexada", "No sexada" }));
-        jPanel7.add(jComboBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 108, 168, -1));
-
-        jTextField33.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField33jTextField2ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(jTextField33, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 146, 168, -1));
-
-        Registrar15.setText("Registrar");
-        Registrar15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Registrar15RegistrarActionPerformed(evt);
-            }
-        });
-        jPanel7.add(Registrar15, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 203, -1, -1));
-
-        jLabel53.setText("Registro de información de pajuelas");
-        jPanel7.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 54, -1, -1));
-
-        jSeparator10.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel7.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 18, 850));
-        jPanel7.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 410, 29));
-        jPanel7.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 290, 520, 27));
-
-        Registrar16.setText("Registrar");
-        Registrar16.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Registrar16Registrar4ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(Registrar16, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 210, -1, -1));
-
-        jLabel54.setText("Nombre");
-        jPanel7.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, -1, -1));
-
-        jTextField34.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField34jTextField9ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(jTextField34, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 120, 195, -1));
-
-        jLabel55.setText("Descripción");
-        jPanel7.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 160, -1, -1));
-
-        jTextField35.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField35jTextField11ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(jTextField35, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 150, 195, -1));
-
-        jLabel56.setText("Registro de información de semillas");
-        jPanel7.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 60, -1, -1));
-        jPanel7.add(jTextField36, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 440, 168, -1));
-
-        jLabel57.setText("Nombre");
-        jPanel7.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 411, -1, -1));
-
-        jLabel58.setText("Descripción");
-        jPanel7.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 449, -1, -1));
-        jPanel7.add(jTextField37, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 400, 168, -1));
-
-        Registrar17.setText("Registrar");
-        jPanel7.add(Registrar17, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 530, -1, -1));
-
-        jLabel59.setText("Registro de información de sobrealimentos");
-        jPanel7.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(79, 344, -1, -1));
-
-        jTextField38.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField38jTextField14ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(jTextField38, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 390, 195, -1));
-
-        jTextField39.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField39jTextField15ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(jTextField39, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 480, 195, -1));
-
-        jLabel60.setText("Descripción");
-        jPanel7.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 480, -1, -1));
-
-        Registrar18.setText("Registrar");
-        Registrar18.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Registrar18Registrar6ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(Registrar18, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 530, -1, -1));
-
-        jLabel61.setText("Tipo");
-        jPanel7.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 420, -1, -1));
-
-        jLabel62.setText("Presentación");
-        jPanel7.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 450, -1, -1));
-
-        jTextField40.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField40jTextField16ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(jTextField40, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 450, 195, -1));
-
-        jComboBox9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Medicamento", "Vacuna", "Desparasitante" }));
-        jPanel7.add(jComboBox9, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 420, 195, -1));
-
-        jLabel63.setText("Nombre");
-        jPanel7.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 390, -1, -1));
-
-        jLabel64.setText("Registro de informaicón de medicina");
-        jPanel7.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 340, -1, -1));
-
-        jLabel2.setText("Presentación");
-        jPanel7.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 487, -1, -1));
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel7.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 480, 168, -1));
-
-        jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
-        jLabel45.setText("jLabel12");
-        jPanel7.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 870));
 
         jTabbedPane1.addTab("Registro de Pajuelas", jPanel7);
 
@@ -486,20 +301,33 @@ public class Productos extends javax.swing.JPanel {
         jPanel8.setPreferredSize(new java.awt.Dimension(1000, 750));
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        PantallaInicial1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel51.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel51.setText("Registro de Alimentos");
+        PantallaInicial1.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(402, 59, 208, -1));
+        PantallaInicial1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(429, 122, 337, -1));
 
         jLabel75.setText("Nombre");
+        PantallaInicial1.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(339, 125, -1, -1));
 
         jLabel76.setText("Fecha de Caducidad");
+        PantallaInicial1.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(279, 308, -1, -1));
+        PantallaInicial1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(429, 179, 337, -1));
+        PantallaInicial1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(429, 241, 337, -1));
 
         jLabel77.setText("Presentaicion");
+        PantallaInicial1.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(312, 244, -1, -1));
 
         jLabel78.setText("Cantidad");
+        PantallaInicial1.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 182, -1, -1));
+        PantallaInicial1.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(429, 305, 337, -1));
 
         jTextField78.setEnabled(false);
+        PantallaInicial1.add(jTextField78, new org.netbeans.lib.awtextra.AbsoluteConstraints(429, 367, 337, -1));
 
         jLabel122.setText("Identificador");
+        PantallaInicial1.add(jLabel122, new org.netbeans.lib.awtextra.AbsoluteConstraints(322, 370, 103, -1));
 
         jButton2.setText("Registrar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -507,69 +335,7 @@ public class Productos extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout PantallaInicial1Layout = new javax.swing.GroupLayout(PantallaInicial1);
-        PantallaInicial1.setLayout(PantallaInicial1Layout);
-        PantallaInicial1Layout.setHorizontalGroup(
-            PantallaInicial1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PantallaInicial1Layout.createSequentialGroup()
-                .addGroup(PantallaInicial1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PantallaInicial1Layout.createSequentialGroup()
-                        .addGap(402, 402, 402)
-                        .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PantallaInicial1Layout.createSequentialGroup()
-                        .addGroup(PantallaInicial1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PantallaInicial1Layout.createSequentialGroup()
-                                .addGap(322, 322, 322)
-                                .addComponent(jLabel122, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(PantallaInicial1Layout.createSequentialGroup()
-                                .addGap(279, 279, 279)
-                                .addGroup(PantallaInicial1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel76)
-                                    .addComponent(jLabel77)
-                                    .addComponent(jLabel75)
-                                    .addComponent(jLabel78))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PantallaInicial1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField78, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PantallaInicial1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(264, Short.MAX_VALUE))
-        );
-        PantallaInicial1Layout.setVerticalGroup(
-            PantallaInicial1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PantallaInicial1Layout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addComponent(jLabel51)
-                .addGap(41, 41, 41)
-                .addGroup(PantallaInicial1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel75)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addGroup(PantallaInicial1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel78))
-                .addGap(42, 42, 42)
-                .addGroup(PantallaInicial1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel77)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
-                .addGroup(PantallaInicial1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel76))
-                .addGap(42, 42, 42)
-                .addGroup(PantallaInicial1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel122)
-                    .addComponent(jTextField78, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(76, 76, 76)
-                .addComponent(jButton2)
-                .addContainerGap(364, Short.MAX_VALUE))
-        );
+        PantallaInicial1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(668, 463, 98, -1));
 
         jPanel8.add(PantallaInicial1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 850));
 
@@ -714,18 +480,29 @@ public class Productos extends javax.swing.JPanel {
         jPanel9.setPreferredSize(new java.awt.Dimension(1000, 750));
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        PantallaInicial2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel123.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel123.setText("Registro de Semillas");
+        PantallaInicial2.add(jLabel123, new org.netbeans.lib.awtextra.AbsoluteConstraints(402, 59, 208, -1));
+        PantallaInicial2.add(jTextField79, new org.netbeans.lib.awtextra.AbsoluteConstraints(429, 122, 337, -1));
 
         jLabel124.setText("Nombre");
+        PantallaInicial2.add(jLabel124, new org.netbeans.lib.awtextra.AbsoluteConstraints(339, 125, -1, -1));
+        PantallaInicial2.add(jTextField80, new org.netbeans.lib.awtextra.AbsoluteConstraints(429, 179, 337, -1));
+        PantallaInicial2.add(jTextField81, new org.netbeans.lib.awtextra.AbsoluteConstraints(429, 241, 337, -1));
 
         jLabel126.setText("Descripcion");
+        PantallaInicial2.add(jLabel126, new org.netbeans.lib.awtextra.AbsoluteConstraints(322, 182, -1, -1));
 
         jLabel127.setText("Cantidad");
+        PantallaInicial2.add(jLabel127, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 244, -1, -1));
 
         jTextField83.setEnabled(false);
+        PantallaInicial2.add(jTextField83, new org.netbeans.lib.awtextra.AbsoluteConstraints(429, 305, 337, -1));
 
         jLabel128.setText("Identificador");
+        PantallaInicial2.add(jLabel128, new org.netbeans.lib.awtextra.AbsoluteConstraints(322, 308, 103, -1));
 
         jButton3.setText("Registrar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -733,67 +510,7 @@ public class Productos extends javax.swing.JPanel {
                 jButton3ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout PantallaInicial2Layout = new javax.swing.GroupLayout(PantallaInicial2);
-        PantallaInicial2.setLayout(PantallaInicial2Layout);
-        PantallaInicial2Layout.setHorizontalGroup(
-            PantallaInicial2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PantallaInicial2Layout.createSequentialGroup()
-                .addGroup(PantallaInicial2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PantallaInicial2Layout.createSequentialGroup()
-                        .addGap(402, 402, 402)
-                        .addComponent(jLabel123, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PantallaInicial2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(PantallaInicial2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PantallaInicial2Layout.createSequentialGroup()
-                                .addComponent(jLabel128, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField83, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PantallaInicial2Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(PantallaInicial2Layout.createSequentialGroup()
-                            .addGroup(PantallaInicial2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(PantallaInicial2Layout.createSequentialGroup()
-                                    .addGap(322, 322, 322)
-                                    .addGroup(PantallaInicial2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel126)
-                                        .addComponent(jLabel124))
-                                    .addGap(53, 53, 53))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PantallaInicial2Layout.createSequentialGroup()
-                                    .addComponent(jLabel127)
-                                    .addGap(62, 62, 62)))
-                            .addGroup(PantallaInicial2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField79, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField81, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField80, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(264, Short.MAX_VALUE))
-        );
-        PantallaInicial2Layout.setVerticalGroup(
-            PantallaInicial2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PantallaInicial2Layout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addComponent(jLabel123)
-                .addGap(41, 41, 41)
-                .addGroup(PantallaInicial2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel124)
-                    .addComponent(jTextField79, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addGroup(PantallaInicial2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField80, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel126))
-                .addGap(42, 42, 42)
-                .addGroup(PantallaInicial2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField81, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel127))
-                .addGap(44, 44, 44)
-                .addGroup(PantallaInicial2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel128)
-                    .addComponent(jTextField83, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(76, 76, 76)
-                .addComponent(jButton3)
-                .addContainerGap(426, Short.MAX_VALUE))
-        );
+        PantallaInicial2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(668, 401, 98, -1));
 
         jPanel9.add(PantallaInicial2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 850));
 
@@ -938,20 +655,33 @@ public class Productos extends javax.swing.JPanel {
         jPanel10.setPreferredSize(new java.awt.Dimension(1000, 750));
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        PantallaInicial3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel125.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel125.setText("Registro de Medicinas");
+        PantallaInicial3.add(jLabel125, new org.netbeans.lib.awtextra.AbsoluteConstraints(402, 59, 208, -1));
+        PantallaInicial3.add(jTextField82, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 122, 337, -1));
 
         jLabel129.setText("Nombre");
+        PantallaInicial3.add(jLabel129, new org.netbeans.lib.awtextra.AbsoluteConstraints(339, 125, -1, -1));
 
         jLabel130.setText("Tipo");
+        PantallaInicial3.add(jLabel130, new org.netbeans.lib.awtextra.AbsoluteConstraints(356, 173, -1, -1));
+        PantallaInicial3.add(jTextField84, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 167, 337, -1));
+        PantallaInicial3.add(jTextField85, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 214, 337, -1));
 
         jLabel131.setText("Presentaicion");
+        PantallaInicial3.add(jLabel131, new org.netbeans.lib.awtextra.AbsoluteConstraints(312, 220, -1, -1));
 
         jLabel132.setText("Fecha de Caducidad");
+        PantallaInicial3.add(jLabel132, new org.netbeans.lib.awtextra.AbsoluteConstraints(279, 305, -1, -1));
+        PantallaInicial3.add(jTextField86, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 302, 337, -1));
 
         jTextField87.setEnabled(false);
+        PantallaInicial3.add(jTextField87, new org.netbeans.lib.awtextra.AbsoluteConstraints(429, 402, 337, -1));
 
         jLabel133.setText("Identificador");
+        PantallaInicial3.add(jLabel133, new org.netbeans.lib.awtextra.AbsoluteConstraints(322, 405, 103, -1));
 
         jButton4.setText("Registrar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -959,87 +689,15 @@ public class Productos extends javax.swing.JPanel {
                 jButton4ActionPerformed(evt);
             }
         });
+        PantallaInicial3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(668, 494, 98, -1));
 
         jLabel134.setText("Cantidad");
+        PantallaInicial3.add(jLabel134, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 353, -1, -1));
 
         jLabel135.setText("Descripcion");
-
-        javax.swing.GroupLayout PantallaInicial3Layout = new javax.swing.GroupLayout(PantallaInicial3);
-        PantallaInicial3.setLayout(PantallaInicial3Layout);
-        PantallaInicial3Layout.setHorizontalGroup(
-            PantallaInicial3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PantallaInicial3Layout.createSequentialGroup()
-                .addGroup(PantallaInicial3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(PantallaInicial3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(PantallaInicial3Layout.createSequentialGroup()
-                            .addGap(402, 402, 402)
-                            .addComponent(jLabel125, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(PantallaInicial3Layout.createSequentialGroup()
-                            .addGap(279, 279, 279)
-                            .addGroup(PantallaInicial3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel132)
-                                .addComponent(jLabel129)
-                                .addComponent(jLabel130)
-                                .addComponent(jLabel131)
-                                .addComponent(jLabel135)
-                                .addComponent(jLabel134))
-                            .addGap(49, 49, 49)
-                            .addGroup(PantallaInicial3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextField86, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField82, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField89, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField84, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField85, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PantallaInicial3Layout.createSequentialGroup()
-                            .addGap(322, 322, 322)
-                            .addGroup(PantallaInicial3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField88, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PantallaInicial3Layout.createSequentialGroup()
-                                    .addComponent(jLabel133, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jTextField87, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(264, Short.MAX_VALUE))
-        );
-        PantallaInicial3Layout.setVerticalGroup(
-            PantallaInicial3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PantallaInicial3Layout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addComponent(jLabel125)
-                .addGap(41, 41, 41)
-                .addGroup(PantallaInicial3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel129)
-                    .addComponent(jTextField82, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(PantallaInicial3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(PantallaInicial3Layout.createSequentialGroup()
-                        .addComponent(jLabel130)
-                        .addGap(33, 33, 33)
-                        .addComponent(jLabel131))
-                    .addGroup(PantallaInicial3Layout.createSequentialGroup()
-                        .addComponent(jTextField84, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(jTextField85, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(PantallaInicial3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel135)
-                    .addComponent(jTextField88, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(PantallaInicial3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField86, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel132))
-                .addGap(28, 28, 28)
-                .addGroup(PantallaInicial3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField89, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel134))
-                .addGap(32, 32, 32)
-                .addGroup(PantallaInicial3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel133)
-                    .addComponent(jTextField87, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(72, 72, 72)
-                .addComponent(jButton4)
-                .addContainerGap(333, Short.MAX_VALUE))
-        );
+        PantallaInicial3.add(jLabel135, new org.netbeans.lib.awtextra.AbsoluteConstraints(322, 255, -1, -1));
+        PantallaInicial3.add(jTextField88, new org.netbeans.lib.awtextra.AbsoluteConstraints(429, 252, 337, -1));
+        PantallaInicial3.add(jTextField89, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 350, 337, -1));
 
         jPanel10.add(PantallaInicial3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 850));
 
@@ -1179,8 +837,11 @@ public class Productos extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Registro de Medicinas", jPanel10);
 
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel139.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel139.setText("Consulta de Pajuelas");
+        jPanel1.add(jLabel139, new org.netbeans.lib.awtextra.AbsoluteConstraints(358, 75, 208, -1));
 
         jButton8.setText("Buscar");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -1188,6 +849,7 @@ public class Productos extends javax.swing.JPanel {
                 jButton8ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 143, 98, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1208,36 +870,11 @@ public class Productos extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 782, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(358, 358, 358)
-                        .addComponent(jLabel139, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(132, 132, 132)
-                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(121, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addComponent(jLabel139)
-                .addGap(46, 46, 46)
-                .addComponent(jButton8)
-                .addGap(51, 51, 51)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(201, Short.MAX_VALUE))
-        );
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 217, 782, -1));
 
         jTabbedPane1.addTab("Consulta de Pajuelas", jPanel1);
+
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton9.setText("Buscar");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
@@ -1245,9 +882,11 @@ public class Productos extends javax.swing.JPanel {
                 jButton9ActionPerformed(evt);
             }
         });
+        jPanel2.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 139, 98, -1));
 
         jLabel140.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel140.setText("Consulta de Alimentos");
+        jPanel2.add(jLabel140, new org.netbeans.lib.awtextra.AbsoluteConstraints(357, 83, 208, -1));
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1268,36 +907,11 @@ public class Productos extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(jTable2);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(357, 357, 357)
-                        .addComponent(jLabel140, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(119, 119, 119)
-                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 787, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(125, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(83, 83, 83)
-                .addComponent(jLabel140)
-                .addGap(34, 34, 34)
-                .addComponent(jButton9)
-                .addGap(64, 64, 64)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(192, Short.MAX_VALUE))
-        );
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 226, 787, -1));
 
         jTabbedPane1.addTab("Consulta de Alimentos", jPanel2);
+
+        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton10.setText("Buscar");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
@@ -1305,9 +919,11 @@ public class Productos extends javax.swing.JPanel {
                 jButton10ActionPerformed(evt);
             }
         });
+        jPanel11.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 147, 98, -1));
 
         jLabel141.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel141.setText("Consulta de Semillas");
+        jPanel11.add(jLabel141, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 91, 208, -1));
 
         jTable7.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1328,37 +944,11 @@ public class Productos extends javax.swing.JPanel {
         ));
         jScrollPane3.setViewportView(jTable7);
 
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(155, 155, 155)
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addGap(238, 238, 238)
-                                .addComponent(jLabel141, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 837, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(83, Short.MAX_VALUE))
-        );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGap(91, 91, 91)
-                .addComponent(jLabel141)
-                .addGap(34, 34, 34)
-                .addComponent(jButton10)
-                .addGap(43, 43, 43)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(205, Short.MAX_VALUE))
-        );
+        jPanel11.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 213, 837, -1));
 
         jTabbedPane1.addTab("Consulta de Semillas", jPanel11);
+
+        jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton11.setText("Buscar");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -1366,9 +956,11 @@ public class Productos extends javax.swing.JPanel {
                 jButton11ActionPerformed(evt);
             }
         });
+        jPanel12.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 147, 98, -1));
 
         jLabel142.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel142.setText("Consulta de Medicinas");
+        jPanel12.add(jLabel142, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 91, 208, -1));
 
         jTable8.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1389,35 +981,7 @@ public class Productos extends javax.swing.JPanel {
         ));
         jScrollPane8.setViewportView(jTable8);
 
-        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-        jPanel12.setLayout(jPanel12Layout);
-        jPanel12Layout.setHorizontalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel12Layout.createSequentialGroup()
-                        .addGap(155, 155, 155)
-                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel12Layout.createSequentialGroup()
-                                .addGap(238, 238, 238)
-                                .addComponent(jLabel142, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel12Layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 864, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(51, Short.MAX_VALUE))
-        );
-        jPanel12Layout.setVerticalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addGap(91, 91, 91)
-                .addComponent(jLabel142)
-                .addGap(34, 34, 34)
-                .addComponent(jButton11)
-                .addGap(59, 59, 59)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(189, Short.MAX_VALUE))
-        );
+        jPanel12.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 229, 864, -1));
 
         jTabbedPane1.addTab("Consulta de Medicinas", jPanel12);
 
@@ -1562,42 +1126,6 @@ public class Productos extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jTextField40jTextField16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField40jTextField16ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField40jTextField16ActionPerformed
-
-    private void Registrar18Registrar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Registrar18Registrar6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Registrar18Registrar6ActionPerformed
-
-    private void jTextField39jTextField15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField39jTextField15ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField39jTextField15ActionPerformed
-
-    private void jTextField38jTextField14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField38jTextField14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField38jTextField14ActionPerformed
-
-    private void jTextField35jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField35jTextField11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField35jTextField11ActionPerformed
-
-    private void jTextField34jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField34jTextField9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField34jTextField9ActionPerformed
-
-    private void Registrar16Registrar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Registrar16Registrar4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Registrar16Registrar4ActionPerformed
-
-    private void Registrar15RegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Registrar15RegistrarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Registrar15RegistrarActionPerformed
-
-    private void jTextField33jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField33jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField33jTextField2ActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -1624,10 +1152,6 @@ public class Productos extends javax.swing.JPanel {
     private javax.swing.JPanel PantallaInicial1;
     private javax.swing.JPanel PantallaInicial2;
     private javax.swing.JPanel PantallaInicial3;
-    private javax.swing.JButton Registrar15;
-    private javax.swing.JButton Registrar16;
-    private javax.swing.JButton Registrar17;
-    private javax.swing.JButton Registrar18;
     private javax.swing.JButton Registrar23;
     private javax.swing.JButton Registrar24;
     private javax.swing.JButton Registrar25;
@@ -1654,12 +1178,9 @@ public class Productos extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> jComboBox15;
     private javax.swing.JComboBox<String> jComboBox16;
     private javax.swing.JComboBox<String> jComboBox17;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JComboBox<String> jComboBox6;
-    private javax.swing.JComboBox<String> jComboBox8;
-    private javax.swing.JComboBox<String> jComboBox9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
@@ -1704,28 +1225,15 @@ public class Productos extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel141;
     private javax.swing.JLabel jLabel142;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
-    private javax.swing.JLabel jLabel52;
-    private javax.swing.JLabel jLabel53;
-    private javax.swing.JLabel jLabel54;
-    private javax.swing.JLabel jLabel55;
-    private javax.swing.JLabel jLabel56;
-    private javax.swing.JLabel jLabel57;
-    private javax.swing.JLabel jLabel58;
-    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel60;
-    private javax.swing.JLabel jLabel61;
-    private javax.swing.JLabel jLabel62;
-    private javax.swing.JLabel jLabel63;
-    private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel75;
     private javax.swing.JLabel jLabel76;
     private javax.swing.JLabel jLabel77;
@@ -1764,9 +1272,6 @@ public class Productos extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane8;
-    private javax.swing.JSeparator jSeparator10;
-    private javax.swing.JSeparator jSeparator11;
-    private javax.swing.JSeparator jSeparator12;
     private javax.swing.JSeparator jSeparator13;
     private javax.swing.JSeparator jSeparator14;
     private javax.swing.JSeparator jSeparator15;
@@ -1784,15 +1289,7 @@ public class Productos extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField33;
-    private javax.swing.JTextField jTextField34;
-    private javax.swing.JTextField jTextField35;
-    private javax.swing.JTextField jTextField36;
-    private javax.swing.JTextField jTextField37;
-    private javax.swing.JTextField jTextField38;
-    private javax.swing.JTextField jTextField39;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField40;
     private javax.swing.JTextField jTextField49;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField51;
