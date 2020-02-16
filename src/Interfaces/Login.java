@@ -51,7 +51,7 @@ public class Login extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("MIlkSoft ingreso al sistema");
+        setTitle("MilkSoft ingreso al sistema");
         setMaximumSize(new java.awt.Dimension(465, 735));
         setMinimumSize(new java.awt.Dimension(465, 735));
         setPreferredSize(new java.awt.Dimension(465, 735));
