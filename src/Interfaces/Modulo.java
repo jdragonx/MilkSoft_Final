@@ -7,7 +7,6 @@ package Interfaces;
 
 import AdministracionUsuariosGUI.Administracion;
 import Auditoria.Auditoria;
-import EmpleadosGUI.Cargos;
 import EmpleadosGUI.Empleados;
 import InventarioGUI.Productos;
 import InventarioGUI.Proveedores;
@@ -25,7 +24,7 @@ import java.awt.Dimension;
 import java.awt.GraphicsEnvironment;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
-import java.sql.Connection;
+
 
 /**
  * width,height
@@ -96,7 +95,6 @@ public class Modulo extends javax.swing.JFrame {
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem14 = new javax.swing.JMenuItem();
-        jMenuItem15 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem16 = new javax.swing.JMenuItem();
 
@@ -273,14 +271,6 @@ public class Modulo extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem14);
 
-        jMenuItem15.setText("Cargos");
-        jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem15ActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItem15);
-
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Administración");
@@ -365,17 +355,6 @@ public class Modulo extends javax.swing.JFrame {
         jPanel1.repaint();
         jPanel1.revalidate();
     }//GEN-LAST:event_jMenuItem14ActionPerformed
-
-    private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
-        // TODO add your handling code here:
-        jPanel1.removeAll();
-        jPanel1.repaint();
-        jPanel1.revalidate();
-
-        jPanel1.add(new Cargos());
-        jPanel1.repaint();
-        jPanel1.revalidate();
-    }//GEN-LAST:event_jMenuItem15ActionPerformed
 
     private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
         // TODO add your handling code here:
@@ -503,7 +482,6 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
-    private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem18;
     private javax.swing.JMenuItem jMenuItem2;
