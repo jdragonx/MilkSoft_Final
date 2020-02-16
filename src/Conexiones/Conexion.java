@@ -44,14 +44,12 @@ public class Conexion {
             declara = contacto.createStatement();
             ResultSet respuesta = declara.executeQuery("exec prodLogin @Login='" + user + "',@Pass='" + pass + "'");
             //Recuperacion del tipo de usuario
+            
+            valCon = respuesta.toString();
+            System.out.print("\n\nvalCon: " + valCon);
 
-            while (respuesta.next()) {
-                //valCon = respuesta.getString("idsysUser");
-                valCon = respuesta.getString("idsysUser");
-                System.out.print("\n\nvalCon: " + valCon);
-            }
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error 2:" + e.getMessage(), "Error de conexion", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Error 2: " + e.getMessage(), "Error de conexion", JOptionPane.ERROR_MESSAGE);
 
         }
         return valCon;
