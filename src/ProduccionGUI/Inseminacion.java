@@ -246,7 +246,7 @@ public class Inseminacion extends javax.swing.JPanel {
         jLabel48.setText("jLabel12");
         jPanel3.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 900));
 
-        jTabbedPane1.addTab("Consulta individual", jPanel3);
+        jTabbedPane1.addTab("Consulta de inseminación", jPanel3);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
