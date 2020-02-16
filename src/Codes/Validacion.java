@@ -17,7 +17,7 @@ public class Validacion {
     }
     //Regex Alfanumerico + Espacio
 
-    public static boolean alfnumesp(String str) {
+    public static boolean alfesp(String str) {
 
         if (Pattern.matches("^[a-zA-Z ]*", str)) {
             return true;

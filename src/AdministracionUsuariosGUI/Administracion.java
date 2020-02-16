@@ -293,7 +293,7 @@ public class Administracion extends javax.swing.JPanel {
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
 
-        if (val.alfnum(jtfUser.getText())==true && val.counter(jtfUser.getText())<=50 && val.counter(jtfUser.getText())>=8){
+        if (val.alf(jtfUser.getText())==true && val.counter(jtfUser.getText())<=50 && val.counter(jtfUser.getText())>=8){
 
         }
 
