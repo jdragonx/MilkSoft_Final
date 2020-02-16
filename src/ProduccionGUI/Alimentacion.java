@@ -44,14 +44,14 @@ public class Alimentacion extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jListArete = new javax.swing.JList<>();
         jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jTextFieldCantidad = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jTextFieldHora = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel30 = new javax.swing.JLabel();
         jTextFieldFecha = new javax.swing.JTextField();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        jTextAreaDetalle = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
         PantallaInicial = new javax.swing.JPanel();
         jLabel29 = new javax.swing.JLabel();
@@ -61,9 +61,9 @@ public class Alimentacion extends javax.swing.JPanel {
         jLabel10 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        calendarPanel3 = new com.github.lgooddatepicker.components.CalendarPanel();
+        calendarPanelFechaActualiza = new com.github.lgooddatepicker.components.CalendarPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        jTableActualiza = new javax.swing.JTable();
         jLabel47 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
@@ -119,7 +119,7 @@ public class Alimentacion extends javax.swing.JPanel {
 
         jLabel4.setText("Cantidad");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 620, -1, -1));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 620, 185, -1));
+        jPanel1.add(jTextFieldCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 620, 185, -1));
 
         jLabel6.setText("Fecha de alimentación");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, -1, -1));
@@ -129,6 +129,11 @@ public class Alimentacion extends javax.swing.JPanel {
         jPanel1.add(jTextFieldHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 370, 185, -1));
 
         jButton1.setText("Registrar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 670, -1, -1));
 
         jLabel30.setText("Detalle");
@@ -143,9 +148,9 @@ public class Alimentacion extends javax.swing.JPanel {
         });
         jPanel1.add(jTextFieldFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 330, 185, -1));
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane6.setViewportView(jTextArea2);
+        jTextAreaDetalle.setColumns(20);
+        jTextAreaDetalle.setRows(5);
+        jScrollPane6.setViewportView(jTextAreaDetalle);
 
         jPanel1.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 430, 260, 170));
 
@@ -202,10 +207,15 @@ public class Alimentacion extends javax.swing.JPanel {
         jPanel4.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 700, -1, -1));
 
         jButton3.setText("Buscar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         jPanel4.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 330, -1, -1));
-        jPanel4.add(calendarPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, -1, -1));
+        jPanel4.add(calendarPanelFechaActualiza, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, -1, -1));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        jTableActualiza.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -240,7 +250,7 @@ public class Alimentacion extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(jTableActualiza);
 
         jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, 630, 300));
 
@@ -256,7 +266,7 @@ public class Alimentacion extends javax.swing.JPanel {
         jLabel26.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPanel3.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, -1, -1));
 
-        jLabel27.setText("Fecha inicio");
+        jLabel27.setText("Fecha de registro");
         jPanel3.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, -1, -1));
         jPanel3.add(calendarPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, -1, 201));
 
@@ -337,8 +347,8 @@ public class Alimentacion extends javax.swing.JPanel {
     private void jTextFieldAreteKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldAreteKeyPressed
         // TODO add your handling code here:
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            if(!Validacion.num(jTextFieldArete.getText())){
-                JOptionPane.showMessageDialog(null,"Formato de arete erróneo’" , "Error Message" , JOptionPane.ERROR_MESSAGE);
+            if (!Validacion.num(jTextFieldArete.getText())) {
+                JOptionPane.showMessageDialog(null, "Formato de arete erróneo’", "Error Message", JOptionPane.ERROR_MESSAGE);
             } else if (!model.contains(jTextFieldArete.getText())) {
                 model.addElement(jTextFieldArete.getText());
                 jListArete.setModel(model);
@@ -362,11 +372,49 @@ public class Alimentacion extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldAreteActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        boolean reg = true;
+        if (model.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Lista de aretes de ganado vacía", "Error Message", JOptionPane.ERROR_MESSAGE);
+            reg = false;
+        }
+        if (jTextAreaDetalle.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Atributo detalle de alimento en blanco", "Error Message", JOptionPane.ERROR_MESSAGE);
+            reg = false;
+        }
+        if (!Validacion.alfesp(jTextAreaDetalle.getText())) {
+            JOptionPane.showMessageDialog(null, "Formato de detalle de alimento erróneo", "Error Message", JOptionPane.ERROR_MESSAGE);
+            reg = false;
+        }
+        if (jTextFieldCantidad.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Atributo cantidad en blanco", "Error Message", JOptionPane.ERROR_MESSAGE);
+            reg = false;
+        }
+        if (!Validacion.num(jTextFieldCantidad.getText())) {
+            JOptionPane.showMessageDialog(null, "Formato de cantidad erróneo", "Error Message", JOptionPane.ERROR_MESSAGE);
+            reg = false;
+        }
+        if (reg) {
+            JOptionPane.showMessageDialog(null, "Registro exitoso", "Succes Message", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        boolean act = true;
+        if (calendarPanelFechaActualiza.getSelectedDate() == null) {
+            JOptionPane.showMessageDialog(null, "Fecha de alimentación en blanco", "Error Message", JOptionPane.ERROR_MESSAGE);
+        } else {
+            System.out.println(calendarPanelFechaActualiza.getSelectedDate().toString());
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     private javax.swing.DefaultListModel model = new javax.swing.DefaultListModel();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PantallaInicial;
     private com.github.lgooddatepicker.components.CalendarPanel calendarPanel1;
-    private com.github.lgooddatepicker.components.CalendarPanel calendarPanel3;
+    private com.github.lgooddatepicker.components.CalendarPanel calendarPanelFechaActualiza;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -395,10 +443,10 @@ public class Alimentacion extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTable jTableActualiza;
+    private javax.swing.JTextArea jTextAreaDetalle;
     private javax.swing.JTextField jTextFieldArete;
+    private javax.swing.JTextField jTextFieldCantidad;
     private javax.swing.JTextField jTextFieldFecha;
     private javax.swing.JTextField jTextFieldHora;
     // End of variables declaration//GEN-END:variables
