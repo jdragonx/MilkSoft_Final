@@ -29,6 +29,8 @@ public class GanadoVenta extends javax.swing.JPanel {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
+        PantallaInicial = new javax.swing.JPanel();
+        jLabel29 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -45,6 +47,7 @@ public class GanadoVenta extends javax.swing.JPanel {
         jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -62,6 +65,7 @@ public class GanadoVenta extends javax.swing.JPanel {
         jTextField3 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(1100, 850));
         setMinimumSize(new java.awt.Dimension(1100, 850));
@@ -71,8 +75,39 @@ public class GanadoVenta extends javax.swing.JPanel {
         jTabbedPane1.setMaximumSize(new java.awt.Dimension(1000, 750));
         jTabbedPane1.setMinimumSize(new java.awt.Dimension(1000, 750));
         jTabbedPane1.setPreferredSize(new java.awt.Dimension(1000, 750));
+        jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabbedPane1MouseClicked(evt);
+            }
+        });
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
+        jLabel29.setText("jLabel12");
+
+        javax.swing.GroupLayout PantallaInicialLayout = new javax.swing.GroupLayout(PantallaInicial);
+        PantallaInicial.setLayout(PantallaInicialLayout);
+        PantallaInicialLayout.setHorizontalGroup(
+            PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1044, Short.MAX_VALUE)
+            .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PantallaInicialLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel29)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        PantallaInicialLayout.setVerticalGroup(
+            PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 900, Short.MAX_VALUE)
+            .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PantallaInicialLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel29)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        jPanel1.add(PantallaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 850));
 
         jLabel1.setText("Número de comprobante");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 92, -1, -1));
@@ -146,7 +181,12 @@ public class GanadoVenta extends javax.swing.JPanel {
         jPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(558, 589, 126, -1));
 
         jLabel20.setText("Registro de venta de ganado");
+        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 34, -1, -1));
+
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
+        jLabel30.setText("jLabel12");
+        jPanel1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jTabbedPane1.addTab("Registro de venta de ganado", jPanel1);
 
@@ -192,6 +232,7 @@ public class GanadoVenta extends javax.swing.JPanel {
         jPanel4.add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(563, 617, 125, -1));
 
         jLabel21.setText("Consulta individual de ventas del ganado");
+        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPanel4.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(264, 35, -1, -1));
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
@@ -229,6 +270,10 @@ public class GanadoVenta extends javax.swing.JPanel {
         jLabel33.setText("Fecha de venta");
         jPanel4.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, -1, -1));
 
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
+        jLabel31.setText("jLabel12");
+        jPanel4.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         jTabbedPane1.addTab("Consulta de venta de ganado", jPanel4);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -259,9 +304,19 @@ public class GanadoVenta extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField9ActionPerformed
 
+    private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
+        // TODO add your handling code here:
+        if (jTabbedPane1.getSelectedIndex() == 0 && jPanel1.getX() > evt.getX() && 31 > evt.getY()) {
+            PantallaInicial.setVisible(false);
+        } else if (jTabbedPane1.getSelectedIndex() != 0) {
+            PantallaInicial.setVisible(false);
+        }
+    }//GEN-LAST:event_jTabbedPane1MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ConsultarIndividual;
+    private javax.swing.JPanel PantallaInicial;
     private javax.swing.JButton Registrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel14;
@@ -269,7 +324,10 @@ public class GanadoVenta extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
