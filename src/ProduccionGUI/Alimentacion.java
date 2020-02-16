@@ -10,6 +10,8 @@ import Codes.Validacion;
 import java.awt.event.KeyEvent;
 import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -217,26 +219,7 @@ public class Alimentacion extends javax.swing.JPanel {
 
         jTableActualiza.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Fecha", "Hora", "Detalle", "Cantidad"
@@ -280,26 +263,7 @@ public class Alimentacion extends javax.swing.JPanel {
 
         jTableConsulta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Fecha", "Hora", "Detalle", "Cantidad"
@@ -337,9 +301,9 @@ public class Alimentacion extends javax.swing.JPanel {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        for (int i = 0; i < jTableConsulta.getRowCount(); i++) {
-            System.out.println(jTableConsulta.getModel().getValueAt(i,2).toString());
-            System.out.println(jTableConsulta.getModel().getValueAt(i,3).toString());
+        for (int i = 0; i < jTableActualiza.getRowCount(); i++) {
+            System.out.println(jTableActualiza.getValueAt(i, 2).toString());
+            System.out.println(jTableActualiza.getValueAt(i, 3).toString());
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -415,6 +379,9 @@ public class Alimentacion extends javax.swing.JPanel {
         if (calendarPanelFechaActualiza.getSelectedDate() == null) {
             JOptionPane.showMessageDialog(null, "Fecha de alimentación en blanco", "Error Message", JOptionPane.ERROR_MESSAGE);
         } else {
+            DefaultTableModel tmodel = (DefaultTableModel) jTableActualiza.getModel();
+            tmodel.setRowCount(0);
+            tmodel.addRow(new Object[]{1, 2, 3, 4});
             System.out.println(calendarPanelFechaActualiza.getSelectedDate().toString());
         }
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -424,6 +391,9 @@ public class Alimentacion extends javax.swing.JPanel {
         if (calendarPanelFechaConsulta.getSelectedDate() == null) {
             JOptionPane.showMessageDialog(null, "Fecha de alimentación en blanco", "Error Message", JOptionPane.ERROR_MESSAGE);
         } else {
+            DefaultTableModel tmodel = (DefaultTableModel) jTableConsulta.getModel();
+            tmodel.setRowCount(0);
+            tmodel.addRow(new Object[]{1, 2, 3, 4});
             System.out.println(calendarPanelFechaConsulta.getSelectedDate().toString());
         }
     }//GEN-LAST:event_jButton5ActionPerformed
