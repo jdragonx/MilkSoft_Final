@@ -85,5 +85,34 @@ public class Conexion {
        }
    return null;
     }
+    
+//INSERCION 
+    public  void insert (String consulta,String user, String pass){
+
+       Connection con =getConexion(user, pass);
+       Statement declara; 
+       try{
+           declara =con.createStatement();
+           declara.executeUpdate(consulta);
+
+       }
+       catch (SQLException e){
+           JOptionPane.showMessageDialog(null, "Error" + e.getMessage(), "Erro de conexion", JOptionPane.ERROR_MESSAGE);
+           
+       }
+
+    }    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
    
 }
