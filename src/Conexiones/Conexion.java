@@ -41,7 +41,6 @@ public class Conexion {
             contacto = DriverManager.getConnection(url, "userAc", "userAc");
             declara = contacto.createStatement();
             ResultSet respuesta = declara.executeQuery("exec prodLogin @Login='" + user + "',@Pass='" + pass + "'");
-            System.out.print("exec prodLogin @Login='" + user + "',@Pass='" + pass + "'");
             ResultSetMetaData rsmd = respuesta.getMetaData();
             int columnsNumber = rsmd.getColumnCount();
              while (respuesta.next()) {
@@ -78,7 +77,7 @@ public class Conexion {
             declara = con.createStatement();
             declara.executeUpdate(consulta);
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error" + e.getMessage(), "Erro de conexion", JOptionPane.ERROR_MESSAGE);
+            System.out.print("Error" + e.getMessage());
 
         }
 
