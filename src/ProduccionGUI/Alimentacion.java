@@ -8,8 +8,12 @@ package ProduccionGUI;
 
 import Codes.Validacion;
 import java.awt.event.KeyEvent;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.time.format.DateTimeFormatter;
 import java.util.Enumeration;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -20,13 +24,16 @@ import javax.swing.table.TableModel;
  */
 public class Alimentacion extends javax.swing.JPanel {
 
+    private Connection conec = Conexiones.Conexion.getConexion("userAc", "userAc");
+    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
+    DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy-dd-MM");
+
     /**
      * Creates new form Alimento
      */
     public Alimentacion() {
         initComponents();
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
-        jTextFieldFecha.setText(java.time.LocalDate.now().toString());
+        jTextFieldFecha.setText(dtf1.format(java.time.LocalDate.now()));
         jTextFieldHora.setText(dtf.format(java.time.LocalDateTime.now()));
     }
 
@@ -41,8 +48,6 @@ public class Alimentacion extends javax.swing.JPanel {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
-        PantallaInicial = new javax.swing.JPanel();
-        jLabel29 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jTextFieldArete = new javax.swing.JTextField();
@@ -58,6 +63,8 @@ public class Alimentacion extends javax.swing.JPanel {
         jScrollPane6 = new javax.swing.JScrollPane();
         jTextAreaDetalle = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
+        PantallaInicial = new javax.swing.JPanel();
+        jLabel29 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
@@ -91,32 +98,6 @@ public class Alimentacion extends javax.swing.JPanel {
         });
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
-        jLabel29.setText("jLabel12");
-
-        javax.swing.GroupLayout PantallaInicialLayout = new javax.swing.GroupLayout(PantallaInicial);
-        PantallaInicial.setLayout(PantallaInicialLayout);
-        PantallaInicialLayout.setHorizontalGroup(
-            PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1401, Short.MAX_VALUE)
-            .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(PantallaInicialLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel29)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        PantallaInicialLayout.setVerticalGroup(
-            PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1046, Short.MAX_VALUE)
-            .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(PantallaInicialLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel29)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-
-        jPanel1.add(PantallaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 850));
 
         jLabel1.setText("Registro de alimentación del ganado");
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -185,6 +166,32 @@ public class Alimentacion extends javax.swing.JPanel {
 
         jLabel3.setText("Hora de alimentación");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, -1, -1));
+
+        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
+        jLabel29.setText("jLabel12");
+
+        javax.swing.GroupLayout PantallaInicialLayout = new javax.swing.GroupLayout(PantallaInicial);
+        PantallaInicial.setLayout(PantallaInicialLayout);
+        PantallaInicialLayout.setHorizontalGroup(
+            PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1401, Short.MAX_VALUE)
+            .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PantallaInicialLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel29)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        PantallaInicialLayout.setVerticalGroup(
+            PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1046, Short.MAX_VALUE)
+            .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PantallaInicialLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel29)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        jPanel1.add(PantallaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 850));
 
         jLabel46.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
         jLabel46.setText("jLabel12");
@@ -323,8 +330,8 @@ public class Alimentacion extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Formato de cantidad erróneo", "Error Message", JOptionPane.ERROR_MESSAGE);
                 act = false;
             }
-            
-            if(act){
+
+            if (act) {
                 JOptionPane.showMessageDialog(null, "Actualización exitosa", "Succes Message", JOptionPane.INFORMATION_MESSAGE);
             }
         }
@@ -371,36 +378,50 @@ public class Alimentacion extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         boolean reg = true;
+        String fecha = dtf1.format(java.time.LocalDate.now());
+        String hora = dtf.format(java.time.LocalDateTime.now());
+        String detalle = jTextAreaDetalle.getText();
+        String cantidad = jTextFieldCantidad.getText();
+
         if (model.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Lista de aretes de ganado vacía", "Error Message", JOptionPane.ERROR_MESSAGE);
             reg = false;
         }
-        if (jTextAreaDetalle.getText().equals("")) {
+        if (detalle.equals("")) {
             JOptionPane.showMessageDialog(null, "Atributo detalle de alimento en blanco", "Error Message", JOptionPane.ERROR_MESSAGE);
             reg = false;
         }
 
-        if (!Validacion.alfesp(jTextAreaDetalle.getText()) || Validacion.counter(jTextAreaDetalle.getText()) > 50) {
+        if (!Validacion.alfesp(detalle) || Validacion.counter(detalle) > 50) {
             JOptionPane.showMessageDialog(null, "Formato de detalle de alimento erróneo", "Error Message", JOptionPane.ERROR_MESSAGE);
             reg = false;
         }
 
-        if (jTextFieldCantidad.getText().equals("")) {
+        if (cantidad.equals("")) {
             JOptionPane.showMessageDialog(null, "Atributo cantidad en blanco", "Error Message", JOptionPane.ERROR_MESSAGE);
             reg = false;
         }
 
-        if (!Validacion.num(jTextFieldCantidad.getText())) {
+        if (!Validacion.num(cantidad)) {
             JOptionPane.showMessageDialog(null, "Formato de cantidad erróneo", "Error Message", JOptionPane.ERROR_MESSAGE);
             reg = false;
         }
 
         if (reg) {
-            Enumeration aretes = model.elements();
-            while (aretes.hasMoreElements()) {
-                System.out.println(aretes.nextElement());
+            try {
+                String sql = "insert into alimentacion values ('" + fecha + " " + hora + "','" + detalle + "','" + cantidad + "')";
+                conec.createStatement().executeUpdate(sql);
+
+                Enumeration aretes = model.elements();
+                while (aretes.hasMoreElements()) {
+                    sql = "insert into historialalimentacion values('" + fecha + " " + hora + "','" + aretes.nextElement() + "')";
+                    conec.createStatement().executeUpdate(sql);
+                }
+
+                JOptionPane.showMessageDialog(null, "Registro exitoso", "Succes Message", JOptionPane.INFORMATION_MESSAGE);
+            } catch (SQLException ex) {
+                Logger.getLogger(Alimentacion.class.getName()).log(Level.SEVERE, null, ex);
             }
-            JOptionPane.showMessageDialog(null, "Registro exitoso", "Succes Message", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
