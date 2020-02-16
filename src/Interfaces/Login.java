@@ -1,8 +1,11 @@
 package Interfaces;
 
 import Auditoria.Auditoria;
+
+import static Codes.Validacion.counter;
+import static Codes.Validacion.num;
+import static Codes.Validacion.unicode;
 import Conexiones.Conexion;
-import java.sql.Connection;
 import javax.swing.JOptionPane;
 
 public class Login extends javax.swing.JFrame {
@@ -22,9 +25,11 @@ public class Login extends javax.swing.JFrame {
 
     public void iniciar() {
         String val="";
+
         val = conec.ingLogin(Usuario.getText(), Pass.getText());
         System.out.print("\nVAL ES: " + val);
         if (val!= "") {
+            JOptionPane.showMessageDialog(null, "Ingreso al Sistema Exitoso","Mensaje", JOptionPane.INFORMATION_MESSAGE);
             if (val.matches("4")) {
                 this.setEnabled(false);
                 new Auditoria().setVisible(true);
@@ -33,7 +38,7 @@ public class Login extends javax.swing.JFrame {
                 new Modulo(val).setVisible(true);
             }
         } else {
-            JOptionPane.showMessageDialog(null, "LLENAR ERROR CON SRS\n", "Error  de conexion", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Login o Contraseña Invalido", "Error", JOptionPane.ERROR_MESSAGE);
         }
         Usuario.setText("");
         Pass.setText("");
@@ -92,14 +97,29 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        //System.exit(0);
+
         this.dispose();
         new Modulo(val).setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jbLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLoginActionPerformed
-        iniciar();
+        if(Usuario.getText().matches("") || Pass.getText().matches("")){
+                     JOptionPane.showMessageDialog(null, "Llenar atributo(s) en blanco","Error", JOptionPane.ERROR_MESSAGE);  
+                     Usuario.setText("");
+        Pass.setText("");
+        }else{
+            if(counter(Usuario.getText())<=20&&counter(Pass.getText())<=128  && counter(Pass.getText())>=8 && unicode(Usuario.getText()) &&unicode(Pass.getText()) ){
+               
+
+                      iniciar();
+                
+            }else{
+                JOptionPane.showMessageDialog(null, "Login o Contraseña Invalido","Error", JOptionPane.ERROR_MESSAGE);  
+                Usuario.setText("");
+        Pass.setText("");
+            }
+        }
+        
     }//GEN-LAST:event_jbLoginActionPerformed
 
     /**
