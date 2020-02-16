@@ -125,7 +125,7 @@ public class Modulo extends javax.swing.JFrame {
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(90, Short.MAX_VALUE)
+                .addGap(0, 0, 0)
                 .addComponent(jLabel6)
                 .addContainerGap(109, Short.MAX_VALUE))
         );
