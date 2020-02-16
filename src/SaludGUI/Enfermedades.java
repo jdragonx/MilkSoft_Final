@@ -25,6 +25,8 @@ public class Enfermedades extends javax.swing.JPanel {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
+        PantallaInicial = new javax.swing.JPanel();
+        jLabel33 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         RazonSocial = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -35,6 +37,7 @@ public class Enfermedades extends javax.swing.JPanel {
         RazonSocial1 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel34 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -47,6 +50,7 @@ public class Enfermedades extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         Registar1 = new javax.swing.JButton();
         Registar2 = new javax.swing.JButton();
+        jLabel35 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel29 = new javax.swing.JLabel();
         RazonSocial4 = new javax.swing.JTextField();
@@ -58,6 +62,7 @@ public class Enfermedades extends javax.swing.JPanel {
         jLabel12 = new javax.swing.JLabel();
         jComboBox3 = new javax.swing.JComboBox<>();
         Registar4 = new javax.swing.JButton();
+        jLabel36 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(1000, 750));
         setMinimumSize(new java.awt.Dimension(1000, 750));
@@ -66,8 +71,39 @@ public class Enfermedades extends javax.swing.JPanel {
         jTabbedPane1.setMaximumSize(new java.awt.Dimension(1100, 850));
         jTabbedPane1.setMinimumSize(new java.awt.Dimension(1100, 850));
         jTabbedPane1.setPreferredSize(new java.awt.Dimension(1100, 850));
+        jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabbedPane1MouseClicked(evt);
+            }
+        });
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
+        jLabel33.setText("jLabel12");
+
+        javax.swing.GroupLayout PantallaInicialLayout = new javax.swing.GroupLayout(PantallaInicial);
+        PantallaInicial.setLayout(PantallaInicialLayout);
+        PantallaInicialLayout.setHorizontalGroup(
+            PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1044, Short.MAX_VALUE)
+            .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PantallaInicialLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel33)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        PantallaInicialLayout.setVerticalGroup(
+            PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 900, Short.MAX_VALUE)
+            .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PantallaInicialLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel33)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        jPanel1.add(PantallaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 850));
 
         jLabel1.setText("Nombre");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, -1, -1));
@@ -100,6 +136,10 @@ public class Enfermedades extends javax.swing.JPanel {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gravedad", "" }));
         jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 270, 210, -1));
+
+        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
+        jLabel34.setText("jLabel12");
+        jPanel1.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jTabbedPane1.addTab("Registrar Enfermedad", jPanel1);
 
@@ -143,6 +183,10 @@ public class Enfermedades extends javax.swing.JPanel {
         });
         jPanel5.add(Registar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 310, -1, -1));
 
+        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
+        jLabel35.setText("jLabel12");
+        jPanel5.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         jTabbedPane1.addTab("Actualizar Enfermedad", jPanel5);
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -182,6 +226,10 @@ public class Enfermedades extends javax.swing.JPanel {
         });
         jPanel2.add(Registar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 180, -1, -1));
 
+        jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
+        jLabel36.setText("jLabel12");
+        jPanel2.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         jTabbedPane1.addTab("Consultar enfermedad", jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -212,11 +260,21 @@ public class Enfermedades extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_Registar4ActionPerformed
 
+    private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
+        // TODO add your handling code here:
+        if (jTabbedPane1.getSelectedIndex() == 0 && jPanel1.getX() > evt.getX() && 31 > evt.getY()) {
+            PantallaInicial.setVisible(false);
+        } else if (jTabbedPane1.getSelectedIndex() != 0){
+            PantallaInicial.setVisible(false);
+        }
+    }//GEN-LAST:event_jTabbedPane1MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Identificador;
     private javax.swing.JTextField Identificador1;
     private javax.swing.JTextField Identificador2;
+    private javax.swing.JPanel PantallaInicial;
     private javax.swing.JTextField RazonSocial;
     private javax.swing.JTextField RazonSocial1;
     private javax.swing.JTextField RazonSocial2;
@@ -239,6 +297,10 @@ public class Enfermedades extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

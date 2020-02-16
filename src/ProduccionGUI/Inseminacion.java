@@ -106,6 +106,7 @@ public class Inseminacion extends javax.swing.JPanel {
         jPanel2.add(PantallaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 850));
 
         jLabel1.setText("Registro de inseminación del ganado");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(348, 40, -1, -1));
 
         jLabel2.setText("Arete de ganado");
@@ -181,6 +182,7 @@ public class Inseminacion extends javax.swing.JPanel {
         jLabel4.setText("Fechas de registro");
         jPanel4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, -1, -1));
 
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel8.setText("Actualización de inseminación");
         jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, -1, -1));
 
@@ -192,6 +194,7 @@ public class Inseminacion extends javax.swing.JPanel {
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setText("Consulta de inseminación");
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, -1, -1));
 
@@ -281,12 +284,11 @@ public class Inseminacion extends javax.swing.JPanel {
 
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
         // TODO add your handling code here:
-        if (jTabbedPane1.getSelectedIndex() == 0 && jPanel1.getX() > evt.getX() && 31 > evt.getY()) {
+        if (jTabbedPane1.getSelectedIndex() == 0 && jPanel2.getX() > evt.getX() && 31 > evt.getY()) {
             PantallaInicial.setVisible(false);
         } else if (jTabbedPane1.getSelectedIndex() != 0){
             PantallaInicial.setVisible(false);
         }
-
     }//GEN-LAST:event_jTabbedPane1MouseClicked
 
 

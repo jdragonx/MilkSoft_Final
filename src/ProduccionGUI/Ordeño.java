@@ -111,6 +111,7 @@ public class Ordeño extends javax.swing.JPanel {
         jPanel1.add(PantallaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 850));
 
         jLabel1.setText("Registro de ordeño del ganado");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(338, 97, -1, -1));
 
         jLabel2.setText("Arete de ganado");
@@ -162,6 +163,7 @@ public class Ordeño extends javax.swing.JPanel {
         jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, -1, -1));
 
         jLabel10.setText("Actualización de ordeño del ganado");
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 50, -1, -1));
         jPanel4.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 630, 176, -1));
 
@@ -230,6 +232,7 @@ public class Ordeño extends javax.swing.JPanel {
         jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, -1, -1));
 
         jLabel19.setText("Consulta individual de alimentación");
+        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(321, 67, -1, -1));
         jPanel2.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 130, 176, -1));
 
