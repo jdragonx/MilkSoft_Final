@@ -52,7 +52,9 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MIlkSoft ingreso al sistema");
+        setMaximumSize(new java.awt.Dimension(465, 735));
         setMinimumSize(new java.awt.Dimension(465, 735));
+        setPreferredSize(new java.awt.Dimension(465, 735));
         setSize(new java.awt.Dimension(465, 735));
         getContentPane().setLayout(null);
         getContentPane().add(Usuario);
@@ -128,8 +130,6 @@ public class Login extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
