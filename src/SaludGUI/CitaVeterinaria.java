@@ -70,8 +70,9 @@ public class CitaVeterinaria extends javax.swing.JPanel {
         jLabel25 = new javax.swing.JLabel();
         jtfCelular2 = new javax.swing.JTextField();
 
-        setMaximumSize(new java.awt.Dimension(1000, 750));
-        setMinimumSize(new java.awt.Dimension(1000, 750));
+        setMaximumSize(new java.awt.Dimension(1100, 850));
+        setMinimumSize(new java.awt.Dimension(1100, 850));
+        setPreferredSize(new java.awt.Dimension(1100, 850));
 
         jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.LEFT);
         jTabbedPane1.setMaximumSize(new java.awt.Dimension(1000, 750));
@@ -228,9 +229,7 @@ public class CitaVeterinaria extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 817, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
