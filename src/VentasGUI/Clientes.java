@@ -87,6 +87,10 @@ public class Clientes extends javax.swing.JPanel {
         jButton3 = new javax.swing.JButton();
         jLabel48 = new javax.swing.JLabel();
 
+        setMaximumSize(new java.awt.Dimension(1100, 850));
+        setMinimumSize(new java.awt.Dimension(1100, 850));
+        setPreferredSize(new java.awt.Dimension(1100, 850));
+
         jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.LEFT);
         jTabbedPane1.setMaximumSize(new java.awt.Dimension(1000, 750));
         jTabbedPane1.setMinimumSize(new java.awt.Dimension(1000, 750));
