@@ -170,7 +170,7 @@ public class Administracion extends javax.swing.JPanel {
         jLabel21.setText("jLabel12");
         jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1090, 860));
 
-        jTabbedPane1.addTab("Registrar", jPanel1);
+        jTabbedPane1.addTab("Registrar usuarios", jPanel1);
 
         jPanel2.setMaximumSize(new java.awt.Dimension(1100, 850));
         jPanel2.setMinimumSize(new java.awt.Dimension(1100, 850));
@@ -236,7 +236,7 @@ public class Administracion extends javax.swing.JPanel {
         jLabel13.setText("jLabel12");
         jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1090, 890));
 
-        jTabbedPane1.addTab("Consultar", jPanel2);
+        jTabbedPane1.addTab("Consultar usuarios", jPanel2);
 
         jPanel3.setMaximumSize(new java.awt.Dimension(1100, 850));
         jPanel3.setMinimumSize(new java.awt.Dimension(1100, 850));
@@ -299,7 +299,7 @@ public class Administracion extends javax.swing.JPanel {
         jLabel12.setText("jLabel12");
         jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1090, 900));
 
-        jTabbedPane1.addTab("Actualizar", jPanel3);
+        jTabbedPane1.addTab("Actualizar usuarios", jPanel3);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -311,8 +311,6 @@ public class Administracion extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-
-        jTabbedPane1.getAccessibleContext().setAccessibleDescription("");
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged

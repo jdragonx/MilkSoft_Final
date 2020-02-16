@@ -49,9 +49,6 @@
           <Dimension value="[1100, 850]"/>
         </Property>
       </Properties>
-      <AccessibilityProperties>
-        <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value=""/>
-      </AccessibilityProperties>
       <Events>
         <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="jTabbedPane1StateChanged"/>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTabbedPane1MouseClicked"/>
@@ -73,8 +70,8 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Registrar">
-                <Property name="tabTitle" type="java.lang.String" value="Registrar"/>
+              <JTabbedPaneConstraints tabName="Registrar usuarios">
+                <Property name="tabTitle" type="java.lang.String" value="Registrar usuarios"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -301,8 +298,8 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Consultar">
-                <Property name="tabTitle" type="java.lang.String" value="Consultar"/>
+              <JTabbedPaneConstraints tabName="Consultar usuarios">
+                <Property name="tabTitle" type="java.lang.String" value="Consultar usuarios"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -386,8 +383,8 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Actualizar">
-                <Property name="tabTitle" type="java.lang.String" value="Actualizar"/>
+              <JTabbedPaneConstraints tabName="Actualizar usuarios">
+                <Property name="tabTitle" type="java.lang.String" value="Actualizar usuarios"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
