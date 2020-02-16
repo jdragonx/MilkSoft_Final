@@ -5,9 +5,9 @@ import Conexiones.Conexion;
 import java.sql.Connection;
 import javax.swing.JOptionPane;
 
-
 public class Login extends javax.swing.JFrame {
-    String val="";
+
+    String val = "";
     Conexion conec;
 
     public Login() {
@@ -17,25 +17,24 @@ public class Login extends javax.swing.JFrame {
         this.conec = new Conexion();
         Modulo mod;
         Auditoria aud;
-        
+
     }
 
     public void iniciar() {
-        String val = conec.ingLogin(Usuario.getText(), Pass.getText());
+        String val = conec.ingLogin(Usuario.getText(), Pass.getPassword().toString());
         System.out.print("\nVAL ES: " + val);
-        if(val!=""){
-            if(val.matches("4")){
+        if (val != "") {
+            if (val.matches("4")) {
                 new Auditoria().setVisible(true);
-            }else{
-            this.disable();
-            new Modulo(val).setVisible(true);}
-        }
-            else {
+            } else {
+                this.setEnabled(false);
+                new Modulo(val).setVisible(true);
+            }
+        } else {
             JOptionPane.showMessageDialog(null, "LLENAR ERROR CON SRS\n", "Error  de conexion", JOptionPane.ERROR_MESSAGE);
         }
         Usuario.setText("");
         Pass.setText("");
-
     }
 
     @SuppressWarnings("unchecked")
@@ -97,7 +96,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jbLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLoginActionPerformed
-        
+
         iniciar();
 
 
