@@ -202,8 +202,8 @@ public class Veterinario extends javax.swing.JPanel {
         jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 381, -1, -1));
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel17.setText("Actualizar Veterianario");
-        jPanel3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 74, -1, -1));
+        jLabel17.setText("Actualizar Veterinario");
+        jPanel3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, -1, -1));
 
         jtbBuscar.setText("Buscar");
         jPanel3.add(jtbBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(628, 142, -1, -1));

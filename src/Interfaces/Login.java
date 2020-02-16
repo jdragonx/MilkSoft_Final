@@ -1,11 +1,13 @@
 package Interfaces;
 
+import Auditoria.Auditoria;
 import Conexiones.Conexion;
 import java.sql.Connection;
 import javax.swing.JOptionPane;
 
-public class Login extends javax.swing.JFrame {
 
+public class Login extends javax.swing.JFrame {
+    String val="";
     Conexion conec;
 
     public Login() {
@@ -13,27 +15,23 @@ public class Login extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         this.conec = new Conexion();
+        Modulo mod;
+        Auditoria aud;
+        
     }
 
     public void iniciar() {
         String val = conec.ingLogin(Usuario.getText(), Pass.getText());
         System.out.print("\nVAL ES: " + val);
-        if (val.matches("1")) {
-            System.out.print("XDDD1");
+        if(val!=""){
+            if(val.matches("4")){
+                new Auditoria().setVisible(true);
+            }else{
+            this.disable();
+            new Modulo(val).setVisible(true);}
         }
-        if (val.matches("2")) {
-            System.out.print("XDDD2");
-        }
-        if (val.matches("3")) {
-            System.out.print("XDDD3");
-        } else {
-            System.out.print("NO COMPARISON");
-        }
-        if (val != "") {
-            this.dispose();
-            new Modulo().setVisible(true);
-        } else {
-            JOptionPane.showMessageDialog(null, "Te la creiste WE\n", "Error  de conexion", JOptionPane.ERROR_MESSAGE);
+            else {
+            JOptionPane.showMessageDialog(null, "LLENAR ERROR CON SRS\n", "Error  de conexion", JOptionPane.ERROR_MESSAGE);
         }
         Usuario.setText("");
         Pass.setText("");
@@ -47,7 +45,7 @@ public class Login extends javax.swing.JFrame {
         Usuario = new javax.swing.JTextField();
         Pass = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jbLogin = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -71,14 +69,14 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(250, 550, 120, 30);
 
-        jButton2.setText("ENTRAR");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jbLogin.setText("ENTRAR");
+        jbLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jbLoginActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(130, 550, 100, 30);
+        getContentPane().add(jbLogin);
+        jbLogin.setBounds(90, 550, 120, 30);
 
         jLabel5.setForeground(new java.awt.Color(0, 204, 255));
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/login.jpg"))); // NOI18N
@@ -95,15 +93,15 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
         //System.exit(0);
         this.dispose();
-        new Modulo().setVisible(true);
+        new Modulo(val).setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
+    private void jbLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLoginActionPerformed
+        
         iniciar();
 
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jbLoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -143,7 +141,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField Pass;
     private javax.swing.JTextField Usuario;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JButton jbLogin;
     // End of variables declaration//GEN-END:variables
 }

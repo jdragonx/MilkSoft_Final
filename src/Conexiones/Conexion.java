@@ -50,14 +50,11 @@ public class Conexion {
        
        try {
            contacto= DriverManager.getConnection(url, "userAc" ,"userAc");
-
-
            declara =contacto.createStatement();
            ResultSet respuesta = declara.executeQuery("exec prodLogin @Login='"+user+"',@Pass='"+pass+"'");
            //Recuperacion del tipo de usuario
               
              while (respuesta.next()) 
-                System.out.print("");
                 valCon = respuesta.getString("idsysUser");
                 System.out.print("\n\nResult Get: "+valCon);
   
