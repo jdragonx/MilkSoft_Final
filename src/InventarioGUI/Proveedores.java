@@ -84,6 +84,26 @@ public class Proveedores extends javax.swing.JPanel {
         jLabel16 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        RazonSocialConsulta1 = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        ListaClientes1 = new javax.swing.JList<>();
+        IdentificadorConsulta1 = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        CorreoElectronicoConsulta1 = new javax.swing.JTextField();
+        FechaDeInscripcionConsulta1 = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        NumeroDeTelefonoConvencionalConsulta1 = new javax.swing.JTextField();
+        NumeroDeTelefonoCelularConsulta1 = new javax.swing.JTextField();
+        jLabel37 = new javax.swing.JLabel();
+        Consultar1 = new javax.swing.JButton();
+        jTextField4 = new javax.swing.JTextField();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(1100, 850));
         setMinimumSize(new java.awt.Dimension(1100, 850));
@@ -209,7 +229,7 @@ public class Proveedores extends javax.swing.JPanel {
         jLabel46.setText("jLabel12");
         jPanel1.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 880));
 
-        jTabbedPane1.addTab("Registrar/actualizar", jPanel1);
+        jTabbedPane1.addTab("Registrar Proveedor", jPanel1);
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -283,7 +303,81 @@ public class Proveedores extends javax.swing.JPanel {
         jLabel47.setText("jLabel12");
         jPanel2.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 900));
 
-        jTabbedPane1.addTab("Consultar", jPanel2);
+        jTabbedPane1.addTab("Actualizar Proveedor", jPanel2);
+
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel15.setText("Nombre");
+        jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 126, -1, -1));
+        jPanel3.add(RazonSocialConsulta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(498, 123, 212, -1));
+
+        ListaClientes1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Proveedor 1", "Proveedor 2", "Proveedor 3", "Proveedor 4" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(ListaClientes1);
+
+        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(498, 161, 212, 182));
+
+        IdentificadorConsulta1.setEditable(false);
+        IdentificadorConsulta1.setBackground(new java.awt.Color(204, 204, 204));
+        IdentificadorConsulta1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IdentificadorConsulta1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(IdentificadorConsulta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(498, 361, 212, -1));
+
+        jLabel17.setText("Cédula/RUC");
+        jPanel3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 364, -1, -1));
+
+        jLabel18.setText("Correo electrónico");
+        jPanel3.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 402, -1, -1));
+
+        CorreoElectronicoConsulta1.setEditable(false);
+        CorreoElectronicoConsulta1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.add(CorreoElectronicoConsulta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(498, 399, 212, -1));
+
+        FechaDeInscripcionConsulta1.setEditable(false);
+        FechaDeInscripcionConsulta1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.add(FechaDeInscripcionConsulta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(498, 437, 212, -1));
+
+        jLabel19.setText("Fecha de inscripción");
+        jPanel3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 440, -1, -1));
+
+        jLabel20.setText("Número de teléfono convencional");
+        jPanel3.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 478, -1, -1));
+
+        NumeroDeTelefonoConvencionalConsulta1.setEditable(false);
+        NumeroDeTelefonoConvencionalConsulta1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.add(NumeroDeTelefonoConvencionalConsulta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(498, 475, 212, -1));
+
+        NumeroDeTelefonoCelularConsulta1.setEditable(false);
+        NumeroDeTelefonoCelularConsulta1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.add(NumeroDeTelefonoCelularConsulta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(498, 513, 212, -1));
+
+        jLabel37.setText("Número de teléfono celular");
+        jPanel3.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 516, -1, -1));
+
+        Consultar1.setText("Consultar");
+        jPanel3.add(Consultar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(631, 589, -1, -1));
+
+        jTextField4.setEditable(false);
+        jTextField4.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(498, 551, 212, -1));
+
+        jLabel38.setText("Dirección");
+        jPanel3.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 554, -1, -1));
+
+        jLabel39.setText("Consulta de proveedores");
+        jPanel3.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(384, 52, -1, -1));
+
+        jLabel48.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
+        jLabel48.setText("jLabel12");
+        jPanel3.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 900));
+
+        jTabbedPane1.addTab("Consultar Proveedor", jPanel3);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -318,29 +412,41 @@ public class Proveedores extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jTabbedPane1MouseClicked
 
+    private void IdentificadorConsulta1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdentificadorConsulta1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IdentificadorConsulta1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Actualizar1;
     private javax.swing.JButton Buscar1;
     private javax.swing.JButton Consultar;
+    private javax.swing.JButton Consultar1;
     private javax.swing.JTextField CorreoElectronico2;
     private javax.swing.JTextField CorreoElectronicoConsulta;
+    private javax.swing.JTextField CorreoElectronicoConsulta1;
     private javax.swing.JTextField CorreoElectronicoConsulta2;
     private javax.swing.JTextField FechaDeInscripcion2;
     private javax.swing.JTextField FechaDeInscripcionConsulta;
+    private javax.swing.JTextField FechaDeInscripcionConsulta1;
     private javax.swing.JTextField Identificador2;
     private javax.swing.JTextField IdentificadorConsulta;
+    private javax.swing.JTextField IdentificadorConsulta1;
     private javax.swing.JTextField IdentificadorConsulta2;
     private javax.swing.JList<String> ListaClientes;
+    private javax.swing.JList<String> ListaClientes1;
     private javax.swing.JTextField NumeroDeTelefonoCelular2;
     private javax.swing.JTextField NumeroDeTelefonoCelularConsulta;
+    private javax.swing.JTextField NumeroDeTelefonoCelularConsulta1;
     private javax.swing.JTextField NumeroDeTelefonoCelularConsulta2;
     private javax.swing.JTextField NumeroDeTelefonoConvencional2;
     private javax.swing.JTextField NumeroDeTelefonoConvencionalConsulta;
+    private javax.swing.JTextField NumeroDeTelefonoConvencionalConsulta1;
     private javax.swing.JTextField NumeroDeTelefonoConvencionalConsulta2;
     private javax.swing.JPanel PantallaInicial;
     private javax.swing.JTextField RazonSocial2;
     private javax.swing.JTextField RazonSocialConsulta;
+    private javax.swing.JTextField RazonSocialConsulta1;
     private javax.swing.JTextField RazonSocialConsulta2;
     private javax.swing.JButton Registar2;
     private javax.swing.JLabel jLabel10;
@@ -348,7 +454,12 @@ public class Proveedores extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
@@ -365,17 +476,24 @@ public class Proveedores extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
 }
