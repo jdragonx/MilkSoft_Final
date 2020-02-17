@@ -1,4 +1,3 @@
-
 package ProduccionGUI;
 
 import static Codes.Validacion.alf;
@@ -18,9 +17,10 @@ import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
 public class Ganado extends javax.swing.JPanel {
+
     Conexion con = new Conexion();
-    String[] itemM = new String[] {" ","Ternero"};
-    String[] itemH = new String[] {" ","Ternera","Vacona","Vaca"};
+    String[] itemM = new String[]{" ", "Ternero"};
+    String[] itemH = new String[]{" ", "Ternera", "Vacona", "Vaca"};
 
     public Ganado() {
         initComponents();
@@ -35,6 +35,8 @@ public class Ganado extends javax.swing.JPanel {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
+        PantallaInicial = new javax.swing.JPanel();
+        jLabel49 = new javax.swing.JLabel();
         jcbParto = new javax.swing.JComboBox<>();
         jrbH = new javax.swing.JRadioButton();
         jrbM = new javax.swing.JRadioButton();
@@ -53,8 +55,6 @@ public class Ganado extends javax.swing.JPanel {
         jcbMaduracion = new javax.swing.JComboBox<>();
         jbRegGanado = new javax.swing.JButton();
         jLabel46 = new javax.swing.JLabel();
-        PantallaInicial = new javax.swing.JPanel();
-        jLabel49 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -92,6 +92,32 @@ public class Ganado extends javax.swing.JPanel {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel49.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
+        jLabel49.setText("jLabel12");
+
+        javax.swing.GroupLayout PantallaInicialLayout = new javax.swing.GroupLayout(PantallaInicial);
+        PantallaInicial.setLayout(PantallaInicialLayout);
+        PantallaInicialLayout.setHorizontalGroup(
+            PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1044, Short.MAX_VALUE)
+            .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PantallaInicialLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel49)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        PantallaInicialLayout.setVerticalGroup(
+            PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 900, Short.MAX_VALUE)
+            .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PantallaInicialLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel49)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        jPanel1.add(PantallaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 850));
+
         jcbParto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "0", "1", "2", "3", "4", "5" }));
         jPanel1.add(jcbParto, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 230, -1));
 
@@ -111,8 +137,8 @@ public class Ganado extends javax.swing.JPanel {
         });
         jPanel1.add(jrbM, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 130, -1, -1));
 
-        jLabel1.setText("Registro ganado");
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setText("Registro de Ganado");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, -1, -1));
 
         jLabel2.setText("Arete");
@@ -161,32 +187,6 @@ public class Ganado extends javax.swing.JPanel {
         jLabel46.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
         jLabel46.setText("jLabel12");
         jPanel1.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        jLabel49.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
-        jLabel49.setText("jLabel12");
-
-        javax.swing.GroupLayout PantallaInicialLayout = new javax.swing.GroupLayout(PantallaInicial);
-        PantallaInicial.setLayout(PantallaInicialLayout);
-        PantallaInicialLayout.setHorizontalGroup(
-            PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1044, Short.MAX_VALUE)
-            .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(PantallaInicialLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel49)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        PantallaInicialLayout.setVerticalGroup(
-            PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 900, Short.MAX_VALUE)
-            .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(PantallaInicialLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel49)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-
-        jPanel1.add(PantallaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 850));
 
         jTabbedPane1.addTab("Registro de ganado", jPanel1);
 
@@ -253,7 +253,7 @@ public class Ganado extends javax.swing.JPanel {
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel15.setText("Consulta de ganado");
+        jLabel15.setText("Consulta de Ganado");
         jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, -1, -1));
 
         jLabel16.setText("Arete");
@@ -308,189 +308,183 @@ public class Ganado extends javax.swing.JPanel {
 
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
         //LLENAR PARA NUEVO GANAD EL IDENTIFICADOR
-        String text = Integer.toString(Integer.parseInt(con.Consulta1Value("exec getLastArete"))+1);
-        jtfArete.setText(text);
-        
         if (jTabbedPane1.getSelectedIndex() == 0 && jPanel1.getX() > evt.getX() && 31 > evt.getY()) {
             PantallaInicial.setVisible(false);
-        } else if (jTabbedPane1.getSelectedIndex() != 0){
+        } else if (jTabbedPane1.getSelectedIndex() != 0) {
             PantallaInicial.setVisible(false);
         }
+        String text = Integer.toString(Integer.parseInt(con.Consulta1Value("exec getLastArete")) + 1);
+        jtfArete.setText(text);
+
+        
     }//GEN-LAST:event_jTabbedPane1MouseClicked
 
     private void jbRegGanadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRegGanadoActionPerformed
-         //Validacion de estar vacio
-         //(jrbM.isSelected()==false && jrbH.isSelected()==true)||(jrbM.isSelected()==true && jrbH.isSelected()==false)
-         if(jrbM.isSelected()){
-             if(jcbParto.getSelectedIndex()==0||jcbRaza.getSelectedIndex()==0||jcbSalud.getSelectedIndex()==0||
-                jcbProduccion.getSelectedIndex()==0 ||jcbMaduracion.getSelectedIndex()==0){
-           JOptionPane.showMessageDialog(null, "Llenar atributo(s) vacíos", "Error", JOptionPane.ERROR_MESSAGE);
-        }else{
-            if(jrbM.isSelected()){
-                con.insert("exec insGanado @parto ="+Integer.parseInt(jcbParto.getSelectedItem().toString())+",@raza ='"+
-                        jcbRaza.getSelectedItem().toString()+"', @salud ='"+jcbSalud.getSelectedItem().toString()+"',@prod ='"+
-                        jcbProduccion.getSelectedItem().toString()+"', @genero ='"+jrbM.getText()+"', @mad ='"+
-                        jcbMaduracion.getSelectedItem().toString()+"'");
-               
-                
-               JOptionPane.showMessageDialog(null, "Registro de Ganado Exitoso", "Accion Exitosa", JOptionPane.INFORMATION_MESSAGE);
-               jcbParto.setSelectedIndex(0);
-                        jcbRaza.setSelectedIndex(0);
-                        jcbSalud.setSelectedIndex(0);
-                        jcbProduccion.setSelectedIndex(0);
-                        jcbMaduracion.setSelectedIndex(0);
-                        String text = Integer.toString(Integer.parseInt(con.Consulta1Value("exec getLastArete"))+1);
-        jtfArete.setText(text);
-        jcbParto.setEnabled(false);
-        jcbMaduracion.setEnabled(false);
-        jcbParto.setSelectedIndex(0);
-        jcbMaduracion.setSelectedIndex(0);
-        jcbRaza.setSelectedIndex(0);
-        jcbSalud.setSelectedIndex(0);
-        jcbProduccion.setSelectedIndex(0);
-        jcbMaduracion.removeAll();
-        jrbM.setSelected(false);
-        jrbH.setSelected(false);
-            }else{
-                con.insert("exec insGanado @parto ="+Integer.parseInt(jcbParto.getSelectedItem().toString())+",@raza ='"+
-                        jcbRaza.getSelectedItem().toString()+"', @salud ='"+jcbSalud.getSelectedItem().toString()+"',@prod ='"+
-                        jcbProduccion.getSelectedItem().toString()+"', @genero ='"+jrbH.getText()+"', @mad ='"+
-                        jcbMaduracion.getSelectedItem().toString()+"'");
+        //Validacion de estar vacio
+        //(jrbM.isSelected()==false && jrbH.isSelected()==true)||(jrbM.isSelected()==true && jrbH.isSelected()==false)
+        if (jrbM.isSelected()) {
+            if (jcbParto.getSelectedIndex() == 0 || jcbRaza.getSelectedIndex() == 0 || jcbSalud.getSelectedIndex() == 0
+                    || jcbProduccion.getSelectedIndex() == 0 || jcbMaduracion.getSelectedIndex() == 0) {
+                JOptionPane.showMessageDialog(null, "Llenar atributo(s) vacíos", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                if (jrbM.isSelected()) {
+                    con.insert("exec insGanado @parto =" + Integer.parseInt(jcbParto.getSelectedItem().toString()) + ",@raza ='"
+                            + jcbRaza.getSelectedItem().toString() + "', @salud ='" + jcbSalud.getSelectedItem().toString() + "',@prod ='"
+                            + jcbProduccion.getSelectedItem().toString() + "', @genero ='" + jrbM.getText() + "', @mad ='"
+                            + jcbMaduracion.getSelectedItem().toString() + "'");
 
-               JOptionPane.showMessageDialog(null, "Registro de Ganado Exitoso", "Accion Exitosa", JOptionPane.INFORMATION_MESSAGE);
-               jcbParto.setSelectedIndex(0);
-                        jcbRaza.setSelectedIndex(0);
-                        jcbSalud.setSelectedIndex(0);
-                        jcbProduccion.setSelectedIndex(0);
-                        jcbMaduracion.setSelectedIndex(0);
-                        String text = Integer.toString(Integer.parseInt(con.Consulta1Value("exec getLastArete"))+1);
-        jtfArete.setText(text);
-        jcbParto.setEnabled(false);
-        jcbMaduracion.setEnabled(false);
-        jcbParto.setSelectedIndex(0);
-        jcbMaduracion.setSelectedIndex(0);
-        jcbRaza.setSelectedIndex(0);
-        jcbSalud.setSelectedIndex(0);
-        jcbProduccion.setSelectedIndex(0);
-        jcbMaduracion.removeAll();
-        jrbM.setSelected(false);
-        jrbH.setSelected(false);
-        
-            }
-            
-                
-        }
-         }else if(jrbH.isSelected()){
-             if(jcbParto.getSelectedIndex()==0||jcbRaza.getSelectedIndex()==0||jcbSalud.getSelectedIndex()==0||
-                jcbProduccion.getSelectedIndex()==0 ||jcbMaduracion.getSelectedIndex()==0){
-           JOptionPane.showMessageDialog(null, "Llenar atributo(s) vacíos", "Error", JOptionPane.ERROR_MESSAGE);
-        }else{
-            if(jrbM.isSelected()){
-                con.insert("exec insGanado @parto ="+Integer.parseInt(jcbParto.getSelectedItem().toString())+",@raza ='"+
-                        jcbRaza.getSelectedItem().toString()+"', @salud ='"+jcbSalud.getSelectedItem().toString()+"',@prod ='"+
-                        jcbProduccion.getSelectedItem().toString()+"', @genero ='"+jrbM.getText()+"', @mad ='"+
-                        jcbMaduracion.getSelectedItem().toString()+"'");
-               
-                
-               JOptionPane.showMessageDialog(null, "Registro de Ganado Exitoso", "Accion Exitosa", JOptionPane.INFORMATION_MESSAGE);
-               jcbParto.setSelectedIndex(0);
-                        jcbRaza.setSelectedIndex(0);
-                        jcbSalud.setSelectedIndex(0);
-                        jcbProduccion.setSelectedIndex(0);
-                        jcbMaduracion.setSelectedIndex(0);
-                        String text = Integer.toString(Integer.parseInt(con.Consulta1Value("exec getLastArete"))+1);
-        jtfArete.setText(text);
-        jcbParto.setEnabled(false);
-        jcbMaduracion.setEnabled(false);
-        jcbParto.setSelectedIndex(0);
-        jcbMaduracion.setSelectedIndex(0);
-        jcbRaza.setSelectedIndex(0);
-        jcbSalud.setSelectedIndex(0);
-        jcbProduccion.setSelectedIndex(0);
-        jcbMaduracion.removeAll();
-        jrbM.setSelected(false);
-        jrbH.setSelected(false);
-            }else{
-                con.insert("exec insGanado @parto ="+Integer.parseInt(jcbParto.getSelectedItem().toString())+",@raza ='"+
-                        jcbRaza.getSelectedItem().toString()+"', @salud ='"+jcbSalud.getSelectedItem().toString()+"',@prod ='"+
-                        jcbProduccion.getSelectedItem().toString()+"', @genero ='"+jrbH.getText()+"', @mad ='"+
-                        jcbMaduracion.getSelectedItem().toString()+"'");
+                    JOptionPane.showMessageDialog(null, "Registro de Ganado Exitoso", "Accion Exitosa", JOptionPane.INFORMATION_MESSAGE);
+                    jcbParto.setSelectedIndex(0);
+                    jcbRaza.setSelectedIndex(0);
+                    jcbSalud.setSelectedIndex(0);
+                    jcbProduccion.setSelectedIndex(0);
+                    jcbMaduracion.setSelectedIndex(0);
+                    String text = Integer.toString(Integer.parseInt(con.Consulta1Value("exec getLastArete")) + 1);
+                    jtfArete.setText(text);
+                    jcbParto.setEnabled(false);
+                    jcbMaduracion.setEnabled(false);
+                    jcbParto.setSelectedIndex(0);
+                    jcbMaduracion.setSelectedIndex(0);
+                    jcbRaza.setSelectedIndex(0);
+                    jcbSalud.setSelectedIndex(0);
+                    jcbProduccion.setSelectedIndex(0);
+                    jcbMaduracion.removeAll();
+                    jrbM.setSelected(false);
+                    jrbH.setSelected(false);
+                } else {
+                    con.insert("exec insGanado @parto =" + Integer.parseInt(jcbParto.getSelectedItem().toString()) + ",@raza ='"
+                            + jcbRaza.getSelectedItem().toString() + "', @salud ='" + jcbSalud.getSelectedItem().toString() + "',@prod ='"
+                            + jcbProduccion.getSelectedItem().toString() + "', @genero ='" + jrbH.getText() + "', @mad ='"
+                            + jcbMaduracion.getSelectedItem().toString() + "'");
 
-               JOptionPane.showMessageDialog(null, "Registro de Ganado Exitoso", "Accion Exitosa", JOptionPane.INFORMATION_MESSAGE);
-               jcbParto.setSelectedIndex(0);
-                        jcbRaza.setSelectedIndex(0);
-                        jcbSalud.setSelectedIndex(0);
-                        jcbProduccion.setSelectedIndex(0);
-                        jcbMaduracion.setSelectedIndex(0);
-                        String text = Integer.toString(Integer.parseInt(con.Consulta1Value("exec getLastArete"))+1);
-        jtfArete.setText(text);
-        jcbParto.setEnabled(false);
-        jcbMaduracion.setEnabled(false);
-        jcbParto.setSelectedIndex(0);
-        jcbMaduracion.setSelectedIndex(0);
-        jcbRaza.setSelectedIndex(0);
-        jcbSalud.setSelectedIndex(0);
-        jcbProduccion.setSelectedIndex(0);
-        jcbMaduracion.removeAll();
-        jrbM.setSelected(false);
-        jrbH.setSelected(false);
-        
+                    JOptionPane.showMessageDialog(null, "Registro de Ganado Exitoso", "Accion Exitosa", JOptionPane.INFORMATION_MESSAGE);
+                    jcbParto.setSelectedIndex(0);
+                    jcbRaza.setSelectedIndex(0);
+                    jcbSalud.setSelectedIndex(0);
+                    jcbProduccion.setSelectedIndex(0);
+                    jcbMaduracion.setSelectedIndex(0);
+                    String text = Integer.toString(Integer.parseInt(con.Consulta1Value("exec getLastArete")) + 1);
+                    jtfArete.setText(text);
+                    jcbParto.setEnabled(false);
+                    jcbMaduracion.setEnabled(false);
+                    jcbParto.setSelectedIndex(0);
+                    jcbMaduracion.setSelectedIndex(0);
+                    jcbRaza.setSelectedIndex(0);
+                    jcbSalud.setSelectedIndex(0);
+                    jcbProduccion.setSelectedIndex(0);
+                    jcbMaduracion.removeAll();
+                    jrbM.setSelected(false);
+                    jrbH.setSelected(false);
+
+                }
+
             }
-            
-                
+        } else if (jrbH.isSelected()) {
+            if (jcbParto.getSelectedIndex() == 0 || jcbRaza.getSelectedIndex() == 0 || jcbSalud.getSelectedIndex() == 0
+                    || jcbProduccion.getSelectedIndex() == 0 || jcbMaduracion.getSelectedIndex() == 0) {
+                JOptionPane.showMessageDialog(null, "Llenar atributo(s) vacíos", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                if (jrbM.isSelected()) {
+                    con.insert("exec insGanado @parto =" + Integer.parseInt(jcbParto.getSelectedItem().toString()) + ",@raza ='"
+                            + jcbRaza.getSelectedItem().toString() + "', @salud ='" + jcbSalud.getSelectedItem().toString() + "',@prod ='"
+                            + jcbProduccion.getSelectedItem().toString() + "', @genero ='" + jrbM.getText() + "', @mad ='"
+                            + jcbMaduracion.getSelectedItem().toString() + "'");
+
+                    JOptionPane.showMessageDialog(null, "Registro de Ganado Exitoso", "Accion Exitosa", JOptionPane.INFORMATION_MESSAGE);
+                    jcbParto.setSelectedIndex(0);
+                    jcbRaza.setSelectedIndex(0);
+                    jcbSalud.setSelectedIndex(0);
+                    jcbProduccion.setSelectedIndex(0);
+                    jcbMaduracion.setSelectedIndex(0);
+                    String text = Integer.toString(Integer.parseInt(con.Consulta1Value("exec getLastArete")) + 1);
+                    jtfArete.setText(text);
+                    jcbParto.setEnabled(false);
+                    jcbMaduracion.setEnabled(false);
+                    jcbParto.setSelectedIndex(0);
+                    jcbMaduracion.setSelectedIndex(0);
+                    jcbRaza.setSelectedIndex(0);
+                    jcbSalud.setSelectedIndex(0);
+                    jcbProduccion.setSelectedIndex(0);
+                    jcbMaduracion.removeAll();
+                    jrbM.setSelected(false);
+                    jrbH.setSelected(false);
+                } else {
+                    con.insert("exec insGanado @parto =" + Integer.parseInt(jcbParto.getSelectedItem().toString()) + ",@raza ='"
+                            + jcbRaza.getSelectedItem().toString() + "', @salud ='" + jcbSalud.getSelectedItem().toString() + "',@prod ='"
+                            + jcbProduccion.getSelectedItem().toString() + "', @genero ='" + jrbH.getText() + "', @mad ='"
+                            + jcbMaduracion.getSelectedItem().toString() + "'");
+
+                    JOptionPane.showMessageDialog(null, "Registro de Ganado Exitoso", "Accion Exitosa", JOptionPane.INFORMATION_MESSAGE);
+                    jcbParto.setSelectedIndex(0);
+                    jcbRaza.setSelectedIndex(0);
+                    jcbSalud.setSelectedIndex(0);
+                    jcbProduccion.setSelectedIndex(0);
+                    jcbMaduracion.setSelectedIndex(0);
+                    String text = Integer.toString(Integer.parseInt(con.Consulta1Value("exec getLastArete")) + 1);
+                    jtfArete.setText(text);
+                    jcbParto.setEnabled(false);
+                    jcbMaduracion.setEnabled(false);
+                    jcbParto.setSelectedIndex(0);
+                    jcbMaduracion.setSelectedIndex(0);
+                    jcbRaza.setSelectedIndex(0);
+                    jcbSalud.setSelectedIndex(0);
+                    jcbProduccion.setSelectedIndex(0);
+                    jcbMaduracion.removeAll();
+                    jrbM.setSelected(false);
+                    jrbH.setSelected(false);
+
+                }
+
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Llenar atributo(s) vacíos", "Error", JOptionPane.ERROR_MESSAGE);
         }
-         }else{
-             JOptionPane.showMessageDialog(null, "Llenar atributo(s) vacíos", "Error", JOptionPane.ERROR_MESSAGE);
-         }
-          
-        
+
+
     }//GEN-LAST:event_jbRegGanadoActionPerformed
 
-    
-    
+
     private void jbActBusGanadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbActBusGanadoActionPerformed
-         if(jtfActArete.getText().matches("")){
+        if (jtfActArete.getText().matches("")) {
             JOptionPane.showMessageDialog(null, "Identificador de arete de ganado en blanco", "Error", JOptionPane.ERROR_MESSAGE);
-        }else{
-            if(num(jtfActArete.getText())){
-                String arete= con.Consulta1Value("exec selGan @Arete='"+jtfActArete.getText()+"'");
-                if(!arete.matches("")){
-                    
+        } else {
+            if (num(jtfActArete.getText())) {
+                String arete = con.Consulta1Value("exec selGan @Arete='" + jtfActArete.getText() + "'");
+                if (!arete.matches("")) {
+
                     jbActBusGanado.setEnabled(false);
                     jtfActArete.setEnabled(false);
                     jbActGanado.setEnabled(true);
-                    String sexo= con.Consulta1Value("exec selSexGan @Arete="+jtfActArete.getText());
-                    if(sexo.matches("H")){
+                    String sexo = con.Consulta1Value("exec selSexGan @Arete=" + jtfActArete.getText());
+                    if (sexo.matches("H")) {
                         jcbActProducion.setEnabled(true);
                         jcbMaduracion1.setEnabled(true);
                         jcbActParto.setEnabled(true);
                         jcbActSalud.setEnabled(true);
-                    }else{
+                    } else {
                         jcbActSalud.setEnabled(true);
                     }
-                    
-                    
-                }else{
-                   JOptionPane.showMessageDialog(null, "Identificador Inexistente", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-            }else{
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "Identificador Inexistente", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
                 JOptionPane.showMessageDialog(null, "Formato de identificador de arete de ganado erróneo", "Error", JOptionPane.ERROR_MESSAGE);
             }
             //BUSQUEDA CON LA BASE DE DATOS
-            
-            
+
         }
     }//GEN-LAST:event_jbActBusGanadoActionPerformed
 
     private void jrbMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbMActionPerformed
-        jrbH.setSelected(false);     
+        jrbH.setSelected(false);
         jcbMaduracion.setEnabled(false);
         jcbParto.setEnabled(false);
         jcbMaduracion.removeAll();
         jcbMaduracion.removeAllItems();
-        for(int i=0;i<itemM.length;i++){
-                jcbMaduracion.addItem(itemM[i]);
-            }
+        for (int i = 0; i < itemM.length; i++) {
+            jcbMaduracion.addItem(itemM[i]);
+        }
         jcbMaduracion.setSelectedIndex(1);
         jcbParto.setSelectedIndex(1);
 
@@ -503,95 +497,88 @@ public class Ganado extends javax.swing.JPanel {
         jcbMaduracion.removeAll();
         jcbMaduracion.removeAllItems();
         jcbParto.setSelectedIndex(0);
-        for(int i=0;i<itemH.length;i++){
-                jcbMaduracion.addItem(itemH[i]);
-            }
-        
-        
-        
+        for (int i = 0; i < itemH.length; i++) {
+            jcbMaduracion.addItem(itemH[i]);
+        }
+
+
     }//GEN-LAST:event_jrbHActionPerformed
 
     private void jbActGanadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbActGanadoActionPerformed
-         ///////
-         if(jcbMaduracion1.getSelectedIndex()==0 &&
-            jcbActParto.getSelectedIndex()==0 &&
-            jcbActSalud.getSelectedIndex()==0&&
-            jcbActProducion.getSelectedIndex()==0     ){
-             JOptionPane.showMessageDialog(null, "Cambiar Atributo", "Error", JOptionPane.ERROR_MESSAGE);
-         }else{
-             String sexo= con.Consulta1Value("exec selSexGan @Arete="+jtfActArete.getText());
-             System.out.print("sexo value: "+sexo);
-                    if(sexo.matches("M")){
-                        if(jcbMaduracion1.getSelectedIndex()>0){
-                            con.insert("exec updGanSal @Salud='"+jcbActSalud.getSelectedItem().toString()+"',@Arete="+jtfActArete.getText());
-                        }
-                    }else{
-                        if(jcbMaduracion1.getSelectedIndex()>0){
-                            con.insert("exec updGanMad @Mad='"+jcbMaduracion1.getSelectedItem().toString()+"',@Arete="+jtfActArete.getText());
-                        }
-                        if(jcbActParto.getSelectedIndex()>0){
-                            con.insert("exec updGanPar @Parto="+jcbActParto.getSelectedItem().toString()+",@Arete="+jtfActArete.getText());
-                            System.out.print("\n\nexec updGanPar @Parto="+jcbActParto.getSelectedItem().toString()+",@Arete="+jtfActArete.getText());
-                        //exec updGanPar @Parto=1, @Arete=7
-                        }
-                        if(jcbActSalud.getSelectedIndex()>0){
-                            con.insert("exec updGanSal @Salud='"+jcbActSalud.getSelectedItem().toString()+"',@Arete="+jtfActArete.getText());
-                        }
-                        if(jcbActProducion.getSelectedIndex()>0){
-                            con.insert("exec updGanPro @Prod='"+jcbActProducion.getSelectedItem().toString()+"',@Arete="+jtfActArete.getText());
-                            System.out.print("\n\nexec updGanPro @Prod='"+jcbActProducion.getSelectedItem().toString()+"',@Arete="+jtfActArete.getText());
-                        }
-                        
-                        
-                    }
-         JOptionPane.showMessageDialog(null, "Actualización Exitosa", "Error", JOptionPane.INFORMATION_MESSAGE);
-                  jcbParto.setSelectedIndex(0);
-         jcbActParto.setEnabled(false);
-         jcbActSalud.setEnabled(false);
-         jcbActProducion.setEnabled(false);
-         jcbMaduracion1.setEnabled(false);
-         jcbActParto.setSelectedIndex(0);
-         jcbActSalud.setSelectedIndex(0);
-         jcbActProducion.setSelectedIndex(0);
-         jcbMaduracion1.setSelectedIndex(0);
-         jtfActArete.setEnabled(true);
-         jbActBusGanado.setEnabled(true);
-         jbActGanado.setEnabled(false);
-         jtfActArete.setText("");
-         }
-         
-         
+        ///////
+        if (jcbMaduracion1.getSelectedIndex() == 0
+                && jcbActParto.getSelectedIndex() == 0
+                && jcbActSalud.getSelectedIndex() == 0
+                && jcbActProducion.getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(null, "Cambiar Atributo", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            String sexo = con.Consulta1Value("exec selSexGan @Arete=" + jtfActArete.getText());
+            System.out.print("sexo value: " + sexo);
+            if (sexo.matches("M")) {
+                if (jcbMaduracion1.getSelectedIndex() > 0) {
+                    con.insert("exec updGanSal @Salud='" + jcbActSalud.getSelectedItem().toString() + "',@Arete=" + jtfActArete.getText());
+                }
+            } else {
+                if (jcbMaduracion1.getSelectedIndex() > 0) {
+                    con.insert("exec updGanMad @Mad='" + jcbMaduracion1.getSelectedItem().toString() + "',@Arete=" + jtfActArete.getText());
+                }
+                if (jcbActParto.getSelectedIndex() > 0) {
+                    con.insert("exec updGanPar @Parto=" + jcbActParto.getSelectedItem().toString() + ",@Arete=" + jtfActArete.getText());
+                    System.out.print("\n\nexec updGanPar @Parto=" + jcbActParto.getSelectedItem().toString() + ",@Arete=" + jtfActArete.getText());
+                    //exec updGanPar @Parto=1, @Arete=7
+                }
+                if (jcbActSalud.getSelectedIndex() > 0) {
+                    con.insert("exec updGanSal @Salud='" + jcbActSalud.getSelectedItem().toString() + "',@Arete=" + jtfActArete.getText());
+                }
+                if (jcbActProducion.getSelectedIndex() > 0) {
+                    con.insert("exec updGanPro @Prod='" + jcbActProducion.getSelectedItem().toString() + "',@Arete=" + jtfActArete.getText());
+                    System.out.print("\n\nexec updGanPro @Prod='" + jcbActProducion.getSelectedItem().toString() + "',@Arete=" + jtfActArete.getText());
+                }
+
+            }
+            JOptionPane.showMessageDialog(null, "Actualización Exitosa", "Error", JOptionPane.INFORMATION_MESSAGE);
+            jcbParto.setSelectedIndex(0);
+            jcbActParto.setEnabled(false);
+            jcbActSalud.setEnabled(false);
+            jcbActProducion.setEnabled(false);
+            jcbMaduracion1.setEnabled(false);
+            jcbActParto.setSelectedIndex(0);
+            jcbActSalud.setSelectedIndex(0);
+            jcbActProducion.setSelectedIndex(0);
+            jcbMaduracion1.setSelectedIndex(0);
+            jtfActArete.setEnabled(true);
+            jbActBusGanado.setEnabled(true);
+            jbActGanado.setEnabled(false);
+            jtfActArete.setText("");
+        }
+
+
     }//GEN-LAST:event_jbActGanadoActionPerformed
 
     private void jbConsultaGanadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbConsultaGanadoActionPerformed
-        if(jtfConsultaGanado.getText().matches("")){
+        if (jtfConsultaGanado.getText().matches("")) {
             JOptionPane.showMessageDialog(null, "Identificador de arete de ganado en blanco", "Error", JOptionPane.INFORMATION_MESSAGE);
-        }else{
-            if(num(jtfConsultaGanado.getText())){
-                if(!jtfConsultaGanado.getText().matches("")){
-                    
-                    
+        } else {
+            if (num(jtfConsultaGanado.getText())) {
+                if (!jtfConsultaGanado.getText().matches("")) {
+
                     DefaultTableModel tmodel = (DefaultTableModel) jtUsers.getModel();
                     Connection conec = getConexion("userAc", "userAc");
-                    ArrayList<ArrayList>cow=con.ConsultaMatriz(conec,"exec conGan @id="+jtfConsultaGanado.getText());
+                    ArrayList<ArrayList> cow = con.ConsultaMatriz(conec, "exec conGan @id=" + jtfConsultaGanado.getText());
                     tmodel.setRowCount(0);
                     cow.get(0);
                     cow.size();
-                    
-                    for(int i=0;i<=cow.size();i++){
-                    ArrayList<ArrayList> xd = cow.get(i);
-                    Object[] objArray = xd.toArray();
-                    tmodel.addRow(objArray);
+
+                    for (int i = 0; i <= cow.size(); i++) {
+                        ArrayList<ArrayList> xd = cow.get(i);
+                        Object[] objArray = xd.toArray();
+                        tmodel.addRow(objArray);
                     }
-                    
-                    
-                    
-                    
-                    
-                }else{
-                  JOptionPane.showMessageDialog(null, "Identificador Inexistente", "Error", JOptionPane.INFORMATION_MESSAGE);
-              }
-            }else{
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "Identificador Inexistente", "Error", JOptionPane.INFORMATION_MESSAGE);
+                }
+            } else {
                 JOptionPane.showMessageDialog(null, "Formato de identificador de arete de ganado erróneo", "Error", JOptionPane.INFORMATION_MESSAGE);
             }
         }
