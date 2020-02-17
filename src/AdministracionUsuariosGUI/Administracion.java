@@ -8,6 +8,7 @@ import static Codes.Validacion.counter;
 import static Codes.Validacion.num;
 import static Codes.Validacion.unicode;
 import Conexiones.Conexion;
+import static java.lang.String.valueOf;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -217,7 +218,11 @@ public class Administracion extends javax.swing.JPanel {
 
         jLabel9.setText("Contrasena 2");
         jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, -1, -1));
+
+        jTextField6.setEnabled(false);
         jPanel3.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 280, 340, -1));
+
+        jTextField7.setEnabled(false);
         jPanel3.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, 340, -1));
 
         jLabel10.setText("Contrasena 1");
@@ -228,6 +233,11 @@ public class Administracion extends javax.swing.JPanel {
         jPanel3.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 160, 340, -1));
 
         jButton4.setText("Buscar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         jPanel3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 160, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -235,6 +245,11 @@ public class Administracion extends javax.swing.JPanel {
         jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, -1, -1));
 
         jButton5.setText("Actualizar");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         jPanel3.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 390, -1, -1));
 
         jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
@@ -331,9 +346,11 @@ public class Administracion extends javax.swing.JPanel {
         if(cedVal(jtfCedula.getText()) && ced2Dig(jtfCedula.getText()) && counter(jtfUser.getText())<=20 && unicode(jtfUser.getText()) && counter(jtfCon1.getText())>=8 && counter(jtfCon1.getText())<=128 && counter(jtfCon2.getText())>=8 && counter(jtfCon2.getText())<=128 && counter(jtfCedula.getText())==10 && num(jtfCedula.getText())/* && jcbRol.getSelectedIndex()!=0 && jcbActivacion.getSelectedIndex()!=0*/){
             if(jtfCon1.getText().matches(jtfCon2.getText())){
                 //SQL REGISTRAR USUARIO
-                con.insert("");
-                
-                
+
+                con.insert("exec newUser @id='"+String.valueOf(jcbRol.getSelectedIndex())+"',@login='"+jtfUser.getText()+
+                        "', @pass ='"+jtfCon1.getText()+"', @ced='"+jtfCedula.getText()+"', @est='"+jcbActivacion.getSelectedItem().toString()+"'");
+     
+
                 JOptionPane.showMessageDialog(null, "Usuario Registrado","Mensaje", JOptionPane.INFORMATION_MESSAGE); 
                 
                 
@@ -423,6 +440,59 @@ public class Administracion extends javax.swing.JPanel {
             jrbActivado.setSelected(false);
         }
     }//GEN-LAST:event_jrbDesactivadoActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        String valCon="";
+        if(jTextField9.getText().matches("")){
+            JOptionPane.showMessageDialog(null, "Atributo Nombre de usuario en blanco","Error", JOptionPane.ERROR_MESSAGE); 
+        }else{
+            if(counter(jTextField9.getText())<=20 && unicode(jtfUser.getText())){
+                //SQL DE BUSQUEDA DE USER
+                ResultSet contrasena = con.Consulta("exec  getPassLogin @login='"+jTextField8.getText()+"'");
+                
+                ///MANEJO DE LO OBTENIDO DE LA CONSULTA
+                try{
+                ResultSetMetaData rsmd = contrasena.getMetaData();
+                int columnsNumber = rsmd.getColumnCount();
+                 while (contrasena.next()) {
+               for (int i = 1; i <= columnsNumber; i++) {
+                valCon = contrasena.getString(i);
+                 }
+                  }
+                System.out.print("\nvalAct:   "+valCon);
+
+                }catch (SQLException e) {
+            System.out.print("Error 2: " + e.getMessage());
+        }
+
+                if(valCon!=""){
+                    jTextField6.setEnabled(true);
+                    jTextField7.setEnabled(true);
+                    jTextField9.setEnabled(false);
+                    jButton4.setEnabled(false);
+                    jButton5.setEnabled(true);
+
+                }else{
+                    JOptionPane.showMessageDialog(null, "Usuario Inexistente","Error", JOptionPane.ERROR_MESSAGE); 
+                }
+            }else{
+                JOptionPane.showMessageDialog(null, "Formato de Nombre de Usuario Erróneo","Error", JOptionPane.ERROR_MESSAGE); 
+            }
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        if(jTextField6.getText().matches("")||jTextField7.getText().matches("")){
+            JOptionPane.showMessageDialog(null, "Llenar la(s) contraseña","Error", JOptionPane.ERROR_MESSAGE); 
+        }else{
+            if(counter(jTextField6.getText())>=8 && counter(jTextField6.getText())<=128 && counter(jTextField7.getText())>=8 && counter(jTextField7.getText())<=128){
+
+                
+            }else{
+                JOptionPane.showMessageDialog(null, "Formato invalido de Contraseña(s)","Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
