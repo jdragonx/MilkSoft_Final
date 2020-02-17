@@ -369,6 +369,8 @@ public class Alimentacion extends javax.swing.JPanel {
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             String arete = jTextFieldArete.getText();
             String sql = "select arete from ganado where ganado.arete=" + arete;
+            if(arete.isEmpty())
+                sql = "select arete from ganado where ganado.arete=0";
             ArrayList<ArrayList> query = Conexion.ConsultaMatriz(conec, sql);
             if (!Validacion.num(arete)) {
                 JOptionPane.showMessageDialog(null, "Formato de arete erróneo’", "Error Message", JOptionPane.ERROR_MESSAGE);
