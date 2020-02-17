@@ -188,7 +188,7 @@ public class Proveedores extends javax.swing.JPanel {
         });
         jPanel4.add(jtfFechaInc1, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 272, 316, -1));
 
-        jtbRegistrar1.setText("Registrar");
+        jtbRegistrar1.setText("Actualizar");
         jtbRegistrar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtbRegistrar1ActionPerformed(evt);
