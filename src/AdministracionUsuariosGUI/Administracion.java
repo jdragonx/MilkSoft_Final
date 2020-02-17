@@ -1,4 +1,3 @@
-
 package AdministracionUsuariosGUI;
 
 import Codes.Validacion;
@@ -19,10 +18,11 @@ import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-
 public class Administracion extends javax.swing.JPanel {
+
     Conexion con = new Conexion();
     Validacion val = new Validacion();
+
     public Administracion() {
         initComponents();
         jbEstcAct.setEnabled(false);
@@ -34,6 +34,8 @@ public class Administracion extends javax.swing.JPanel {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
+        PantallaInicial = new javax.swing.JPanel();
+        jLabel29 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jtfCon1 = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
@@ -49,8 +51,6 @@ public class Administracion extends javax.swing.JPanel {
         jLabel21 = new javax.swing.JLabel();
         jcbRol = new javax.swing.JComboBox<>();
         jLabel30 = new javax.swing.JLabel();
-        PantallaInicial = new javax.swing.JPanel();
-        jLabel29 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jtUsers = new javax.swing.JTable();
@@ -104,6 +104,32 @@ public class Administracion extends javax.swing.JPanel {
         jPanel1.setPreferredSize(new java.awt.Dimension(1100, 850));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
+        jLabel29.setText("jLabel12");
+
+        javax.swing.GroupLayout PantallaInicialLayout = new javax.swing.GroupLayout(PantallaInicial);
+        PantallaInicial.setLayout(PantallaInicialLayout);
+        PantallaInicialLayout.setHorizontalGroup(
+            PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1044, Short.MAX_VALUE)
+            .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PantallaInicialLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel29)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        PantallaInicialLayout.setVerticalGroup(
+            PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 900, Short.MAX_VALUE)
+            .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PantallaInicialLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel29)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        jPanel1.add(PantallaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 850));
+
         jLabel15.setText("Estado");
         jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 430, -1, -1));
         jPanel1.add(jtfCon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, 340, -1));
@@ -147,32 +173,6 @@ public class Administracion extends javax.swing.JPanel {
         jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
         jLabel30.setText("jLabel12");
         jPanel1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
-        jLabel29.setText("jLabel12");
-
-        javax.swing.GroupLayout PantallaInicialLayout = new javax.swing.GroupLayout(PantallaInicial);
-        PantallaInicial.setLayout(PantallaInicialLayout);
-        PantallaInicialLayout.setHorizontalGroup(
-            PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1044, Short.MAX_VALUE)
-            .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(PantallaInicialLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel29)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        PantallaInicialLayout.setVerticalGroup(
-            PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 900, Short.MAX_VALUE)
-            .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(PantallaInicialLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel29)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-
-        jPanel1.add(PantallaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 850));
 
         jTabbedPane1.addTab("Registrar de Usuario", jPanel1);
 
@@ -329,200 +329,194 @@ public class Administracion extends javax.swing.JPanel {
     }//GEN-LAST:event_jTabbedPane1StateChanged
 
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
-         // CONSULTAS DE USUARIOS
-         //ArrayLisT<ArrayList>=con.ConsultaMatriz(,);
-            DefaultTableModel tmodel = (DefaultTableModel) jtUsers.getModel();
-            Connection cone = getConexion("userAc", "userAc");
-            ArrayList<ArrayList>users=con.ConsultaMatriz(cone,"exec selAllUsers");
-            tmodel.setRowCount(0);
-            users.get(0);
-            users.size();
-
-  
-            for(int i=0;i<=users.size();i++){
-                ArrayList<ArrayList> xd = users.get(i);
-                Object[] objArray = xd.toArray();
-                tmodel.addRow(objArray);
-            }
-            
-  
-         
-         
-         //FUNCIONALIDA PREVIA
+        // CONSULTAS DE USUARIOS
         if (jTabbedPane1.getSelectedIndex() == 0 && jPanel1.getX() > evt.getX() && 31 > evt.getY()) {
-
-        } else if (jTabbedPane1.getSelectedIndex() != 0){
-
+            PantallaInicial.setVisible(false);
+        } else if (jTabbedPane1.getSelectedIndex() != 0) {
+            PantallaInicial.setVisible(false);
         }
+        //ArrayLisT<ArrayList>=con.ConsultaMatriz(,);
+        DefaultTableModel tmodel = (DefaultTableModel) jtUsers.getModel();
+        Connection cone = getConexion("userAc", "userAc");
+        ArrayList<ArrayList> users = con.ConsultaMatriz(cone, "exec selAllUsers");
+        tmodel.setRowCount(0);
+        users.get(0);
+        users.size();
+
+        for (int i = 0; i <= users.size(); i++) {
+            ArrayList<ArrayList> xd = users.get(i);
+            Object[] objArray = xd.toArray();
+            tmodel.addRow(objArray);
+        }
+
+        //FUNCIONALIDA PREVIA
+        
     }//GEN-LAST:event_jTabbedPane1MouseClicked
 
     private void jfbRegUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jfbRegUserActionPerformed
 
-    if(jtfUser.getText().matches("")||jtfCon1.getText().matches("")||jtfCon2.getText().matches("")||jtfCedula.getText().matches("")||jcbRol.getSelectedIndex()==0||jcbActivacion.getSelectedIndex()==0){
-        JOptionPane.showMessageDialog(null, "Llenar atributo(s) en blanco","Error", JOptionPane.ERROR_MESSAGE); 
-    }else{
+        if (jtfUser.getText().matches("") || jtfCon1.getText().matches("") || jtfCon2.getText().matches("") || jtfCedula.getText().matches("") || jcbRol.getSelectedIndex() == 0 || jcbActivacion.getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(null, "Llenar atributo(s) en blanco", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
 
-        if(cedVal(jtfCedula.getText()) && ced2Dig(jtfCedula.getText()) && counter(jtfUser.getText())<=20 && unicode(jtfUser.getText()) && counter(jtfCon1.getText())>=8 && counter(jtfCon1.getText())<=128 && counter(jtfCon2.getText())>=8 && counter(jtfCon2.getText())<=128 && counter(jtfCedula.getText())==10 && num(jtfCedula.getText())/* && jcbRol.getSelectedIndex()!=0 && jcbActivacion.getSelectedIndex()!=0*/){
-            if(jtfCon1.getText().matches(jtfCon2.getText())){
-                //SQL REGISTRAR USUARIO
+            if (cedVal(jtfCedula.getText()) && ced2Dig(jtfCedula.getText()) && counter(jtfUser.getText()) <= 20 && unicode(jtfUser.getText()) && counter(jtfCon1.getText()) >= 8 && counter(jtfCon1.getText()) <= 128 && counter(jtfCon2.getText()) >= 8 && counter(jtfCon2.getText()) <= 128 && counter(jtfCedula.getText()) == 10 && num(jtfCedula.getText())/* && jcbRol.getSelectedIndex()!=0 && jcbActivacion.getSelectedIndex()!=0*/) {
+                if (jtfCon1.getText().matches(jtfCon2.getText())) {
+                    //SQL REGISTRAR USUARIO
 
-                con.insert("exec newUser @id='"+String.valueOf(jcbRol.getSelectedIndex())+"',@login='"+jtfUser.getText()+
-                        "', @pass ='"+jtfCon1.getText()+"', @ced='"+jtfCedula.getText()+"', @est='"+jcbActivacion.getSelectedItem().toString()+"'");
-     
+                    con.insert("exec newUser @id='" + String.valueOf(jcbRol.getSelectedIndex()) + "',@login='" + jtfUser.getText()
+                            + "', @pass ='" + jtfCon1.getText() + "', @ced='" + jtfCedula.getText() + "', @est='" + jcbActivacion.getSelectedItem().toString() + "'");
 
-                JOptionPane.showMessageDialog(null, "Usuario Registrado","Mensaje", JOptionPane.INFORMATION_MESSAGE); 
-                
-                
-                jtfUser.setText("");
-                jtfCon1.setText("");
-                jtfCon2.setText("");
-                jtfCedula.setText("");
-                jcbRol.setSelectedIndex(0);
-                jcbActivacion.setSelectedIndex(0);
-            }else{
-                JOptionPane.showMessageDialog(null, "Contraseñas Diferentes","Error", JOptionPane.ERROR_MESSAGE); 
-    }
-            
-            
-        }else{
-                JOptionPane.showMessageDialog(null, "Formato invalido de atributo(s)","Error", JOptionPane.ERROR_MESSAGE); 
+                    JOptionPane.showMessageDialog(null, "Usuario Registrado", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+
+                    jtfUser.setText("");
+                    jtfCon1.setText("");
+                    jtfCon2.setText("");
+                    jtfCedula.setText("");
+                    jcbRol.setSelectedIndex(0);
+                    jcbActivacion.setSelectedIndex(0);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Contraseñas Diferentes", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Formato invalido de atributo(s)", "Error", JOptionPane.ERROR_MESSAGE);
+            }
         }
-    }
     }//GEN-LAST:event_jfbRegUserActionPerformed
 
     private void jbUsrBusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbUsrBusActionPerformed
-        String valAct="";
-        if(jTextField9.getText().matches("")){
-            JOptionPane.showMessageDialog(null, "Atributo Nombre de usuario en blanco","Error", JOptionPane.ERROR_MESSAGE); 
-        }else{
-            if(counter(jTextField9.getText())<=20 && unicode(jtfUser.getText())){
+        String valAct = "";
+        if (jTextField9.getText().matches("")) {
+            JOptionPane.showMessageDialog(null, "Atributo Nombre de usuario en blanco", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            if (counter(jTextField9.getText()) <= 20 && unicode(jtfUser.getText())) {
                 //SQL DE BUSQUEDA DE USER
-                ResultSet activacion = con.Consulta("exec actEstadoUser @login='"+jTextField9.getText()+"'");
-                
+                ResultSet activacion = con.Consulta("exec actEstadoUser @login='" + jTextField9.getText() + "'");
+
                 ///MANEJO DE LO OBTENIDO DE LA CONSULTA
-                try{
-                ResultSetMetaData rsmd = activacion.getMetaData();
-                int columnsNumber = rsmd.getColumnCount();
-                 while (activacion.next()) {
-               for (int i = 1; i <= columnsNumber; i++) {
-                valAct = activacion.getString(i);
-                 }
-                  }
-                System.out.print("\nvalAct:   "+valAct);
+                try {
+                    ResultSetMetaData rsmd = activacion.getMetaData();
+                    int columnsNumber = rsmd.getColumnCount();
+                    while (activacion.next()) {
+                        for (int i = 1; i <= columnsNumber; i++) {
+                            valAct = activacion.getString(i);
+                        }
+                    }
+                    System.out.print("\nvalAct:   " + valAct);
 
-                }catch (SQLException e) {
-            System.out.print("Error 2: " + e.getMessage());
-        }
+                } catch (SQLException e) {
+                    System.out.print("Error 2: " + e.getMessage());
+                }
 
-                if(valAct!=""){
-                    
+                if (valAct != "") {
+
                     jbUsrBus.setEnabled(false);
                     jTextField9.setEnabled(false);
                     jTextField10.setText(valAct);
-                    
+
                     //VERIFICAR SI SE SELECCIONO EL NUEVO ESTADO
                     jbEstcAct.setEnabled(true);
-                    
-                }else{
-                    JOptionPane.showMessageDialog(null, "Usuario Inexistente","Error", JOptionPane.ERROR_MESSAGE); 
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "Usuario Inexistente", "Error", JOptionPane.ERROR_MESSAGE);
                 }
-            }else{
-                JOptionPane.showMessageDialog(null, "Formato de Nombre de Usuario Erróneo","Error", JOptionPane.ERROR_MESSAGE); 
+            } else {
+                JOptionPane.showMessageDialog(null, "Formato de Nombre de Usuario Erróneo", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
     }//GEN-LAST:event_jbUsrBusActionPerformed
 
     private void jbEstcActActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEstcActActionPerformed
-        if(jrbActivado.isSelected() || jrbDesactivado.isSelected()){
-                        JOptionPane.showMessageDialog(null, "Actualizacion Exitosa","Mensaje", JOptionPane.INFORMATION_MESSAGE); 
-                        jTextField9.setText("");
-                        jTextField10.setText("");
-                        jrbActivado.setSelected(false);
-                        jrbDesactivado.setSelected(false);
-                        jTextField9.setEnabled(true);
-                        jbEstcAct.setEnabled(false);
-                        jbUsrBus.setEnabled(true);
-                    }else{
-                        JOptionPane.showMessageDialog(null, "Atributo Estado de Activación en blanco","Error", JOptionPane.ERROR_MESSAGE); 
-                        jTextField10.setText("");
-                    }
+        if (jrbActivado.isSelected() || jrbDesactivado.isSelected()) {
+            JOptionPane.showMessageDialog(null, "Actualizacion Exitosa", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+            jTextField9.setText("");
+            jTextField10.setText("");
+            jrbActivado.setSelected(false);
+            jrbDesactivado.setSelected(false);
+            jTextField9.setEnabled(true);
+            jbEstcAct.setEnabled(false);
+            jbUsrBus.setEnabled(true);
+        } else {
+            JOptionPane.showMessageDialog(null, "Atributo Estado de Activación en blanco", "Error", JOptionPane.ERROR_MESSAGE);
+            jTextField10.setText("");
+        }
     }//GEN-LAST:event_jbEstcActActionPerformed
 
     private void jrbActivadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbActivadoActionPerformed
-        if(jrbActivado.isSelected()){
+        if (jrbActivado.isSelected()) {
             jrbDesactivado.setSelected(false);
         }
     }//GEN-LAST:event_jrbActivadoActionPerformed
 
     private void jrbDesactivadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbDesactivadoActionPerformed
-        if(jrbDesactivado.isSelected()){
+        if (jrbDesactivado.isSelected()) {
             jrbActivado.setSelected(false);
         }
     }//GEN-LAST:event_jrbDesactivadoActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        String valCon="";
-        if(jTextField8.getText().matches("")){
-            JOptionPane.showMessageDialog(null, "Atributo Nombre de usuario en blanco","Error", JOptionPane.ERROR_MESSAGE); 
-        }else{
-            if(counter(jTextField8.getText())<=20 && unicode(jtfUser.getText())){
+        String valCon = "";
+        if (jTextField8.getText().matches("")) {
+            JOptionPane.showMessageDialog(null, "Atributo Nombre de usuario en blanco", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            if (counter(jTextField8.getText()) <= 20 && unicode(jtfUser.getText())) {
                 //SQL DE BUSQUEDA DE USER
-                ResultSet contrasena = con.Consulta("exec  getPassLogin @login='"+jTextField8.getText()+"'");
-                
+                ResultSet contrasena = con.Consulta("exec  getPassLogin @login='" + jTextField8.getText() + "'");
+
                 ///MANEJO DE LO OBTENIDO DE LA CONSULTA
-                try{
-                ResultSetMetaData rsmd = contrasena.getMetaData();
-                int columnsNumber = rsmd.getColumnCount();
-                 while (contrasena.next()) {
-               for (int i = 1; i <= columnsNumber; i++) {
-                valCon = contrasena.getString(i);
-                 }
-                  }
-                System.out.print("\nvalAct:   "+valCon);
+                try {
+                    ResultSetMetaData rsmd = contrasena.getMetaData();
+                    int columnsNumber = rsmd.getColumnCount();
+                    while (contrasena.next()) {
+                        for (int i = 1; i <= columnsNumber; i++) {
+                            valCon = contrasena.getString(i);
+                        }
+                    }
+                    System.out.print("\nvalAct:   " + valCon);
 
-                }catch (SQLException e) {
-            System.out.print("Error 2: " + e.getMessage());
-        }
+                } catch (SQLException e) {
+                    System.out.print("Error 2: " + e.getMessage());
+                }
 
-                if(valCon!=""){
+                if (valCon != "") {
                     jTextField6.setEnabled(true);
                     jTextField7.setEnabled(true);
                     jTextField8.setEnabled(false);
                     jButton4.setEnabled(false);
                     jButton5.setEnabled(true);
 
-                }else{
-                    JOptionPane.showMessageDialog(null, "Usuario Inexistente","Error", JOptionPane.ERROR_MESSAGE); 
+                } else {
+                    JOptionPane.showMessageDialog(null, "Usuario Inexistente", "Error", JOptionPane.ERROR_MESSAGE);
                 }
-            }else{
-                JOptionPane.showMessageDialog(null, "Formato de Nombre de Usuario Erróneo","Error", JOptionPane.ERROR_MESSAGE); 
+            } else {
+                JOptionPane.showMessageDialog(null, "Formato de Nombre de Usuario Erróneo", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        if(jTextField6.getText().matches("")||jTextField7.getText().matches("")){
-            JOptionPane.showMessageDialog(null, "Llenar la(s) contraseña","Error", JOptionPane.ERROR_MESSAGE); 
-        }else{
-            if(counter(jTextField6.getText())>=8 && counter(jTextField6.getText())<=128 && counter(jTextField7.getText())>=8 && counter(jTextField7.getText())<=128){
-                   if(jTextField6.getText().matches(jTextField7.getText())){
-                       con.insert("exec updPass @pass= '"+jTextField6.getText()+"' ,@login= '"+jTextField8.getText()+"'");
-                       JOptionPane.showMessageDialog(null, "Actualización Exitosa","Mensaje", JOptionPane.INFORMATION_MESSAGE);
-                       
-                               jTextField6.setEnabled(false);
-                               jTextField7.setEnabled(false);
-                               jButton5.setEnabled(false);
-                               jTextField8.setEnabled(true);
-                               jButton4.setEnabled(true);
-                               jTextField6.setText("");
-                               jTextField7.setText("");
-                               jTextField8.setText("");
-                   }else{
-                       JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden","Error", JOptionPane.ERROR_MESSAGE);
-                   }
-                
-            }else{
-                JOptionPane.showMessageDialog(null, "Formato invalido de Contraseña(s)","Error", JOptionPane.ERROR_MESSAGE);
+        if (jTextField6.getText().matches("") || jTextField7.getText().matches("")) {
+            JOptionPane.showMessageDialog(null, "Llenar la(s) contraseña", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            if (counter(jTextField6.getText()) >= 8 && counter(jTextField6.getText()) <= 128 && counter(jTextField7.getText()) >= 8 && counter(jTextField7.getText()) <= 128) {
+                if (jTextField6.getText().matches(jTextField7.getText())) {
+                    con.insert("exec updPass @pass= '" + jTextField6.getText() + "' ,@login= '" + jTextField8.getText() + "'");
+                    JOptionPane.showMessageDialog(null, "Actualización Exitosa", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+
+                    jTextField6.setEnabled(false);
+                    jTextField7.setEnabled(false);
+                    jButton5.setEnabled(false);
+                    jTextField8.setEnabled(true);
+                    jButton4.setEnabled(true);
+                    jTextField6.setText("");
+                    jTextField7.setText("");
+                    jTextField8.setText("");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Formato invalido de Contraseña(s)", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
     }//GEN-LAST:event_jButton5ActionPerformed
