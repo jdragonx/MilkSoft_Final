@@ -8,11 +8,16 @@ import static Codes.Validacion.counter;
 import static Codes.Validacion.num;
 import static Codes.Validacion.unicode;
 import Conexiones.Conexion;
+import static Conexiones.Conexion.getConexion;
 import static java.lang.String.valueOf;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Vector;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 
 public class Administracion extends javax.swing.JPanel {
@@ -47,9 +52,9 @@ public class Administracion extends javax.swing.JPanel {
         PantallaInicial = new javax.swing.JPanel();
         jLabel29 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        jtUsers = new javax.swing.JTable();
+        jLabel8 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
@@ -176,40 +181,29 @@ public class Administracion extends javax.swing.JPanel {
         jPanel2.setPreferredSize(new java.awt.Dimension(1100, 850));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel8.setText("Consulta de Usuarios");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, -1, -1));
-
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        jtUsers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Usuario", "Contrasena", "Cedula", "Estado"
             }
-        ));
-        jScrollPane2.setViewportView(jTable2);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, true, true
+            };
 
-        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 760, 360));
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jtUsers);
+
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, 720, 300));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel8.setText("Consulta de Usuarios");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, -1, -1));
 
         jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
         jLabel31.setText("jLabel12");
@@ -336,9 +330,24 @@ public class Administracion extends javax.swing.JPanel {
 
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
          // CONSULTAS DE USUARIOS
-         
-         
-         
+         //ArrayLisT<ArrayList>=con.ConsultaMatriz(,);
+            DefaultTableModel tmodel = (DefaultTableModel) jtUsers.getModel();
+            
+             
+            Connection cone = getConexion("userAc", "userAc");
+            ArrayList<ArrayList>users=con.ConsultaMatriz(cone,"exec selAllUsers");
+            tmodel.setRowCount(0);
+            users.get(0);
+            users.size();
+
+  
+            for(int i=0;i<=users.size();i++){
+                ArrayList<ArrayList> xd = users.get(i);
+                Object[] objArray = xd.toArray();
+                tmodel.addRow(objArray);
+            }
+            
+  
          
          
          //FUNCIONALIDA PREVIA
@@ -551,7 +560,6 @@ public class Administracion extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
@@ -564,6 +572,7 @@ public class Administracion extends javax.swing.JPanel {
     private javax.swing.JButton jfbRegUser;
     private javax.swing.JRadioButton jrbActivado;
     private javax.swing.JRadioButton jrbDesactivado;
+    private javax.swing.JTable jtUsers;
     private javax.swing.JTextField jtfCedula;
     private javax.swing.JTextField jtfCon1;
     private javax.swing.JTextField jtfCon2;
