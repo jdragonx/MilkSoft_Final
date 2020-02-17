@@ -43,12 +43,12 @@ public class Conexion {
             ResultSet respuesta = declara.executeQuery("exec prodLogin @Login='" + user + "',@Pass='" + pass + "'");
             ResultSetMetaData rsmd = respuesta.getMetaData();
             int columnsNumber = rsmd.getColumnCount();
-             while (respuesta.next()) {
-               for (int i = 1; i <= columnsNumber; i++) {
-           valCon = respuesta.getString(i);
+            while (respuesta.next()) {
+                for (int i = 1; i <= columnsNumber; i++) {
+                    valCon = respuesta.getString(i);
+                }
             }
-              }
-            System.out.print("\nvalcon   "+valCon);
+            System.out.print("\nvalcon   " + valCon);
         } catch (SQLException e) {
             System.out.print("Error 2: " + e.getMessage());
         }
@@ -71,7 +71,7 @@ public class Conexion {
 
 //INSERCION 
     public void insert(String consulta) {
-        Connection con = getConexion( "userAc","userAc");
+        Connection con = getConexion("userAc", "userAc");
         Statement declara;
         try {
             declara = con.createStatement();
