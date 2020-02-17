@@ -9,7 +9,10 @@ package ProduccionGUI;
 import Codes.Validacion;
 import java.awt.event.KeyEvent;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.time.Clock;
 import java.time.format.DateTimeFormatter;
 import java.util.Enumeration;
 import java.util.logging.Level;
@@ -33,7 +36,7 @@ public class Alimentacion extends javax.swing.JPanel {
      */
     public Alimentacion() {
         initComponents();
-        jTextFieldFecha.setText(dtf1.format(java.time.LocalDate.now()));
+        jTextFieldFecha.setText(dtf1.format(java.time.LocalDateTime.now()));
         jTextFieldHora.setText(dtf.format(java.time.LocalDateTime.now()));
     }
 
@@ -348,15 +351,34 @@ public class Alimentacion extends javax.swing.JPanel {
     }//GEN-LAST:event_jTabbedPane1MouseClicked
 
     private void jTextFieldAreteKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldAreteKeyPressed
-        // TODO add your handling code here:
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            if (!Validacion.num(jTextFieldArete.getText())) {
-                JOptionPane.showMessageDialog(null, "Formato de arete erróneo’", "Error Message", JOptionPane.ERROR_MESSAGE);
-            } else if (!model.contains(jTextFieldArete.getText()) && !jTextFieldArete.getText().equals("")) {
-                model.addElement(jTextFieldArete.getText());
-                jListArete.setModel(model);
+        try {
+            // TODO add your handling code here:
+            if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+                String arete = jTextFieldArete.getText();
+                String sql = "select arete from ganado where ganado.arete=" + arete;
+                ResultSet query = conec.createStatement().executeQuery(sql);
+                ResultSetMetaData rsmd = query.getMetaData();
+                int columnsNumber = rsmd.getColumnCount();
+                String comp="";
+                String valCon="";
+                while (query.next()) {
+                    for (int i = 1; i <= columnsNumber; i++) {
+                        valCon = query.getString(i);
+                    }
+                    comp += valCon;
+                }
+                if (!Validacion.num(arete)) {
+                    JOptionPane.showMessageDialog(null, "Formato de arete erróneo’", "Error Message", JOptionPane.ERROR_MESSAGE);
+                } else if (!comp.equals(arete)) {
+                    JOptionPane.showMessageDialog(null, "Arete inexistente’", "Error Message", JOptionPane.ERROR_MESSAGE);
+                } else if (!model.contains(jTextFieldArete.getText()) && !jTextFieldArete.getText().equals("")) {
+                    model.addElement(jTextFieldArete.getText());
+                    jListArete.setModel(model);
+                }
+                jTextFieldArete.setText("");
             }
-            jTextFieldArete.setText("");
+        } catch (SQLException ex) {
+            Logger.getLogger(Alimentacion.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jTextFieldAreteKeyPressed
 
@@ -402,7 +424,7 @@ public class Alimentacion extends javax.swing.JPanel {
             reg = false;
         }
 
-        if (!Validacion.num(cantidad)) {
+        if (!Validacion.numDec(cantidad)) {
             JOptionPane.showMessageDialog(null, "Formato de cantidad erróneo", "Error Message", JOptionPane.ERROR_MESSAGE);
             reg = false;
         }

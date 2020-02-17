@@ -1,11 +1,15 @@
 package Conexiones;
 
+import java.lang.reflect.Array;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class Conexion {
@@ -43,12 +47,12 @@ public class Conexion {
             ResultSet respuesta = declara.executeQuery("exec prodLogin @Login='" + user + "',@Pass='" + pass + "'");
             ResultSetMetaData rsmd = respuesta.getMetaData();
             int columnsNumber = rsmd.getColumnCount();
-             while (respuesta.next()) {
-               for (int i = 1; i <= columnsNumber; i++) {
-           valCon = respuesta.getString(i);
+            while (respuesta.next()) {
+                for (int i = 1; i <= columnsNumber; i++) {
+                    valCon = respuesta.getString(i);
+                }
             }
-              }
-            System.out.print("\nvalcon   "+valCon);
+            System.out.print("\nvalcon   " + valCon);
         } catch (SQLException e) {
             System.out.print("Error 2: " + e.getMessage());
         }
@@ -69,9 +73,30 @@ public class Conexion {
         return null;
     }
 
+    public static ArrayList<ArrayList> ConsultaMatriz(Connection conec, String sql) {
+        ArrayList<ArrayList> comp = new ArrayList<>();
+        try {
+            ResultSet query = conec.createStatement().executeQuery(sql);
+            ResultSetMetaData rsmd = query.getMetaData();
+            int columnsNumber = rsmd.getColumnCount();
+            String valCon;
+            while (query.next()) {
+                ArrayList<String> aux = new ArrayList<>();
+                for (int i = 1; i <= columnsNumber; i++) {
+                    valCon = query.getString(i);
+                    aux.add(valCon);
+                }
+                comp.add(aux);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return comp;
+    }
+
 //INSERCION 
     public void insert(String consulta) {
-        Connection con = getConexion( "userAc","userAc");
+        Connection con = getConexion("userAc", "userAc");
         Statement declara;
         try {
             declara = con.createStatement();
