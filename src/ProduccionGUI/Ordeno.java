@@ -17,6 +17,7 @@ import java.util.Enumeration;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -87,9 +88,9 @@ public class Ordeno extends javax.swing.JPanel {
         jTextField8 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        calendarPanel3 = new com.github.lgooddatepicker.components.CalendarPanel();
+        calendarPanelFechaActualiza = new com.github.lgooddatepicker.components.CalendarPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        jTableActualiza = new javax.swing.JTable();
         jLabel31 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jButton4 = new javax.swing.JButton();
@@ -244,9 +245,9 @@ public class Ordeno extends javax.swing.JPanel {
             }
         });
         jPanel4.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 320, -1, -1));
-        jPanel4.add(calendarPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 90, -1, -1));
+        jPanel4.add(calendarPanelFechaActualiza, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 90, -1, -1));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        jTableActualiza.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -265,7 +266,7 @@ public class Ordeno extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(jTableActualiza);
 
         jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, -1, 90));
 
@@ -334,6 +335,59 @@ public class Ordeno extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+        boolean act = true;
+        
+        for (int i=0; i<jTableActualiza.getRowCount(); i++ ){
+            String fecha = jTableActualiza.getValueAt(i, 0).toString();
+            String jornada = jTableActualiza.getValueAt(i, 1).toString();
+            String cantidad = jTableActualiza.getValueAt(i, 2).toString();
+        
+            if(cantidad.equals("")){
+                JOptionPane.showMessageDialog(null, " Atributo de cantidad en blanco ", "Error Message",JOptionPane.ERROR_MESSAGE);
+                act = false;  
+            }
+           if(jTextFieldCantidaLeche.getText().equals("")){
+              JOptionPane.showMessageDialog(null,"Cantidad de leche vacia","Error Message ",JOptionPane.ERROR_MESSAGE);
+              act = false;
+  
+          }
+          if(!Validacion.numDec(jTextFieldCantidaLeche.getText())){
+              
+              JOptionPane.showMessageDialog(null,"Formato de cantidad de erronéo"," Error Message",JOptionPane.ERROR_MESSAGE);
+              act= false;
+              
+          }
+          if (act){
+              try{
+                  String sql="update ORDENO set CANTIDADLECHE="+cantidad+" where FECHAORDENO="+fecha+"'";
+                    conec.createStatement().executeUpdate(sql); 
+                 JOptionPane.showMessageDialog(null, "Actualización exitosa", "Succes Message", JOptionPane.INFORMATION_MESSAGE);
+
+              }catch(SQLException e){
+                                      Logger.getLogger(Alimentacion.class.getName()).log(Level.SEVERE, null, e);
+
+              }
+          }  
+      
+         }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -347,7 +401,30 @@ public class Ordeno extends javax.swing.JPanel {
     }//GEN-LAST:event_jTabbedPane1MouseClicked
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+   
+         DefaultTableModel tmodel = (DefaultTableModel) jTableActualiza.getModel();
+         tmodel.setRowCount(0);
+         if(calendarPanelFechaActualiza.getSelectedDate() == null){
+        JOptionPane.showMessageDialog(null, "Fecha de ordeño en blanco", "Error Message", JOptionPane.ERROR_MESSAGE);
+
+         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jTextFieldArerteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldArerteActionPerformed
@@ -420,7 +497,7 @@ public class Ordeno extends javax.swing.JPanel {
               reg = false;
   
           }
-          if(!Validacion.num(jTextFieldCantidaLeche.getText())){
+          if(!Validacion.numDec(jTextFieldCantidaLeche.getText())){
               
               JOptionPane.showMessageDialog(null,"Formato de cantidad de erronéo"," Error Message",JOptionPane.ERROR_MESSAGE);
               reg= false;
@@ -470,7 +547,7 @@ public class Ordeno extends javax.swing.JPanel {
       private javax.swing.DefaultListModel model = new javax.swing.DefaultListModel();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PantallaInicial;
-    private com.github.lgooddatepicker.components.CalendarPanel calendarPanel3;
+    private com.github.lgooddatepicker.components.CalendarPanel calendarPanelFechaActualiza;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
@@ -499,8 +576,8 @@ public class Ordeno extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTableActualiza;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextFieldArerte;
