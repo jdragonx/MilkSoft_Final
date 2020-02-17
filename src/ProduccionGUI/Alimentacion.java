@@ -7,6 +7,7 @@
 package ProduccionGUI;
 
 import Codes.Validacion;
+import Conexiones.Conexion;
 import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -14,6 +15,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.time.Clock;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -51,6 +53,8 @@ public class Alimentacion extends javax.swing.JPanel {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
+        PantallaInicial = new javax.swing.JPanel();
+        jLabel29 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jTextFieldArete = new javax.swing.JTextField();
@@ -66,8 +70,6 @@ public class Alimentacion extends javax.swing.JPanel {
         jScrollPane6 = new javax.swing.JScrollPane();
         jTextAreaDetalle = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
-        PantallaInicial = new javax.swing.JPanel();
-        jLabel29 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
@@ -101,6 +103,32 @@ public class Alimentacion extends javax.swing.JPanel {
         });
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
+        jLabel29.setText("jLabel12");
+
+        javax.swing.GroupLayout PantallaInicialLayout = new javax.swing.GroupLayout(PantallaInicial);
+        PantallaInicial.setLayout(PantallaInicialLayout);
+        PantallaInicialLayout.setHorizontalGroup(
+            PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1401, Short.MAX_VALUE)
+            .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PantallaInicialLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel29)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        PantallaInicialLayout.setVerticalGroup(
+            PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1046, Short.MAX_VALUE)
+            .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PantallaInicialLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel29)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        jPanel1.add(PantallaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 850));
 
         jLabel1.setText("Registro de alimentación del ganado");
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -169,32 +197,6 @@ public class Alimentacion extends javax.swing.JPanel {
 
         jLabel3.setText("Hora de alimentación");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, -1, -1));
-
-        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
-        jLabel29.setText("jLabel12");
-
-        javax.swing.GroupLayout PantallaInicialLayout = new javax.swing.GroupLayout(PantallaInicial);
-        PantallaInicial.setLayout(PantallaInicialLayout);
-        PantallaInicialLayout.setHorizontalGroup(
-            PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1401, Short.MAX_VALUE)
-            .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(PantallaInicialLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel29)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        PantallaInicialLayout.setVerticalGroup(
-            PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1046, Short.MAX_VALUE)
-            .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(PantallaInicialLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel29)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-
-        jPanel1.add(PantallaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 850));
 
         jLabel46.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
         jLabel46.setText("jLabel12");
@@ -314,28 +316,39 @@ public class Alimentacion extends javax.swing.JPanel {
         // TODO add your handling code here:
         boolean act = true;
         for (int i = 0; i < jTableActualiza.getRowCount(); i++) {
-            if (jTableActualiza.getValueAt(i, 2).toString().equals("")) {
+            String detalle = jTableActualiza.getValueAt(i, 2).toString();
+            String cantidad = jTableActualiza.getValueAt(i, 3).toString();
+            String fecha = jTableActualiza.getValueAt(i, 0).toString();
+            String hora = jTableActualiza.getValueAt(i, 1).toString();
+            if (detalle.equals("")) {
                 JOptionPane.showMessageDialog(null, "Atributo detalle de alimento en blanco", "Error Message", JOptionPane.ERROR_MESSAGE);
                 act = false;
             }
 
-            if (!Validacion.alfesp(jTableActualiza.getValueAt(i, 2).toString()) || Validacion.counter(jTextAreaDetalle.getText()) > 50) {
+            if (!Validacion.alfesp(detalle.toString()) || Validacion.counter(jTextAreaDetalle.getText()) > 50) {
                 JOptionPane.showMessageDialog(null, "Formato de detalle de alimento erróneo", "Error Message", JOptionPane.ERROR_MESSAGE);
                 act = false;
             }
 
-            if (jTableActualiza.getValueAt(i, 3).toString().equals("")) {
+            if (cantidad.equals("")) {
                 JOptionPane.showMessageDialog(null, "Atributo cantidad en blanco", "Error Message", JOptionPane.ERROR_MESSAGE);
                 act = false;
             }
 
-            if (!Validacion.num(jTableActualiza.getValueAt(i, 3).toString())) {
+            if (!Validacion.numDec(cantidad)) {
                 JOptionPane.showMessageDialog(null, "Formato de cantidad erróneo", "Error Message", JOptionPane.ERROR_MESSAGE);
                 act = false;
             }
 
             if (act) {
-                JOptionPane.showMessageDialog(null, "Actualización exitosa", "Succes Message", JOptionPane.INFORMATION_MESSAGE);
+                try {
+                    String sql = "update ALIMENTACION set DETALLE='" + detalle + "', CANTIDAD=" + cantidad + " where FECHAHORAALIMENTACION='" + fecha + " " + hora
+                            + "'";
+                    conec.createStatement().executeUpdate(sql);
+                    JOptionPane.showMessageDialog(null, "Actualización exitosa", "Succes Message", JOptionPane.INFORMATION_MESSAGE);
+                } catch (SQLException ex) {
+                    Logger.getLogger(Alimentacion.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         }
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -351,35 +364,25 @@ public class Alimentacion extends javax.swing.JPanel {
     }//GEN-LAST:event_jTabbedPane1MouseClicked
 
     private void jTextFieldAreteKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldAreteKeyPressed
-        try {
-            // TODO add your handling code here:
-            if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-                String arete = jTextFieldArete.getText();
-                String sql = "select arete from ganado where ganado.arete=" + arete;
-                ResultSet query = conec.createStatement().executeQuery(sql);
-                ResultSetMetaData rsmd = query.getMetaData();
-                int columnsNumber = rsmd.getColumnCount();
-                String comp="";
-                String valCon="";
-                while (query.next()) {
-                    for (int i = 1; i <= columnsNumber; i++) {
-                        valCon = query.getString(i);
-                    }
-                    comp += valCon;
-                }
-                if (!Validacion.num(arete)) {
-                    JOptionPane.showMessageDialog(null, "Formato de arete erróneo’", "Error Message", JOptionPane.ERROR_MESSAGE);
-                } else if (!comp.equals(arete)) {
-                    JOptionPane.showMessageDialog(null, "Arete inexistente’", "Error Message", JOptionPane.ERROR_MESSAGE);
-                } else if (!model.contains(jTextFieldArete.getText()) && !jTextFieldArete.getText().equals("")) {
-                    model.addElement(jTextFieldArete.getText());
-                    jListArete.setModel(model);
-                }
-                jTextFieldArete.setText("");
+
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            String arete = jTextFieldArete.getText();
+            String sql = "select arete from ganado where ganado.arete=" + arete;
+            if(arete.isEmpty())
+                sql = "select arete from ganado where ganado.arete=0";
+            ArrayList<ArrayList> query = Conexion.ConsultaMatriz(conec, sql);
+            if (!Validacion.num(arete)) {
+                JOptionPane.showMessageDialog(null, "Formato de arete erróneo’", "Error Message", JOptionPane.ERROR_MESSAGE);
+            } else if (query.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Arete inexistente’", "Error Message", JOptionPane.ERROR_MESSAGE);
+            } else if (!model.contains(jTextFieldArete.getText()) && !jTextFieldArete.getText().equals("")) {
+                model.addElement(jTextFieldArete.getText());
+                jListArete.setModel(model);
             }
-        } catch (SQLException ex) {
-            Logger.getLogger(Alimentacion.class.getName()).log(Level.SEVERE, null, ex);
+            jTextFieldArete.setText("");
         }
+
     }//GEN-LAST:event_jTextFieldAreteKeyPressed
 
     private void jListAreteKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jListAreteKeyPressed
@@ -449,25 +452,57 @@ public class Alimentacion extends javax.swing.JPanel {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        DefaultTableModel tmodel = (DefaultTableModel) jTableActualiza.getModel();
+        tmodel.setRowCount(0);
         if (calendarPanelFechaActualiza.getSelectedDate() == null) {
             JOptionPane.showMessageDialog(null, "Fecha de alimentación en blanco", "Error Message", JOptionPane.ERROR_MESSAGE);
         } else {
-            DefaultTableModel tmodel = (DefaultTableModel) jTableActualiza.getModel();
-            tmodel.setRowCount(0);
-            tmodel.addRow(new Object[]{1, 2, 3, 4});
-            System.out.println(calendarPanelFechaActualiza.getSelectedDate().toString());
+
+            String fecha = calendarPanelFechaActualiza.getSelectedDate().format(dtf1);
+            String sql = "select * from ALIMENTACION where FECHAHORAALIMENTACION between '" + fecha + "' and '" + fecha + " 23:59:59'";
+            ArrayList<ArrayList> query = Conexion.ConsultaMatriz(conec, sql);
+            for (int i = 0; i < query.size(); i++) {
+                ArrayList<String> aux = query.get(i);
+                String hora = aux.get(0).toString().substring(11);
+                ArrayList<String> aux1 = new ArrayList<String>();
+                aux1.add(fecha);
+                aux1.add(hora);
+                aux1.add(aux.get(1));
+                aux1.add(aux.get(2));
+                Object[] objArray = aux1.toArray();
+                tmodel.addRow(objArray);
+            }
+        }
+        if (tmodel.getRowCount() == 0) {
+            JOptionPane.showMessageDialog(null, "Fecha de alimentación inexistente", "Error Message", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+        DefaultTableModel tmodel = (DefaultTableModel) jTableConsulta.getModel();
+        tmodel.setRowCount(0);
         if (calendarPanelFechaConsulta.getSelectedDate() == null) {
             JOptionPane.showMessageDialog(null, "Fecha de alimentación en blanco", "Error Message", JOptionPane.ERROR_MESSAGE);
         } else {
-            DefaultTableModel tmodel = (DefaultTableModel) jTableConsulta.getModel();
-            tmodel.setRowCount(0);
-            tmodel.addRow(new Object[]{1, 2, 3, 4});
-            System.out.println(calendarPanelFechaConsulta.getSelectedDate().toString());
+            String fecha = calendarPanelFechaConsulta.getSelectedDate().format(dtf1);
+            String sql = "select * from ALIMENTACION where FECHAHORAALIMENTACION between '" + fecha + "' and '" + fecha + " 23:59:59'";
+            System.out.println(sql);
+            ArrayList<ArrayList> query = Conexion.ConsultaMatriz(conec, sql);
+            for (int i = 0; i < query.size(); i++) {
+                ArrayList<String> aux = query.get(i);
+                String hora = aux.get(0).toString().substring(11);
+                ArrayList<String> aux1 = new ArrayList<String>();
+                aux1.add(fecha);
+                aux1.add(hora);
+                aux1.add(aux.get(1));
+                aux1.add(aux.get(2));
+                Object[] objArray = aux1.toArray();
+                tmodel.addRow(objArray);
+            }
+        }
+        if (tmodel.getRowCount() == 0) {
+            JOptionPane.showMessageDialog(null, "Fecha de alimentación inexistente", "Error Message", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 

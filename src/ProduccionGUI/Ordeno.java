@@ -6,10 +6,16 @@
 package ProduccionGUI;
 
 import Codes.Validacion;
+import Conexiones.Conexion;
 import java.awt.event.KeyEvent;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Enumeration;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,17 +24,32 @@ import javax.swing.JOptionPane;
  */
 public class Ordeno extends javax.swing.JPanel {
 
+    private Connection conec = Conexiones.Conexion.getConexion("userAc", "userAc");
+    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
+    DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy-dd-MM");
+
     /**
      * Creates new form Ordeño
      */
     public Ordeno() {
         initComponents();
-        DateTimeFormatter dtf= DateTimeFormatter.ofPattern("HH:mm:ss");
+        jornada();
         jTextFieldFechaOrdeño.setText(java.time.LocalDate.now().toString());
         //jTextFieldJornada.setText(dtf.format(java.time.LocalDateTime.now()));     
     }
 
-    
+    public void jornada(){
+                Calendar  calendario = Calendar.getInstance();
+                 int hora= calendario.get(Calendar.HOUR_OF_DAY);
+                  if(hora > 12  ){ 
+              
+              jTextFieldJornada.setText("T"); 
+              
+          }else {
+              jTextFieldJornada.setText("M"); 
+          }
+        
+    }
     
     
     /**
@@ -337,11 +358,16 @@ public class Ordeno extends javax.swing.JPanel {
 
         if (evt.getKeyCode() == KeyEvent.VK_ENTER){
           
-           if( !Validacion.num(jTextFieldArerte.getText() )){
+            String arete = jTextFieldArerte.getText();
+            String sql = "select arete from ganado where ganado.arete="+arete;
+            ArrayList<ArrayList> query = Conexion.ConsultaMatriz(conec, sql);
+           if( !Validacion.num(arete )){
                JOptionPane.showMessageDialog(null, " Fomato de arete erróneo"," Error Message",JOptionPane.ERROR_MESSAGE);
-             } else if(!model.contains(jTextFieldArerte.getText())){ 
-               model.addElement(jTextFieldArerte.getText());
-                jListArete.setModel(model);
+             } else if(query.size()==0){ 
+                JOptionPane.showMessageDialog(null, "Arete inexistente’", "Error Message", JOptionPane.ERROR_MESSAGE); 
+             } else if (!model.contains(jTextFieldArerte.getText()) && !jTextFieldArerte.getText().equals("") ){
+                  model.addElement(jTextFieldArerte.getText());
+                  jListArete.setModel(model);
                  
              }
            
@@ -372,10 +398,19 @@ public class Ordeno extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
-        Calendar  calendario = Calendar.getInstance();
-        int hora= calendario.get(Calendar.HOUR_OF_DAY);
+     String fecha = dtf1.format(java.time.LocalDate.now());
+        String  cantidadLeche = jTextFieldCantidaLeche.getText();
+        String  jornada= jTextFieldJornada.getText();
+        
+        
+        
+ 
         
             boolean reg= true;
+           
+          
+            
+        
           if( model.isEmpty()){
               JOptionPane.showMessageDialog(null, "Lista de aretes de ganado vacia", " Error Message", JOptionPane.ERROR_MESSAGE);
               reg = false;
@@ -391,30 +426,32 @@ public class Ordeno extends javax.swing.JPanel {
               reg= false;
               
           }
-           
-          if(hora > 12  ){ 
-              
-              jTextFieldJornada.setText("T"); 
-              
-          }else {
-              jTextFieldJornada.setText("M"); 
-          }
-          
-          
-          
+        
           
           if(reg){
-              Enumeration aretes = model.elements();
-              while( aretes.hasMoreElements()){
-                  System.out.println(aretes.nextElement());
+              try{
+                  
+                  String sql = "insert into ORDENO values ( '"+fecha+"','"+cantidadLeche+"' , '"+jornada+"')";
+                  //String sql = "insert into ORDENO values ( '"+fecha+"','"+cantidadLeche+"' , '"+jornada+"')";
+                  conec.createStatement().executeUpdate(sql);
+                  Enumeration aretes = model.elements();
+                  while (aretes.hasMoreElements()){
+                     
+                      sql= "insert into HISTORIALORDENO  values ('"+aretes.nextElement()+"','"+fecha+"','"+jornada+"') ";
+                      conec.createStatement().executeUpdate(sql);
+                      
+                  }
+                      JOptionPane.showMessageDialog(null, "Registro exitoso", "Succes Message", JOptionPane.INFORMATION_MESSAGE);
+
+                  
+              } catch (SQLException ex){
+                                  Logger.getLogger(Alimentacion.class.getName()).log(Level.SEVERE, null, ex);
+
               }
-              JOptionPane.showMessageDialog(null, " Registro exitoso", " Succes Message",JOptionPane.INFORMATION_MESSAGE);
-          }
-         
-
-
-
-
+              
+          }   
+          
+        
 
 
 
