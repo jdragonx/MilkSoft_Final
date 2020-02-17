@@ -38,7 +38,7 @@ public class Alimentacion extends javax.swing.JPanel {
      */
     public Alimentacion() {
         initComponents();
-        jTextFieldFecha.setText(java.time.LocalDateTime.now().toLocalDate().toString());
+        jTextFieldFecha.setText(dtf1.format(java.time.LocalDateTime.now()));
         jTextFieldHora.setText(dtf.format(java.time.LocalDateTime.now()));
     }
 
@@ -369,9 +369,6 @@ public class Alimentacion extends javax.swing.JPanel {
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             String arete = jTextFieldArete.getText();
             String sql = "select arete from ganado where ganado.arete=" + arete;
-            if (arete.isEmpty()) {
-                sql = "select arete from ganado where ganado.arete=0";
-            }
             ArrayList<ArrayList> query = Conexion.ConsultaMatriz(conec, sql);
             if (!Validacion.num(arete)) {
                 JOptionPane.showMessageDialog(null, "Formato de arete erróneo’", "Error Message", JOptionPane.ERROR_MESSAGE);
@@ -462,13 +459,9 @@ public class Alimentacion extends javax.swing.JPanel {
             String fecha = calendarPanelFechaActualiza.getSelectedDate().format(dtf1);
             String sql = "select * from ALIMENTACION where FECHAHORAALIMENTACION between '" + fecha + "' and '" + fecha + " 23:59:59'";
             ArrayList<ArrayList> query = Conexion.ConsultaMatriz(conec, sql);
-            String año = fecha.substring(0, 4);
-            String dia = fecha.substring(5, 7);
-            String mes = fecha.substring(8, 10);
-            fecha = año + "-" + mes + "-" + dia;
             for (int i = 0; i < query.size(); i++) {
                 ArrayList<String> aux = query.get(i);
-                String hora = aux.get(0).substring(11);
+                String hora = aux.get(0).toString().substring(11);
                 ArrayList<String> aux1 = new ArrayList<String>();
                 aux1.add(fecha);
                 aux1.add(hora);
@@ -492,11 +485,8 @@ public class Alimentacion extends javax.swing.JPanel {
         } else {
             String fecha = calendarPanelFechaConsulta.getSelectedDate().format(dtf1);
             String sql = "select * from ALIMENTACION where FECHAHORAALIMENTACION between '" + fecha + "' and '" + fecha + " 23:59:59'";
+            System.out.println(sql);
             ArrayList<ArrayList> query = Conexion.ConsultaMatriz(conec, sql);
-            String año = fecha.substring(0, 4);
-            String dia = fecha.substring(5, 7);
-            String mes = fecha.substring(8, 10);
-            fecha = año + "-" + mes + "-" + dia;
             for (int i = 0; i < query.size(); i++) {
                 ArrayList<String> aux = query.get(i);
                 String hora = aux.get(0).toString().substring(11);

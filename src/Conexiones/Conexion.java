@@ -25,6 +25,7 @@ public class Conexion {
         }
         try {
             contacto = DriverManager.getConnection(url, user, pass);
+            System.out.println("Ingreso Exitoso");
         } catch (SQLException e) {
         }
         return contacto;
@@ -65,36 +66,7 @@ public class Conexion {
         try {
             declara = con.createStatement();
             ResultSet respuesta = declara.executeQuery(consulta);
-            
             return respuesta;
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error" + e.getMessage(), "Erro de conexion", JOptionPane.ERROR_MESSAGE);
-        }
-        return null;
-    }
-    
-    
-    
-        public static String Consulta1Value(String consulta) {
-            String val1="";
-        Connection con = getConexion("userAc", "userAc");
-        Statement declara;
-        try {
-            declara = con.createStatement();
-            ResultSet respuesta = declara.executeQuery(consulta);
-            
-            ///////
-            ResultSetMetaData rsmd = respuesta.getMetaData();
-            int columnsNumber = rsmd.getColumnCount();
-            while (respuesta.next()) {
-                for (int i = 1; i <= columnsNumber; i++) {
-                    val1 = respuesta.getString(i);
-                }
-            }
-            System.out.print("\nvalcon   " + val1);
-            ////////
-            
-            return val1;
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error" + e.getMessage(), "Erro de conexion", JOptionPane.ERROR_MESSAGE);
         }
