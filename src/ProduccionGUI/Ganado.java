@@ -11,14 +11,18 @@ import javax.swing.JOptionPane;
 import static Codes.Validacion.num;
 import static Codes.Validacion.counter;
 import Conexiones.Conexion;
+import java.awt.event.ItemEvent;
 
 public class Ganado extends javax.swing.JPanel {
     Conexion con = new Conexion();
+    String[] itemM = new String[] {" ","Ternero"};
+    String[] itemH = new String[] {" ","Ternera","Vacona","Vaca"};
 
     public Ganado() {
         initComponents();
+        jcbParto.setEnabled(false);
+        jcbMaduracion.setEnabled(false);
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -26,20 +30,21 @@ public class Ganado extends javax.swing.JPanel {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
+        jcbParto = new javax.swing.JComboBox<>();
+        jrbH = new javax.swing.JRadioButton();
+        jrbM = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jcbRaza = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jtfRaza = new javax.swing.JTextField();
         jtfArete = new javax.swing.JTextField();
-        jtfPartos = new javax.swing.JTextField();
         jcbSalud = new javax.swing.JComboBox<>();
         jcbProduccion = new javax.swing.JComboBox<>();
-        jcbGenero = new javax.swing.JComboBox<>();
         jcbMaduracion = new javax.swing.JComboBox<>();
         jbRegGanado = new javax.swing.JButton();
         jLabel46 = new javax.swing.JLabel();
@@ -82,6 +87,25 @@ public class Ganado extends javax.swing.JPanel {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jcbParto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "0", "1", "2", "3", "4", "5" }));
+        jPanel1.add(jcbParto, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 230, -1));
+
+        jrbH.setText("H");
+        jrbH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrbHActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jrbH, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 130, -1, -1));
+
+        jrbM.setText("M");
+        jrbM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrbMActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jrbM, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 130, -1, -1));
+
         jLabel1.setText("Registro ganado");
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, -1, -1));
@@ -90,37 +114,36 @@ public class Ganado extends javax.swing.JPanel {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, -1, -1));
 
         jLabel3.setText("Número de partos");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, -1, -1));
 
         jLabel4.setText("Raza");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, -1, -1));
 
         jLabel5.setText("Estado de salud");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, -1, -1));
+
+        jcbRaza.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Jersey cattle", "Holstein Friesian cattle" }));
+        jPanel1.add(jcbRaza, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 170, 230, -1));
 
         jLabel6.setText("Estado de producción");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 260, -1, -1));
 
         jLabel7.setText("Género");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, -1, -1));
 
         jLabel8.setText("Maduración");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, -1, -1));
-        jPanel1.add(jtfRaza, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 170, 230, -1));
-        jPanel1.add(jtfArete, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, 230, -1));
-        jPanel1.add(jtfPartos, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 130, 230, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, -1, -1));
 
-        jcbSalud.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Saludable", "Enfermedad débil", "Enfermedad Media", "Enfermedd grave", "Crítica" }));
+        jtfArete.setEnabled(false);
+        jPanel1.add(jtfArete, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, 230, -1));
+
+        jcbSalud.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Saludable", "Enfermedad débil", "Enfermedad Media", "Enfermedd grave", "Crítica" }));
         jPanel1.add(jcbSalud, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 210, 230, -1));
 
-        jcbProduccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "En producción", "Vendida", "Seca" }));
+        jcbProduccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "En producción", "Vendida", "Seca" }));
         jPanel1.add(jcbProduccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, 230, -1));
 
-        jcbGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Genero", "M", "H" }));
-        jPanel1.add(jcbGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 290, 230, -1));
-
-        jcbMaduracion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Ternera", "Vacona", "Vaca" }));
-        jPanel1.add(jcbMaduracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 330, 230, -1));
+        jPanel1.add(jcbMaduracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 350, 230, -1));
 
         jbRegGanado.setText("Registrar");
         jbRegGanado.addActionListener(new java.awt.event.ActionListener() {
@@ -128,7 +151,7 @@ public class Ganado extends javax.swing.JPanel {
                 jbRegGanadoActionPerformed(evt);
             }
         });
-        jPanel1.add(jbRegGanado, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 380, -1, -1));
+        jPanel1.add(jbRegGanado, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 400, -1, -1));
 
         jLabel46.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
         jLabel46.setText("jLabel12");
@@ -182,19 +205,7 @@ public class Ganado extends javax.swing.JPanel {
 
         jLabel18.setText("Maduración");
         jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 370, -1, -1));
-
-        jtfActArete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtfActAreteActionPerformed(evt);
-            }
-        });
         jPanel2.add(jtfActArete, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 180, 230, -1));
-
-        jtfActPartos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtfActPartosActionPerformed(evt);
-            }
-        });
         jPanel2.add(jtfActPartos, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, 230, -1));
 
         jbActGanado.setText("Registrar");
@@ -281,7 +292,10 @@ public class Ganado extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
-        // TODO add your handling code here:
+        //LLENAR PARA NUEVO GANAD EL IDENTIFICADOR
+        String text = Integer.toString(Integer.parseInt(con.Consulta1Value("exec getLastArete"))+1);
+        jtfArete.setText(text);
+        
         if (jTabbedPane1.getSelectedIndex() == 0 && jPanel1.getX() > evt.getX() && 31 > evt.getY()) {
             PantallaInicial.setVisible(false);
         } else if (jTabbedPane1.getSelectedIndex() != 0){
@@ -289,35 +303,136 @@ public class Ganado extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jTabbedPane1MouseClicked
 
-    private void jtfActAreteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfActAreteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtfActAreteActionPerformed
-
-    private void jtfActPartosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfActPartosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtfActPartosActionPerformed
-
     private void jbRegGanadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRegGanadoActionPerformed
-        //Validacion de estar vacio
-        if(jtfArete.getText().matches("")||jtfPartos.getText().matches("")||jtfRaza.getText().matches("")||jcbSalud.getSelectedIndex()==0||jcbProduccion.getSelectedIndex()==0||jcbGenero.getSelectedIndex()==0||jcbMaduracion.getSelectedIndex()==0){
+         //Validacion de estar vacio
+         //(jrbM.isSelected()==false && jrbH.isSelected()==true)||(jrbM.isSelected()==true && jrbH.isSelected()==false)
+         if(jrbM.isSelected()){
+             if(jcbParto.getSelectedIndex()==0||jcbRaza.getSelectedIndex()==0||jcbSalud.getSelectedIndex()==0||
+                jcbProduccion.getSelectedIndex()==0 ||jcbMaduracion.getSelectedIndex()==0){
            JOptionPane.showMessageDialog(null, "Llenar atributo(s) vacíos", "Error", JOptionPane.ERROR_MESSAGE);
         }else{
-            
-             //Validacion de formato
-            if(num(jtfArete.getText())==true && num(jtfPartos.getText())==true && alf(jtfRaza.getText())==true&&  counter(jtfRaza.getText())<=20 &&Integer.parseInt(jtfPartos.getText())>=0&&Integer.parseInt(jtfPartos.getText())<=5){
+            if(jrbM.isSelected()){
+                con.insert("exec insGanado @parto ="+Integer.parseInt(jcbParto.getSelectedItem().toString())+",@raza ='"+
+                        jcbRaza.getSelectedItem().toString()+"', @salud ='"+jcbSalud.getSelectedItem().toString()+"',@prod ='"+
+                        jcbProduccion.getSelectedItem().toString()+"', @genero ='"+jrbM.getText()+"', @mad ='"+
+                        jcbMaduracion.getSelectedItem().toString()+"'");
                
-            //    con.insert("POR RELLENAR", "userEmpleado", "userEmpleado");
+                
                JOptionPane.showMessageDialog(null, "Registro de Ganado Exitoso", "Accion Exitosa", JOptionPane.INFORMATION_MESSAGE);
-               
-               
-           }else{
-                JOptionPane.showMessageDialog(null, "Formato de Atributo(s) Invalido", "Error", JOptionPane.ERROR_MESSAGE);
+               jcbParto.setSelectedIndex(0);
+                        jcbRaza.setSelectedIndex(0);
+                        jcbSalud.setSelectedIndex(0);
+                        jcbProduccion.setSelectedIndex(0);
+                        jcbMaduracion.setSelectedIndex(0);
+                        String text = Integer.toString(Integer.parseInt(con.Consulta1Value("exec getLastArete"))+1);
+        jtfArete.setText(text);
+        jcbParto.setEnabled(false);
+        jcbMaduracion.setEnabled(false);
+        jcbParto.setSelectedIndex(0);
+        jcbMaduracion.setSelectedIndex(0);
+        jcbRaza.setSelectedIndex(0);
+        jcbSalud.setSelectedIndex(0);
+        jcbProduccion.setSelectedIndex(0);
+        jcbMaduracion.removeAll();
+        jrbM.setSelected(false);
+        jrbH.setSelected(false);
+            }else{
+                con.insert("exec insGanado @parto ="+Integer.parseInt(jcbParto.getSelectedItem().toString())+",@raza ='"+
+                        jcbRaza.getSelectedItem().toString()+"', @salud ='"+jcbSalud.getSelectedItem().toString()+"',@prod ='"+
+                        jcbProduccion.getSelectedItem().toString()+"', @genero ='"+jrbH.getText()+"', @mad ='"+
+                        jcbMaduracion.getSelectedItem().toString()+"'");
+
+               JOptionPane.showMessageDialog(null, "Registro de Ganado Exitoso", "Accion Exitosa", JOptionPane.INFORMATION_MESSAGE);
+               jcbParto.setSelectedIndex(0);
+                        jcbRaza.setSelectedIndex(0);
+                        jcbSalud.setSelectedIndex(0);
+                        jcbProduccion.setSelectedIndex(0);
+                        jcbMaduracion.setSelectedIndex(0);
+                        String text = Integer.toString(Integer.parseInt(con.Consulta1Value("exec getLastArete"))+1);
+        jtfArete.setText(text);
+        jcbParto.setEnabled(false);
+        jcbMaduracion.setEnabled(false);
+        jcbParto.setSelectedIndex(0);
+        jcbMaduracion.setSelectedIndex(0);
+        jcbRaza.setSelectedIndex(0);
+        jcbSalud.setSelectedIndex(0);
+        jcbProduccion.setSelectedIndex(0);
+        jcbMaduracion.removeAll();
+        jrbM.setSelected(false);
+        jrbH.setSelected(false);
+        
             }
             
+                
         }
+         }else if(jrbH.isSelected()){
+             if(jcbParto.getSelectedIndex()==0||jcbRaza.getSelectedIndex()==0||jcbSalud.getSelectedIndex()==0||
+                jcbProduccion.getSelectedIndex()==0 ||jcbMaduracion.getSelectedIndex()==0){
+           JOptionPane.showMessageDialog(null, "Llenar atributo(s) vacíos", "Error", JOptionPane.ERROR_MESSAGE);
+        }else{
+            if(jrbM.isSelected()){
+                con.insert("exec insGanado @parto ="+Integer.parseInt(jcbParto.getSelectedItem().toString())+",@raza ='"+
+                        jcbRaza.getSelectedItem().toString()+"', @salud ='"+jcbSalud.getSelectedItem().toString()+"',@prod ='"+
+                        jcbProduccion.getSelectedItem().toString()+"', @genero ='"+jrbM.getText()+"', @mad ='"+
+                        jcbMaduracion.getSelectedItem().toString()+"'");
+               
+                
+               JOptionPane.showMessageDialog(null, "Registro de Ganado Exitoso", "Accion Exitosa", JOptionPane.INFORMATION_MESSAGE);
+               jcbParto.setSelectedIndex(0);
+                        jcbRaza.setSelectedIndex(0);
+                        jcbSalud.setSelectedIndex(0);
+                        jcbProduccion.setSelectedIndex(0);
+                        jcbMaduracion.setSelectedIndex(0);
+                        String text = Integer.toString(Integer.parseInt(con.Consulta1Value("exec getLastArete"))+1);
+        jtfArete.setText(text);
+        jcbParto.setEnabled(false);
+        jcbMaduracion.setEnabled(false);
+        jcbParto.setSelectedIndex(0);
+        jcbMaduracion.setSelectedIndex(0);
+        jcbRaza.setSelectedIndex(0);
+        jcbSalud.setSelectedIndex(0);
+        jcbProduccion.setSelectedIndex(0);
+        jcbMaduracion.removeAll();
+        jrbM.setSelected(false);
+        jrbH.setSelected(false);
+            }else{
+                con.insert("exec insGanado @parto ="+Integer.parseInt(jcbParto.getSelectedItem().toString())+",@raza ='"+
+                        jcbRaza.getSelectedItem().toString()+"', @salud ='"+jcbSalud.getSelectedItem().toString()+"',@prod ='"+
+                        jcbProduccion.getSelectedItem().toString()+"', @genero ='"+jrbH.getText()+"', @mad ='"+
+                        jcbMaduracion.getSelectedItem().toString()+"'");
+
+               JOptionPane.showMessageDialog(null, "Registro de Ganado Exitoso", "Accion Exitosa", JOptionPane.INFORMATION_MESSAGE);
+               jcbParto.setSelectedIndex(0);
+                        jcbRaza.setSelectedIndex(0);
+                        jcbSalud.setSelectedIndex(0);
+                        jcbProduccion.setSelectedIndex(0);
+                        jcbMaduracion.setSelectedIndex(0);
+                        String text = Integer.toString(Integer.parseInt(con.Consulta1Value("exec getLastArete"))+1);
+        jtfArete.setText(text);
+        jcbParto.setEnabled(false);
+        jcbMaduracion.setEnabled(false);
+        jcbParto.setSelectedIndex(0);
+        jcbMaduracion.setSelectedIndex(0);
+        jcbRaza.setSelectedIndex(0);
+        jcbSalud.setSelectedIndex(0);
+        jcbProduccion.setSelectedIndex(0);
+        jcbMaduracion.removeAll();
+        jrbM.setSelected(false);
+        jrbH.setSelected(false);
+        
+            }
+            
+                
+        }
+         }else{
+             JOptionPane.showMessageDialog(null, "Llenar atributo(s) vacíos", "Error", JOptionPane.ERROR_MESSAGE);
+         }
+          
         
     }//GEN-LAST:event_jbRegGanadoActionPerformed
 
+    
+    
     private void jbActBusGanadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbActBusGanadoActionPerformed
         if(jtfArete.getText().matches("")){
             JOptionPane.showMessageDialog(null, "Atributo arete de ganado en blanco", "Error", JOptionPane.ERROR_MESSAGE);
@@ -326,6 +441,35 @@ public class Ganado extends javax.swing.JPanel {
             
         }
     }//GEN-LAST:event_jbActBusGanadoActionPerformed
+
+    private void jrbMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbMActionPerformed
+        jrbH.setSelected(false);     
+        jcbMaduracion.setEnabled(false);
+        jcbParto.setEnabled(false);
+        jcbMaduracion.removeAll();
+        jcbMaduracion.removeAllItems();
+        for(int i=0;i<itemM.length;i++){
+                jcbMaduracion.addItem(itemM[i]);
+            }
+        jcbMaduracion.setSelectedIndex(1);
+        jcbParto.setSelectedIndex(1);
+
+    }//GEN-LAST:event_jrbMActionPerformed
+
+    private void jrbHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbHActionPerformed
+        jrbM.setSelected(false);
+        jcbMaduracion.setEnabled(true);
+        jcbParto.setEnabled(true);
+        jcbMaduracion.removeAll();
+        jcbMaduracion.removeAllItems();
+        jcbParto.setSelectedIndex(0);
+        for(int i=0;i<itemH.length;i++){
+                jcbMaduracion.addItem(itemH[i]);
+            }
+        
+        
+        
+    }//GEN-LAST:event_jrbHActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -361,17 +505,18 @@ public class Ganado extends javax.swing.JPanel {
     private javax.swing.JButton jbActBusGanado;
     private javax.swing.JButton jbActGanado;
     private javax.swing.JButton jbRegGanado;
-    private javax.swing.JComboBox<String> jcbGenero;
     private javax.swing.JComboBox<String> jcbMaduracion;
     private javax.swing.JComboBox<String> jcbMaduracion1;
+    private javax.swing.JComboBox<String> jcbParto;
     private javax.swing.JComboBox<String> jcbProduccion;
     private javax.swing.JComboBox<String> jcbProduccion1;
+    private javax.swing.JComboBox<String> jcbRaza;
     private javax.swing.JComboBox<String> jcbSalud;
     private javax.swing.JComboBox<String> jcbSalud1;
+    private javax.swing.JRadioButton jrbH;
+    private javax.swing.JRadioButton jrbM;
     private javax.swing.JTextField jtfActArete;
     private javax.swing.JTextField jtfActPartos;
     private javax.swing.JTextField jtfArete;
-    private javax.swing.JTextField jtfPartos;
-    private javax.swing.JTextField jtfRaza;
     // End of variables declaration//GEN-END:variables
 }
