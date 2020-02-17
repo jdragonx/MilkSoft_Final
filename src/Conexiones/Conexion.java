@@ -1,4 +1,4 @@
-package Conexiones;
+/*XD*/package Conexiones;
 
 import java.lang.reflect.Array;
 import java.sql.Connection;

@@ -1,4 +1,4 @@
-
+/*XD*/
 package InventarioGUI;
 
 public class Proveedores extends javax.swing.JPanel {

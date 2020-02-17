@@ -1,4 +1,4 @@
-package Interfaces;
+/*XD*/package Interfaces;
 
 import Auditoria.Auditoria;
 

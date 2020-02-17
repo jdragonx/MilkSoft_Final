@@ -1,4 +1,4 @@
-
+/*XD*/
 package Interfaces;
 
 import AdministracionUsuariosGUI.Administracion;

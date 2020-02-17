@@ -1,5 +1,5 @@
 package AdministracionUsuariosGUI;
-
+/*XD*/
 import Codes.Validacion;
 import static Codes.Validacion.ced2Dig;
 import static Codes.Validacion.cedVal;
