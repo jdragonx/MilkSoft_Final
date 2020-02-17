@@ -38,7 +38,7 @@ public class Alimentacion extends javax.swing.JPanel {
      */
     public Alimentacion() {
         initComponents();
-        jTextFieldFecha.setText(dtf1.format(java.time.LocalDateTime.now()));
+        jTextFieldFecha.setText(java.time.LocalDateTime.now().toLocalDate().toString());
         jTextFieldHora.setText(dtf.format(java.time.LocalDateTime.now()));
     }
 
@@ -463,11 +463,11 @@ public class Alimentacion extends javax.swing.JPanel {
             ArrayList<ArrayList> query = Conexion.ConsultaMatriz(conec, sql);
             for (int i = 0; i < query.size(); i++) {
                 ArrayList<String> aux = query.get(i);
-                String hora = aux.get(0).toString().substring(11);
+                String hora = aux.get(0).substring(11);
                 ArrayList<String> aux1 = new ArrayList<String>();
                 aux1.add(fecha);
                 aux1.add(hora);
-                aux1.add(aux.get(1));
+                aux1.add(aux.get(1).strip());
                 aux1.add(aux.get(2));
                 Object[] objArray = aux1.toArray();
                 tmodel.addRow(objArray);
