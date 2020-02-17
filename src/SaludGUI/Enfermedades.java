@@ -134,7 +134,7 @@ public class Enfermedades extends javax.swing.JPanel {
         jLabel4.setText("Identificador");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, -1, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Gravedad", "" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gravedad", "" }));
         jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 270, 210, -1));
 
         jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
@@ -161,7 +161,7 @@ public class Enfermedades extends javax.swing.JPanel {
         jPanel5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, -1, -1));
         jPanel5.add(Identificador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 240, 212, -1));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Gravedad", "" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gravedad", "" }));
         jPanel5.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 270, 210, -1));
 
         jLabel8.setText("Gravedad");
@@ -214,7 +214,7 @@ public class Enfermedades extends javax.swing.JPanel {
         jLabel12.setText("Gravedad");
         jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, -1, -1));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Gravedad", "" }));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gravedad", "" }));
         jComboBox3.setEnabled(false);
         jPanel2.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 270, 210, -1));
 

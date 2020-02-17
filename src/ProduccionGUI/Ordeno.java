@@ -39,19 +39,20 @@ public class Ordeno extends javax.swing.JPanel {
         //jTextFieldJornada.setText(dtf.format(java.time.LocalDateTime.now()));     
     }
 
-    public void jornada() {
-        Calendar calendario = Calendar.getInstance();
-        int hora = calendario.get(Calendar.HOUR_OF_DAY);
-        if (hora > 12) {
-
-            jTextFieldJornada.setText("T");
-
-        } else {
-            jTextFieldJornada.setText("M");
-        }
-
+    public void jornada(){
+                Calendar  calendario = Calendar.getInstance();
+                 int hora= calendario.get(Calendar.HOUR_OF_DAY);
+                  if(hora > 12  ){ 
+              
+              jTextFieldJornada.setText("T"); 
+              
+          }else {
+              jTextFieldJornada.setText("M"); 
+          }
+        
     }
-
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -63,8 +64,6 @@ public class Ordeno extends javax.swing.JPanel {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
-        PantallaInicial = new javax.swing.JPanel();
-        jLabel33 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jTextFieldArerte = new javax.swing.JTextField();
@@ -77,10 +76,16 @@ public class Ordeno extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jTextFieldJornada = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
+        PantallaInicial = new javax.swing.JPanel();
+        jLabel33 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jList4 = new javax.swing.JList<>();
+        jTextField8 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         calendarPanelFechaActualiza = new com.github.lgooddatepicker.components.CalendarPanel();
@@ -90,7 +95,7 @@ public class Ordeno extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jButton4 = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
-        jTextFieldAreteConsulta = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
@@ -112,32 +117,6 @@ public class Ordeno extends javax.swing.JPanel {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
-        jLabel33.setText("jLabel12");
-
-        javax.swing.GroupLayout PantallaInicialLayout = new javax.swing.GroupLayout(PantallaInicial);
-        PantallaInicial.setLayout(PantallaInicialLayout);
-        PantallaInicialLayout.setHorizontalGroup(
-            PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1044, Short.MAX_VALUE)
-            .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(PantallaInicialLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel33)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        PantallaInicialLayout.setVerticalGroup(
-            PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 900, Short.MAX_VALUE)
-            .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(PantallaInicialLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel33)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-
-        jPanel1.add(PantallaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 850));
-
         jLabel1.setText("Registro de ordeño del ganado");
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(338, 97, -1, -1));
@@ -157,6 +136,11 @@ public class Ordeno extends javax.swing.JPanel {
         });
         jPanel1.add(jTextFieldArerte, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 141, 176, -1));
 
+        jListArete.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Ganado 1", "Ganado 2", "Ganado 3", "Ganado 4", "Ganado 5", "Ganado 6", "Ganado 7", "Ganado 8", "Ganado 9", "Ganado 10" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
         jListArete.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jListAreteKeyPressed(evt);
@@ -192,6 +176,32 @@ public class Ordeno extends javax.swing.JPanel {
         jLabel16.setText("Jornada");
         jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 460, -1, -1));
 
+        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
+        jLabel33.setText("jLabel12");
+
+        javax.swing.GroupLayout PantallaInicialLayout = new javax.swing.GroupLayout(PantallaInicial);
+        PantallaInicial.setLayout(PantallaInicialLayout);
+        PantallaInicialLayout.setHorizontalGroup(
+            PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1044, Short.MAX_VALUE)
+            .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PantallaInicialLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel33)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        PantallaInicialLayout.setVerticalGroup(
+            PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 900, Short.MAX_VALUE)
+            .addGroup(PantallaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PantallaInicialLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel33)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        jPanel1.add(PantallaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 850));
+
         jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
         jLabel32.setText("jLabel12");
         jPanel1.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -200,12 +210,25 @@ public class Ordeno extends javax.swing.JPanel {
 
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel8.setText("Arete de ganado");
+        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 470, -1, -1));
+
         jLabel9.setText("Fecha de registro");
         jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, -1, -1));
 
         jLabel10.setText("Actualización de ordeño del ganado");
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 50, -1, -1));
+
+        jList4.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Ganado 1", "Ganado 2", "Ganado 3", "Ganado 4", "Ganado 5", "Ganado 6", "Ganado 7", "Ganado 8", "Ganado 9", "Ganado 10" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane4.setViewportView(jList4);
+
+        jPanel4.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 510, 176, 110));
+        jPanel4.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 470, 176, -1));
 
         jButton2.setText("Actualizar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -226,14 +249,17 @@ public class Ordeno extends javax.swing.JPanel {
 
         jTableActualiza.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
                 "Fecha", "Jornada", "Cantidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, true
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -242,7 +268,7 @@ public class Ordeno extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(jTableActualiza);
 
-        jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, -1, 220));
+        jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, -1, 90));
 
         jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
         jLabel31.setText("jLabel12");
@@ -252,25 +278,27 @@ public class Ordeno extends javax.swing.JPanel {
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton4.setText("Consultar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
+        jButton4.setText("Buscar");
         jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, -1, -1));
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel19.setText("Consulta individual de ordeño");
         jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(321, 67, -1, -1));
-        jPanel2.add(jTextFieldAreteConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 130, 176, -1));
+        jPanel2.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 130, 176, -1));
 
         jLabel3.setText("Arete de ganado");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, -1, -1));
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
                 "Fecha de ordeño", "Cantidad", "Jornada"
@@ -286,7 +314,7 @@ public class Ordeno extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(jTable3);
 
-        jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, -1, 280));
+        jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, -1, 160));
 
         jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
         jLabel30.setText("jLabel12");
@@ -307,79 +335,96 @@ public class Ordeno extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+
         boolean act = true;
-        for (int i = 0; i < jTableActualiza.getRowCount(); i++) {
-            String cantidad = jTableActualiza.getValueAt(i, 2).toString();
+        
+        for (int i=0; i<jTableActualiza.getRowCount(); i++ ){
             String fecha = jTableActualiza.getValueAt(i, 0).toString();
             String jornada = jTableActualiza.getValueAt(i, 1).toString();
-
-            if (cantidad.equals("")) {
-                JOptionPane.showMessageDialog(null, "Atributo cantidad en blanco", "Error Message", JOptionPane.ERROR_MESSAGE);
-                act = false;
+            String cantidad = jTableActualiza.getValueAt(i, 2).toString();
+        
+            if(cantidad.equals("")){
+                JOptionPane.showMessageDialog(null, " Atributo de cantidad en blanco ", "Error Message",JOptionPane.ERROR_MESSAGE);
+                act = false;  
             }
+           if(jTextFieldCantidaLeche.getText().equals("")){
+              JOptionPane.showMessageDialog(null,"Cantidad de leche vacia","Error Message ",JOptionPane.ERROR_MESSAGE);
+              act = false;
+  
+          }
+          if(!Validacion.numDec(jTextFieldCantidaLeche.getText())){
+              
+              JOptionPane.showMessageDialog(null,"Formato de cantidad de erronéo"," Error Message",JOptionPane.ERROR_MESSAGE);
+              act= false;
+              
+          }
+          if (act){
+              try{
+                  String sql="update ORDENO set CANTIDADLECHE="+cantidad+" where FECHAORDENO="+fecha+"'";
+                    conec.createStatement().executeUpdate(sql); 
+                 JOptionPane.showMessageDialog(null, "Actualización exitosa", "Succes Message", JOptionPane.INFORMATION_MESSAGE);
 
-            if (!Validacion.numDec(cantidad)) {
-                JOptionPane.showMessageDialog(null, "Formato de cantidad erróneo", "Error Message", JOptionPane.ERROR_MESSAGE);
-                act = false;
-            }
+              }catch(SQLException e){
+                                      Logger.getLogger(Alimentacion.class.getName()).log(Level.SEVERE, null, e);
 
-            if (act) {
-                try {
-                    String año = fecha.substring(0, 4);
-                    String dia = fecha.substring(5, 7);
-                    String mes = fecha.substring(8, 10);
-                    fecha = año + "-" + mes + "-" + dia;
-                    String sql = "update ORDENO set CANTIDADLECHE=" + cantidad + " where FECHAORDENO='" + fecha + " 00:00:00.000' and JORNADA='" + jornada
-                            + "'";
-                    conec.createStatement().executeUpdate(sql);
-                    JOptionPane.showMessageDialog(null, "Actualización exitosa", "Succes Message", JOptionPane.INFORMATION_MESSAGE);
-                } catch (SQLException ex) {
-                    Logger.getLogger(Alimentacion.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        }
+              }
+          }  
+      
+         }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
         // TODO add your handling code here:
         if (jTabbedPane1.getSelectedIndex() == 0 && jPanel1.getX() > evt.getX() && 31 > evt.getY()) {
             PantallaInicial.setVisible(false);
-        } else if (jTabbedPane1.getSelectedIndex() != 0) {
+        } else if (jTabbedPane1.getSelectedIndex() != 0){
             PantallaInicial.setVisible(false);
         }
     }//GEN-LAST:event_jTabbedPane1MouseClicked
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-        DefaultTableModel tmodel = (DefaultTableModel) jTableActualiza.getModel();
-        tmodel.setRowCount(0);
-        if (calendarPanelFechaActualiza.getSelectedDate() == null) {
-            JOptionPane.showMessageDialog(null, "Fecha de ordeño en blanco", "Error Message", JOptionPane.ERROR_MESSAGE);
-        } else {
+   
+         DefaultTableModel tmodel = (DefaultTableModel) jTableActualiza.getModel();
+         tmodel.setRowCount(0);
+         if(calendarPanelFechaActualiza.getSelectedDate() == null){
+        JOptionPane.showMessageDialog(null, "Fecha de ordeño en blanco", "Error Message", JOptionPane.ERROR_MESSAGE);
 
-            String fecha = calendarPanelFechaActualiza.getSelectedDate().format(dtf1);
-            String sql = "select * from ORDENO where FECHAORDENO between '" + fecha + "' and '" + fecha + " 23:59:59'";
-            ArrayList<ArrayList> query = Conexion.ConsultaMatriz(conec, sql);
-            System.out.println(sql);
-            String año = fecha.substring(0, 4);
-            String dia = fecha.substring(5, 7);
-            String mes = fecha.substring(8, 10);
-            fecha = año + "-" + mes + "-" + dia;
-            for (int i = 0; i < query.size(); i++) {
-                ArrayList<String> aux = query.get(i);
-                String hora = aux.get(0).substring(11);
-                ArrayList<String> aux1 = new ArrayList<String>();
-                aux1.add(fecha);
-                aux1.add(aux.get(2));
-                aux1.add(aux.get(1));
-                Object[] objArray = aux1.toArray();
-                tmodel.addRow(objArray);
-            }
-        }
-        if (tmodel.getRowCount() == 0) {
-            JOptionPane.showMessageDialog(null, "Fecha de ordeño inexistente", "Error Message", JOptionPane.ERROR_MESSAGE);
-        }
+         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jTextFieldArerteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldArerteActionPerformed
@@ -388,119 +433,118 @@ public class Ordeno extends javax.swing.JPanel {
 
     private void jTextFieldArerteKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldArerteKeyPressed
 
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+          
             String arete = jTextFieldArerte.getText();
-            String sql = "select arete from ganado where ganado.arete=" + arete;
-            if (arete.isEmpty()) {
-                sql = "select arete from ganado where ganado.arete=0";
-            }
+            String sql = "select arete from ganado where ganado.arete="+arete;
             ArrayList<ArrayList> query = Conexion.ConsultaMatriz(conec, sql);
-            if (!Validacion.num(arete)) {
-                JOptionPane.showMessageDialog(null, " Fomato de arete erróneo", " Error Message", JOptionPane.ERROR_MESSAGE);
-            } else if (query.size() == 0) {
-                JOptionPane.showMessageDialog(null, "Arete inexistente’", "Error Message", JOptionPane.ERROR_MESSAGE);
-            } else if (!model.contains(jTextFieldArerte.getText()) && !jTextFieldArerte.getText().equals("")) {
-                model.addElement(jTextFieldArerte.getText());
-                jListArete.setModel(model);
-
-            }
-
-            jTextFieldArerte.setText("");
+           if( !Validacion.num(arete )){
+               JOptionPane.showMessageDialog(null, " Fomato de arete erróneo"," Error Message",JOptionPane.ERROR_MESSAGE);
+             } else if(query.size()==0){ 
+                JOptionPane.showMessageDialog(null, "Arete inexistente’", "Error Message", JOptionPane.ERROR_MESSAGE); 
+             } else if (!model.contains(jTextFieldArerte.getText()) && !jTextFieldArerte.getText().equals("") ){
+                  model.addElement(jTextFieldArerte.getText());
+                  jListArete.setModel(model);
+                 
+             }
+           
+           jTextFieldArerte.setText("");
         }
+
+
+
+
+
+
+
+        // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldArerteKeyPressed
 
     private void jListAreteKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jListAreteKeyPressed
 
-        if (evt.getKeyCode() == KeyEvent.VK_DELETE) {
+        if( evt.getKeyCode()== KeyEvent.VK_DELETE){
             model.remove(jListArete.getSelectedIndex());
         }
+
+
+
+
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jListAreteKeyPressed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+     String fecha = dtf1.format(java.time.LocalDate.now());
+        String  cantidadLeche = jTextFieldCantidaLeche.getText();
+        String  jornada= jTextFieldJornada.getText();
+        
+        
+        
+ 
+        
+            boolean reg= true;
+           
+          
+            
+        
+          if( model.isEmpty()){
+              JOptionPane.showMessageDialog(null, "Lista de aretes de ganado vacia", " Error Message", JOptionPane.ERROR_MESSAGE);
+              reg = false;
+          }  
+          if(jTextFieldCantidaLeche.getText().equals("")){
+              JOptionPane.showMessageDialog(null,"Cantidad de leche vacia","Error Message ",JOptionPane.ERROR_MESSAGE);
+              reg = false;
+  
+          }
+          if(!Validacion.numDec(jTextFieldCantidaLeche.getText())){
+              
+              JOptionPane.showMessageDialog(null,"Formato de cantidad de erronéo"," Error Message",JOptionPane.ERROR_MESSAGE);
+              reg= false;
+              
+          }
+        
+          
+          if(reg){
+              try{
+                  
+                  String sql = "insert into ORDENO values ( '"+fecha+"','"+cantidadLeche+"' , '"+jornada+"')";
+                  //String sql = "insert into ORDENO values ( '"+fecha+"','"+cantidadLeche+"' , '"+jornada+"')";
+                  conec.createStatement().executeUpdate(sql);
+                  Enumeration aretes = model.elements();
+                  while (aretes.hasMoreElements()){
+                     
+                      sql= "insert into HISTORIALORDENO  values ('"+aretes.nextElement()+"','"+fecha+"','"+jornada+"') ";
+                      conec.createStatement().executeUpdate(sql);
+                      
+                  }
+                      JOptionPane.showMessageDialog(null, "Registro exitoso", "Succes Message", JOptionPane.INFORMATION_MESSAGE);
 
-        String fecha = dtf1.format(java.time.LocalDate.now());
-        String cantidadLeche = jTextFieldCantidaLeche.getText();
-        String jornada = jTextFieldJornada.getText();
+                  
+              } catch (SQLException ex){
+                                  Logger.getLogger(Alimentacion.class.getName()).log(Level.SEVERE, null, ex);
 
-        boolean reg = true;
+              }
+              
+          }   
+          
+        
 
-        if (model.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Lista de aretes de ganado vacia", " Error Message", JOptionPane.ERROR_MESSAGE);
-            reg = false;
-        }
-        if (jTextFieldCantidaLeche.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Cantidad de leche vacia", "Error Message ", JOptionPane.ERROR_MESSAGE);
-            reg = false;
 
-        }
-        if (!Validacion.num(jTextFieldCantidaLeche.getText())) {
 
-            JOptionPane.showMessageDialog(null, "Formato de cantidad de erronéo", " Error Message", JOptionPane.ERROR_MESSAGE);
-            reg = false;
 
-        }
 
-        if (reg) {
-            try {
 
-                String sql = "insert into ORDENO values ( '" + fecha + "','" + cantidadLeche + "' , '" + jornada + "')";
-                //String sql = "insert into ORDENO values ( '"+fecha+"','"+cantidadLeche+"' , '"+jornada+"')";
-                conec.createStatement().executeUpdate(sql);
-                Enumeration aretes = model.elements();
-                while (aretes.hasMoreElements()) {
 
-                    sql = "insert into HISTORIALORDENO  values ('" + aretes.nextElement() + "','" + fecha + "','" + jornada + "') ";
-                    conec.createStatement().executeUpdate(sql);
 
-                }
-                JOptionPane.showMessageDialog(null, "Registro exitoso", "Succes Message", JOptionPane.INFORMATION_MESSAGE);
 
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Ordeño ya ingresada en esta fecha", "Error Message", JOptionPane.ERROR_MESSAGE);
 
-            }
-
-        }
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-        String arete = jTextFieldAreteConsulta.getText();
-        DefaultTableModel tmodel = (DefaultTableModel) jTable3.getModel();
-        tmodel.setRowCount(0);
-        if (!Validacion.num(arete)) {
-            JOptionPane.showMessageDialog(null, "Formato de arete erróneo’", "Error Message", JOptionPane.ERROR_MESSAGE);
-        }
 
-        String sql = "select o.FECHAORDENO,o.JORNADA, o.CANTIDADLECHE from ORDENO o join HISTORIALORDENO h on\n"
-                + "o.FECHAORDENO=h.FECHAORDENO join GANADO g on\n"
-                + "h.ARETE=g.ARETE where g.arete=" + arete;
-        if (arete.isEmpty()) {
-            sql = "select o.FECHAORDENO,o.JORNADA, o.CANTIDADLECHE from ORDENO o join HISTORIALORDENO h on\n"
-                    + "o.FECHAORDENO=h.FECHAORDENO join GANADO g on\n"
-                    + "h.ARETE=g.ARETE where g.arete=0";
-        }
-
-        query = Conexion.ConsultaMatriz(conec, sql);
-        if (query.isEmpty())
-            JOptionPane.showMessageDialog(null, "Arete inexistente’", "Error Message", JOptionPane.ERROR_MESSAGE);
-        else {
-            for (int i = 0; i < query.size(); i++) {
-                ArrayList<String> aux = query.get(i);
-                aux.set(i, aux.get(i).substring(0, 10));
-                Object[] objArray = aux.toArray();
-                tmodel.addRow(objArray);
-            }
-        }
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private ArrayList<ArrayList> query;
-    private javax.swing.DefaultListModel model = new javax.swing.DefaultListModel();
+      private javax.swing.DefaultListModel model = new javax.swing.DefaultListModel();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PantallaInicial;
     private com.github.lgooddatepicker.components.CalendarPanel calendarPanelFechaActualiza;
@@ -520,7 +564,9 @@ public class Ordeno extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JList<String> jList4;
     private javax.swing.JList<String> jListArete;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -528,11 +574,13 @@ public class Ordeno extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTableActualiza;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextFieldArerte;
-    private javax.swing.JTextField jTextFieldAreteConsulta;
     private javax.swing.JTextField jTextFieldCantidaLeche;
     private javax.swing.JTextField jTextFieldFechaOrdeño;
     private javax.swing.JTextField jTextFieldJornada;

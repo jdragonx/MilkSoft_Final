@@ -5,34 +5,17 @@
  */
 package ProduccionGUI;
 
-import Codes.Validacion;
-import Conexiones.Conexion;
-import java.awt.event.KeyEvent;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-
 /**
  *
  * @author jonhe
  */
 public class Inseminacion extends javax.swing.JPanel {
 
-    private Connection conec = Conexiones.Conexion.getConexion("userAc", "userAc");
-    DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy-dd-MM");
-
     /**
      * Creates new form Inseminacio
      */
     public Inseminacion() {
         initComponents();
-        jTextFieldFecha.setText(java.time.LocalDateTime.now().toLocalDate().toString());
     }
 
     /**
@@ -51,24 +34,24 @@ public class Inseminacion extends javax.swing.JPanel {
         jLabel29 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextFieldArete = new javax.swing.JTextField();
+        jTextField1 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jListArete = new javax.swing.JList<>();
+        jList1 = new javax.swing.JList<>();
         jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel30 = new javax.swing.JLabel();
-        jTextFieldFecha = new javax.swing.JTextField();
+        jTextField15 = new javax.swing.JTextField();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTextAreaDetalle = new javax.swing.JTextArea();
+        jTextArea2 = new javax.swing.JTextArea();
         jLabel46 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
-        jTextFieldAreteActualiza = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jListFecha = new javax.swing.JList<>();
+        jList2 = new javax.swing.JList<>();
         jScrollPane8 = new javax.swing.JScrollPane();
-        jTextAreaDetalleActualiza = new javax.swing.JTextArea();
+        jTextArea3 = new javax.swing.JTextArea();
         jLabel31 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -79,7 +62,7 @@ public class Inseminacion extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
-        jTextFieldAreteConsulta = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jLabel48 = new javax.swing.JLabel();
 
@@ -129,20 +112,14 @@ public class Inseminacion extends javax.swing.JPanel {
 
         jLabel2.setText("Arete de ganado");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 87, -1, -1));
+        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(403, 84, 176, -1));
 
-        jTextFieldArete.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextFieldAreteKeyPressed(evt);
-            }
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Ganado 1", "Ganado 2", "Ganado 3", "Ganado 4", "Ganado 5", "Ganado 6", "Ganado 7", "Ganado 8", "Ganado 9", "Ganado 10" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
         });
-        jPanel2.add(jTextFieldArete, new org.netbeans.lib.awtextra.AbsoluteConstraints(403, 84, 176, -1));
-
-        jListArete.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jListAreteKeyPressed(evt);
-            }
-        });
-        jScrollPane1.setViewportView(jListArete);
+        jScrollPane1.setViewportView(jList1);
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(403, 122, 176, 173));
 
@@ -150,23 +127,18 @@ public class Inseminacion extends javax.swing.JPanel {
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, -1, -1));
 
         jButton1.setText("Registrar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 640, -1, -1));
 
         jLabel30.setText("Detalle");
         jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, -1, -1));
 
-        jTextFieldFecha.setEditable(false);
-        jTextFieldFecha.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel2.add(jTextFieldFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 330, 185, -1));
+        jTextField15.setEditable(false);
+        jTextField15.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 330, 185, -1));
 
-        jTextAreaDetalle.setColumns(20);
-        jTextAreaDetalle.setRows(5);
-        jScrollPane6.setViewportView(jTextAreaDetalle);
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jScrollPane6.setViewportView(jTextArea2);
 
         jPanel2.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 430, 260, 170));
 
@@ -185,28 +157,23 @@ public class Inseminacion extends javax.swing.JPanel {
             }
         });
         jPanel4.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 500, -1, -1));
-        jPanel4.add(jTextFieldAreteActualiza, new org.netbeans.lib.awtextra.AbsoluteConstraints(403, 84, 176, -1));
+        jPanel4.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(403, 84, 176, -1));
 
         jLabel3.setText("Arete de ganado");
         jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 87, -1, -1));
 
-        jListFecha.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListFechaMouseClicked(evt);
-            }
+        jList2.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Fecha 1", "Fecha 2" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
         });
-        jListFecha.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
-            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-                jListFechaValueChanged(evt);
-            }
-        });
-        jScrollPane3.setViewportView(jListFecha);
+        jScrollPane3.setViewportView(jList2);
 
         jPanel4.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 160, 176, 80));
 
-        jTextAreaDetalleActualiza.setColumns(20);
-        jTextAreaDetalleActualiza.setRows(5);
-        jScrollPane8.setViewportView(jTextAreaDetalleActualiza);
+        jTextArea3.setColumns(20);
+        jTextArea3.setRows(5);
+        jScrollPane8.setViewportView(jTextArea3);
 
         jPanel4.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 310, 260, 170));
 
@@ -221,11 +188,6 @@ public class Inseminacion extends javax.swing.JPanel {
         jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, -1, -1));
 
         jButton4.setText("Buscar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
         jPanel4.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, -1, -1));
 
         jLabel47.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
@@ -245,7 +207,21 @@ public class Inseminacion extends javax.swing.JPanel {
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
                 "Fecha de inseminación", "Detalle"
@@ -262,14 +238,9 @@ public class Inseminacion extends javax.swing.JPanel {
         jScrollPane4.setViewportView(jTable3);
 
         jPanel3.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, -1, 270));
-        jPanel3.add(jTextFieldAreteConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, 200, -1));
+        jPanel3.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, 200, -1));
 
         jButton3.setText("Consultar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
         jPanel3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 470, -1, -1));
 
         jLabel48.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
@@ -313,188 +284,18 @@ public class Inseminacion extends javax.swing.JPanel {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        boolean act = true;
-        String detalle = jTextAreaDetalleActualiza.getText();
-        String fecha = jListFecha.getSelectedValue();
-        if (detalle.equals("")) {
-            JOptionPane.showMessageDialog(null, "Atributo detalle de inseminación en blanco", "Error Message", JOptionPane.ERROR_MESSAGE);
-            act = false;
-        }
-
-        if (!Validacion.alfesp(detalle) || Validacion.counter(detalle) > 50) {
-            JOptionPane.showMessageDialog(null, "Formato de detalle de inseminación erróneo", "Error Message", JOptionPane.ERROR_MESSAGE);
-            act = false;
-        }
-        if (act) {
-            try {
-                String año = fecha.substring(0, 4);
-                String mes = fecha.substring(5, 7);
-                String dia = fecha.substring(8, 10);
-                fecha = año + "-" + dia + "-" + mes;
-                String sql = "update INSEMINACION set DETALLEINSEMINACION='" + detalle + "' where FECHAINSEMINACION='" + fecha + " 00:00:00.000'";
-                System.out.println(sql);
-                conec.createStatement().executeUpdate(sql);
-                JOptionPane.showMessageDialog(null, "Actualización exitosa", "Succes Message", JOptionPane.INFORMATION_MESSAGE);
-            } catch (SQLException ex) {
-                Logger.getLogger(Alimentacion.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
         // TODO add your handling code here:
         if (jTabbedPane1.getSelectedIndex() == 0 && jPanel2.getX() > evt.getX() && 31 > evt.getY()) {
             PantallaInicial.setVisible(false);
-        } else if (jTabbedPane1.getSelectedIndex() != 0) {
+        } else if (jTabbedPane1.getSelectedIndex() != 0){
             PantallaInicial.setVisible(false);
         }
     }//GEN-LAST:event_jTabbedPane1MouseClicked
 
-    private void jTextFieldAreteKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldAreteKeyPressed
-        // TODO add your handling code here:
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            String arete = jTextFieldArete.getText();
-            String sql = "select arete from ganado where ganado.arete=" + arete;
-            if (arete.isEmpty()) {
-                sql = "select arete from ganado where ganado.arete=0";
-            }
-            ArrayList<ArrayList> query = Conexion.ConsultaMatriz(conec, sql);
-            if (!Validacion.num(arete)) {
-                JOptionPane.showMessageDialog(null, "Formato de arete erróneo’", "Error Message", JOptionPane.ERROR_MESSAGE);
-            } else if (query.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Arete inexistente’", "Error Message", JOptionPane.ERROR_MESSAGE);
-            } else if (!model.contains(jTextFieldArete.getText()) && !jTextFieldArete.getText().equals("")) {
-                model.addElement(jTextFieldArete.getText());
-                jListArete.setModel(model);
-            }
-            jTextFieldArete.setText("");
-        }
-    }//GEN-LAST:event_jTextFieldAreteKeyPressed
 
-    private void jListAreteKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jListAreteKeyPressed
-        // TODO add your handling code here:
-        if (evt.getKeyCode() == KeyEvent.VK_DELETE) {
-            model.remove(jListArete.getSelectedIndex());
-        }
-    }//GEN-LAST:event_jListAreteKeyPressed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        boolean reg = true;
-        String fecha = dtf1.format(java.time.LocalDate.now());
-        String detalle = jTextAreaDetalle.getText();
-
-        if (model.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Lista de aretes de ganado vacía", "Error Message", JOptionPane.ERROR_MESSAGE);
-            reg = false;
-        }
-        if (detalle.equals("")) {
-            JOptionPane.showMessageDialog(null, "Atributo detalle de inseminación en blanco", "Error Message", JOptionPane.ERROR_MESSAGE);
-            reg = false;
-        }
-
-        if (!Validacion.alfesp(detalle) || Validacion.counter(detalle) > 50) {
-            JOptionPane.showMessageDialog(null, "Formato de detalle de inseminación erróneo", "Error Message", JOptionPane.ERROR_MESSAGE);
-            reg = false;
-        }
-
-        if (reg) {
-            try {
-                String sql = "insert into inseminacion values ('" + fecha + "','" + detalle + "')";
-                conec.createStatement().executeUpdate(sql);
-
-                Enumeration aretes = model.elements();
-                while (aretes.hasMoreElements()) {
-                    sql = "insert into historialinseminacion values('" + aretes.nextElement() + "','" + fecha + "')";
-                    conec.createStatement().executeUpdate(sql);
-                }
-
-                JOptionPane.showMessageDialog(null, "Registro exitoso", "Succes Message", JOptionPane.INFORMATION_MESSAGE);
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Inseminación ya ingresada en esta fecha", "Error Message", JOptionPane.ERROR_MESSAGE);
-            }
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-        String arete = jTextFieldAreteActualiza.getText();
-        model1.clear();
-        if (!Validacion.num(arete)) {
-            JOptionPane.showMessageDialog(null, "Formato de arete erróneo’", "Error Message", JOptionPane.ERROR_MESSAGE);
-        }
-
-        String sql = "select i.FECHAINSEMINACION,i.DETALLEINSEMINACION from INSEMINACION i join HISTORIALINSEMINACION h on\n"
-                + "i.FECHAINSEMINACION=h.FECHAINSEMINACION join GANADO g on\n"
-                + "h.ARETE=g.ARETE where g.arete=" + arete;
-        if (arete.isEmpty()) {
-            sql = "select i.FECHAINSEMINACION,i.DETALLEINSEMINACION from INSEMINACION i join HISTORIALINSEMINACION h on\n"
-                    + "i.FECHAINSEMINACION=h.FECHAINSEMINACION join GANADO g on\n"
-                    + "h.ARETE=g.ARETE where g.arete=0";
-        }
-
-        query = Conexion.ConsultaMatriz(conec, sql);
-        if (query.isEmpty())
-            JOptionPane.showMessageDialog(null, "Arete inexistente’", "Error Message", JOptionPane.ERROR_MESSAGE);
-        else {
-            for (int i = 0; i < query.size(); i++) {
-                String fecha = query.get(i).get(0).toString().substring(0, 11);
-                model1.addElement(fecha);
-            }
-            jListFecha.setModel(model1);
-        }
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jListFechaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListFechaMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jListFechaMouseClicked
-
-    private void jListFechaValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jListFechaValueChanged
-        // TODO add your handling code here:
-        String fecha = jListFecha.getSelectedValue();
-        String detalle = "";
-        for (int i = 0; i < query.size(); i++) {
-            if (fecha.equals(query.get(i).get(0).toString().substring(0, 11))) {
-                detalle = query.get(i).get(1).toString();
-            }
-        }
-        jTextAreaDetalleActualiza.setText(detalle);
-    }//GEN-LAST:event_jListFechaValueChanged
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        String arete = jTextFieldAreteConsulta.getText();
-        DefaultTableModel tmodel = (DefaultTableModel) jTable3.getModel();
-        tmodel.setRowCount(0);
-        if (!Validacion.num(arete)) {
-            JOptionPane.showMessageDialog(null, "Formato de arete erróneo’", "Error Message", JOptionPane.ERROR_MESSAGE);
-        }
-
-        String sql = "select i.FECHAINSEMINACION,i.DETALLEINSEMINACION from INSEMINACION i join HISTORIALINSEMINACION h on\n"
-                + "i.FECHAINSEMINACION=h.FECHAINSEMINACION join GANADO g on\n"
-                + "h.ARETE=g.ARETE where g.arete=" + arete;
-        if (arete.isEmpty()) {
-            sql = "select i.FECHAINSEMINACION,i.DETALLEINSEMINACION from INSEMINACION i join HISTORIALINSEMINACION h on\n"
-                    + "i.FECHAINSEMINACION=h.FECHAINSEMINACION join GANADO g on\n"
-                    + "h.ARETE=g.ARETE where g.arete=0";
-        }
-
-        query = Conexion.ConsultaMatriz(conec, sql);
-        if (query.isEmpty())
-            JOptionPane.showMessageDialog(null, "Arete inexistente’", "Error Message", JOptionPane.ERROR_MESSAGE);
-        else {
-            for (int i = 0; i < query.size(); i++) {
-                ArrayList<String> aux = query.get(i);
-                aux.set(i, aux.get(i).substring(0,10));
-                Object[] objArray = aux.toArray();
-                tmodel.addRow(objArray);
-            }
-        }
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private ArrayList<ArrayList> query;
-    private javax.swing.DefaultListModel model = new javax.swing.DefaultListModel();
-    private javax.swing.DefaultListModel model1 = new javax.swing.DefaultListModel();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PantallaInicial;
     private javax.swing.JButton jButton1;
@@ -515,8 +316,8 @@ public class Inseminacion extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JList<String> jListArete;
-    private javax.swing.JList<String> jListFecha;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JList<String> jList2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -528,11 +329,11 @@ public class Inseminacion extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTextArea jTextAreaDetalle;
-    private javax.swing.JTextArea jTextAreaDetalleActualiza;
-    private javax.swing.JTextField jTextFieldArete;
-    private javax.swing.JTextField jTextFieldAreteActualiza;
-    private javax.swing.JTextField jTextFieldAreteConsulta;
-    private javax.swing.JTextField jTextFieldFecha;
+    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextArea jTextArea3;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField15;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }

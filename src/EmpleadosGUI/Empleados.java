@@ -50,6 +50,26 @@ public class Empleados extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel35 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jTextField9 = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jTextField10 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jTextField11 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jTextField12 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jTextField13 = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        jTextField14 = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        jTextField15 = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        jTextField16 = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        jLabel36 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jTextField17 = new javax.swing.JTextField();
@@ -71,26 +91,6 @@ public class Empleados extends javax.swing.JPanel {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jLabel37 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
-        jTextField12 = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        jTextField13 = new javax.swing.JTextField();
-        jLabel14 = new javax.swing.JLabel();
-        jTextField14 = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
-        jTextField15 = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
-        jTextField16 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jLabel36 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(1100, 850));
         setMinimumSize(new java.awt.Dimension(1100, 850));
@@ -158,58 +158,6 @@ public class Empleados extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Registrar Empleado", jPanel1);
 
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel17.setText("Nombres y Apellidos Completos:");
-        jPanel4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, -1, -1));
-        jPanel4.add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 300, -1));
-
-        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel20.setText("Actualizar Empleados");
-        jPanel4.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, -1, -1));
-
-        jLabel21.setText("Numero de Cedula:");
-        jPanel4.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, -1, -1));
-
-        jTextField18.setEnabled(false);
-        jPanel4.add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, 300, -1));
-
-        jLabel22.setText("Direccion:");
-        jPanel4.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, -1, -1));
-        jPanel4.add(jTextField19, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 300, -1));
-
-        jLabel23.setText("Correo Electronico:");
-        jPanel4.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, -1, -1));
-        jPanel4.add(jTextField20, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, 300, -1));
-
-        jLabel24.setText("Numero de Telefono Celular:");
-        jPanel4.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, -1, -1));
-        jPanel4.add(jTextField21, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, 300, -1));
-
-        jLabel25.setText("Numero de Telefono Convecional:");
-        jPanel4.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 360, -1, -1));
-        jPanel4.add(jTextField22, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 360, 300, -1));
-
-        jLabel26.setText("Cargo:");
-        jPanel4.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 410, -1, -1));
-        jPanel4.add(jTextField23, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 410, 300, -1));
-
-        jLabel27.setText("Salario:");
-        jPanel4.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 460, -1, -1));
-        jPanel4.add(jTextField24, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 460, 300, -1));
-
-        jButton3.setText("Actualizar");
-        jPanel4.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 530, -1, -1));
-
-        jButton4.setText("Buscar");
-        jPanel4.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 130, -1, -1));
-
-        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
-        jLabel37.setText("jLabel12");
-        jPanel4.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        jTabbedPane1.addTab("Actualizar Empleado", jPanel4);
-
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel9.setText("Nombres y Apellidos Completos:");
@@ -270,6 +218,58 @@ public class Empleados extends javax.swing.JPanel {
         jPanel3.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jTabbedPane1.addTab("Consultar Empleado", jPanel3);
+
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel17.setText("Nombres y Apellidos Completos:");
+        jPanel4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, -1, -1));
+        jPanel4.add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 300, -1));
+
+        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel20.setText("Actualizar Empleados");
+        jPanel4.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, -1, -1));
+
+        jLabel21.setText("Numero de Cedula:");
+        jPanel4.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, -1, -1));
+
+        jTextField18.setEnabled(false);
+        jPanel4.add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, 300, -1));
+
+        jLabel22.setText("Direccion:");
+        jPanel4.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, -1, -1));
+        jPanel4.add(jTextField19, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 300, -1));
+
+        jLabel23.setText("Correo Electronico:");
+        jPanel4.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, -1, -1));
+        jPanel4.add(jTextField20, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, 300, -1));
+
+        jLabel24.setText("Numero de Telefono Celular:");
+        jPanel4.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, -1, -1));
+        jPanel4.add(jTextField21, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, 300, -1));
+
+        jLabel25.setText("Numero de Telefono Convecional:");
+        jPanel4.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 360, -1, -1));
+        jPanel4.add(jTextField22, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 360, 300, -1));
+
+        jLabel26.setText("Cargo:");
+        jPanel4.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 410, -1, -1));
+        jPanel4.add(jTextField23, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 410, 300, -1));
+
+        jLabel27.setText("Salario:");
+        jPanel4.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 460, -1, -1));
+        jPanel4.add(jTextField24, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 460, 300, -1));
+
+        jButton3.setText("Actualizar");
+        jPanel4.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 530, -1, -1));
+
+        jButton4.setText("Buscar");
+        jPanel4.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 130, -1, -1));
+
+        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
+        jLabel37.setText("jLabel12");
+        jPanel4.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jTabbedPane1.addTab("Actualizar Empleado", jPanel4);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
