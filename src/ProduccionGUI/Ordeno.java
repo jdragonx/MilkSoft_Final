@@ -6,7 +6,7 @@
 package ProduccionGUI;
 
 import Codes.Validacion;
-import com.sun.glass.events.KeyEvent;
+import java.awt.event.KeyEvent;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Enumeration;
