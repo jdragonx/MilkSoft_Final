@@ -450,12 +450,12 @@ public class Alimentacion extends javax.swing.JPanel {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-
+        DefaultTableModel tmodel = (DefaultTableModel) jTableActualiza.getModel();
+        tmodel.setRowCount(0);
         if (calendarPanelFechaActualiza.getSelectedDate() == null) {
             JOptionPane.showMessageDialog(null, "Fecha de alimentación en blanco", "Error Message", JOptionPane.ERROR_MESSAGE);
         } else {
-            DefaultTableModel tmodel = (DefaultTableModel) jTableActualiza.getModel();
-            tmodel.setRowCount(0);
+
             String fecha = calendarPanelFechaActualiza.getSelectedDate().format(dtf1);
             String sql = "select * from ALIMENTACION where FECHAHORAALIMENTACION between '" + fecha + "' and '" + fecha + " 23:59:59'";
             ArrayList<ArrayList> query = Conexion.ConsultaMatriz(conec, sql);
@@ -471,17 +471,36 @@ public class Alimentacion extends javax.swing.JPanel {
                 tmodel.addRow(objArray);
             }
         }
+        if (tmodel.getRowCount() == 0) {
+            JOptionPane.showMessageDialog(null, "Fecha de alimentación inexistente", "Error Message", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+        DefaultTableModel tmodel = (DefaultTableModel) jTableConsulta.getModel();
+        tmodel.setRowCount(0);
         if (calendarPanelFechaConsulta.getSelectedDate() == null) {
             JOptionPane.showMessageDialog(null, "Fecha de alimentación en blanco", "Error Message", JOptionPane.ERROR_MESSAGE);
         } else {
-            DefaultTableModel tmodel = (DefaultTableModel) jTableConsulta.getModel();
-            tmodel.setRowCount(0);
-            tmodel.addRow(new Object[]{1, 2, 3, 4});
-            System.out.println(calendarPanelFechaConsulta.getSelectedDate().toString());
+            String fecha = calendarPanelFechaConsulta.getSelectedDate().format(dtf1);
+            String sql = "select * from ALIMENTACION where FECHAHORAALIMENTACION between '" + fecha + "' and '" + fecha + " 23:59:59'";
+            System.out.println(sql);
+            ArrayList<ArrayList> query = Conexion.ConsultaMatriz(conec, sql);
+            for (int i = 0; i < query.size(); i++) {
+                ArrayList<String> aux = query.get(i);
+                String hora = aux.get(0).toString().substring(11);
+                ArrayList<String> aux1 = new ArrayList<String>();
+                aux1.add(fecha);
+                aux1.add(hora);
+                aux1.add(aux.get(1));
+                aux1.add(aux.get(2));
+                Object[] objArray = aux1.toArray();
+                tmodel.addRow(objArray);
+            }
+        }
+        if (tmodel.getRowCount() == 0) {
+            JOptionPane.showMessageDialog(null, "Fecha de alimentación inexistente", "Error Message", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
