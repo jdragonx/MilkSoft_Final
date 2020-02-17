@@ -455,7 +455,7 @@ public class Inseminacion extends javax.swing.JPanel {
         String detalle = "";
         for (int i = 0; i < query.size(); i++) {
             if (fecha.equals(query.get(i).get(0).toString().substring(0, 11))) {
-                detalle = query.get(i).get(1).toString().strip();
+                detalle = query.get(i).get(1).toString();
             }
         }
         jTextAreaDetalleActualiza.setText(detalle);
