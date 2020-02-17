@@ -6,10 +6,12 @@
 package ProduccionGUI;
 
 import Codes.Validacion;
+import Conexiones.Conexion;
 import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Enumeration;
 import java.util.logging.Level;
@@ -356,11 +358,16 @@ public class Ordeno extends javax.swing.JPanel {
 
         if (evt.getKeyCode() == KeyEvent.VK_ENTER){
           
-           if( !Validacion.num(jTextFieldArerte.getText() )){
+            String arete = jTextFieldArerte.getText();
+            String sql = "select arete from ganado where ganado.arete="+arete;
+            ArrayList<ArrayList> query = Conexion.ConsultaMatriz(conec, sql);
+           if( !Validacion.num(arete )){
                JOptionPane.showMessageDialog(null, " Fomato de arete erróneo"," Error Message",JOptionPane.ERROR_MESSAGE);
-             } else if(!model.contains(jTextFieldArerte.getText())){ 
-               model.addElement(jTextFieldArerte.getText());
-                jListArete.setModel(model);
+             } else if(query.size()==0){ 
+                JOptionPane.showMessageDialog(null, "Arete inexistente’", "Error Message", JOptionPane.ERROR_MESSAGE); 
+             } else if (!model.contains(jTextFieldArerte.getText()) && !jTextFieldArerte.getText().equals("") ){
+                  model.addElement(jTextFieldArerte.getText());
+                  jListArete.setModel(model);
                  
              }
            
