@@ -7,6 +7,7 @@
 package ProduccionGUI;
 
 import Codes.Validacion;
+import Conexiones.Conexion;
 import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -14,6 +15,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.time.Clock;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -351,35 +353,23 @@ public class Alimentacion extends javax.swing.JPanel {
     }//GEN-LAST:event_jTabbedPane1MouseClicked
 
     private void jTextFieldAreteKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldAreteKeyPressed
-        try {
-            // TODO add your handling code here:
-            if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-                String arete = jTextFieldArete.getText();
-                String sql = "select arete from ganado where ganado.arete=" + arete;
-                ResultSet query = conec.createStatement().executeQuery(sql);
-                ResultSetMetaData rsmd = query.getMetaData();
-                int columnsNumber = rsmd.getColumnCount();
-                String comp="";
-                String valCon="";
-                while (query.next()) {
-                    for (int i = 1; i <= columnsNumber; i++) {
-                        valCon = query.getString(i);
-                    }
-                    comp += valCon;
-                }
-                if (!Validacion.num(arete)) {
-                    JOptionPane.showMessageDialog(null, "Formato de arete erróneo’", "Error Message", JOptionPane.ERROR_MESSAGE);
-                } else if (!comp.equals(arete)) {
-                    JOptionPane.showMessageDialog(null, "Arete inexistente’", "Error Message", JOptionPane.ERROR_MESSAGE);
-                } else if (!model.contains(jTextFieldArete.getText()) && !jTextFieldArete.getText().equals("")) {
-                    model.addElement(jTextFieldArete.getText());
-                    jListArete.setModel(model);
-                }
-                jTextFieldArete.setText("");
+
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            String arete = jTextFieldArete.getText();
+            String sql = "select arete from ganado where ganado.arete=" + arete;
+            ArrayList<ArrayList> query = Conexion.ConsultaMatriz(conec, sql);
+            if (!Validacion.num(arete)) {
+                JOptionPane.showMessageDialog(null, "Formato de arete erróneo’", "Error Message", JOptionPane.ERROR_MESSAGE);
+            } else if (query.size()==0) {
+                JOptionPane.showMessageDialog(null, "Arete inexistente’", "Error Message", JOptionPane.ERROR_MESSAGE);
+            } else if (!model.contains(jTextFieldArete.getText()) && !jTextFieldArete.getText().equals("")) {
+                model.addElement(jTextFieldArete.getText());
+                jListArete.setModel(model);
             }
-        } catch (SQLException ex) {
-            Logger.getLogger(Alimentacion.class.getName()).log(Level.SEVERE, null, ex);
+            jTextFieldArete.setText("");
         }
+
     }//GEN-LAST:event_jTextFieldAreteKeyPressed
 
     private void jListAreteKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jListAreteKeyPressed
