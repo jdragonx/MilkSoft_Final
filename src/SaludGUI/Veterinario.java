@@ -283,7 +283,7 @@ public class Veterinario extends javax.swing.JPanel {
 
     private void jtbRegVetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtbRegVetActionPerformed
         String str1="";
-        con.insert(str1, "userGerente", "userGerente");
+        //con.insert(str1, "userGerente", "userGerente");
     }//GEN-LAST:event_jtbRegVetActionPerformed
 
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
