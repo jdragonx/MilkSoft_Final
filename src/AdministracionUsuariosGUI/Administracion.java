@@ -8,11 +8,16 @@ import static Codes.Validacion.counter;
 import static Codes.Validacion.num;
 import static Codes.Validacion.unicode;
 import Conexiones.Conexion;
+import static Conexiones.Conexion.getConexion;
 import static java.lang.String.valueOf;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Vector;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 
 public class Administracion extends javax.swing.JPanel {
@@ -47,10 +52,9 @@ public class Administracion extends javax.swing.JPanel {
         PantallaInicial = new javax.swing.JPanel();
         jLabel29 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        jtUsers = new javax.swing.JTable();
+        jLabel8 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
@@ -177,39 +181,35 @@ public class Administracion extends javax.swing.JPanel {
         jPanel2.setPreferredSize(new java.awt.Dimension(1100, 850));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel8.setText("Consulta de Usuarios");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, -1, -1));
-
-        jButton3.setText("Buscar");
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, -1, -1));
-
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        jtUsers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Usuario", "Contrasena", "Cedula", "Estado"
             }
-        ));
-        jScrollPane2.setViewportView(jTable2);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, true, true
+            };
 
-        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 760, 190));
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jtUsers);
+
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, 720, 300));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel8.setText("Consulta de Usuarios");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, -1, -1));
 
         jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
         jLabel31.setText("jLabel12");
         jPanel2.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jTabbedPane1.addTab("Consultar de Usuario", jPanel2);
+        jTabbedPane1.addTab("Consulta de Usuarios", jPanel2);
 
         jPanel3.setMaximumSize(new java.awt.Dimension(1100, 850));
         jPanel3.setMinimumSize(new java.awt.Dimension(1100, 850));
@@ -329,7 +329,28 @@ public class Administracion extends javax.swing.JPanel {
     }//GEN-LAST:event_jTabbedPane1StateChanged
 
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
-        // TODO add your handling code here:
+         // CONSULTAS DE USUARIOS
+         //ArrayLisT<ArrayList>=con.ConsultaMatriz(,);
+            DefaultTableModel tmodel = (DefaultTableModel) jtUsers.getModel();
+            
+             
+            Connection cone = getConexion("userAc", "userAc");
+            ArrayList<ArrayList>users=con.ConsultaMatriz(cone,"exec selAllUsers");
+            tmodel.setRowCount(0);
+            users.get(0);
+            users.size();
+
+  
+            for(int i=0;i<=users.size();i++){
+                ArrayList<ArrayList> xd = users.get(i);
+                Object[] objArray = xd.toArray();
+                tmodel.addRow(objArray);
+            }
+            
+  
+         
+         
+         //FUNCIONALIDA PREVIA
         if (jTabbedPane1.getSelectedIndex() == 0 && jPanel1.getX() > evt.getX() && 31 > evt.getY()) {
 
         } else if (jTabbedPane1.getSelectedIndex() != 0){
@@ -443,10 +464,10 @@ public class Administracion extends javax.swing.JPanel {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         String valCon="";
-        if(jTextField9.getText().matches("")){
+        if(jTextField8.getText().matches("")){
             JOptionPane.showMessageDialog(null, "Atributo Nombre de usuario en blanco","Error", JOptionPane.ERROR_MESSAGE); 
         }else{
-            if(counter(jTextField9.getText())<=20 && unicode(jtfUser.getText())){
+            if(counter(jTextField8.getText())<=20 && unicode(jtfUser.getText())){
                 //SQL DE BUSQUEDA DE USER
                 ResultSet contrasena = con.Consulta("exec  getPassLogin @login='"+jTextField8.getText()+"'");
                 
@@ -468,7 +489,7 @@ public class Administracion extends javax.swing.JPanel {
                 if(valCon!=""){
                     jTextField6.setEnabled(true);
                     jTextField7.setEnabled(true);
-                    jTextField9.setEnabled(false);
+                    jTextField8.setEnabled(false);
                     jButton4.setEnabled(false);
                     jButton5.setEnabled(true);
 
@@ -486,7 +507,21 @@ public class Administracion extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Llenar la(s) contraseña","Error", JOptionPane.ERROR_MESSAGE); 
         }else{
             if(counter(jTextField6.getText())>=8 && counter(jTextField6.getText())<=128 && counter(jTextField7.getText())>=8 && counter(jTextField7.getText())<=128){
-
+                   if(jTextField6.getText().matches(jTextField7.getText())){
+                       con.insert("exec updPass @pass= '"+jTextField6.getText()+"' ,@login= '"+jTextField8.getText()+"'");
+                       JOptionPane.showMessageDialog(null, "Actualización Exitosa","Mensaje", JOptionPane.INFORMATION_MESSAGE);
+                       
+                               jTextField6.setEnabled(false);
+                               jTextField7.setEnabled(false);
+                               jButton5.setEnabled(false);
+                               jTextField8.setEnabled(true);
+                               jButton4.setEnabled(true);
+                               jTextField6.setText("");
+                               jTextField7.setText("");
+                               jTextField8.setText("");
+                   }else{
+                       JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden","Error", JOptionPane.ERROR_MESSAGE);
+                   }
                 
             }else{
                 JOptionPane.showMessageDialog(null, "Formato invalido de Contraseña(s)","Error", JOptionPane.ERROR_MESSAGE);
@@ -497,7 +532,6 @@ public class Administracion extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PantallaInicial;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel10;
@@ -526,7 +560,6 @@ public class Administracion extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
@@ -539,6 +572,7 @@ public class Administracion extends javax.swing.JPanel {
     private javax.swing.JButton jfbRegUser;
     private javax.swing.JRadioButton jrbActivado;
     private javax.swing.JRadioButton jrbDesactivado;
+    private javax.swing.JTable jtUsers;
     private javax.swing.JTextField jtfCedula;
     private javax.swing.JTextField jtfCon1;
     private javax.swing.JTextField jtfCon2;
