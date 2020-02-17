@@ -90,7 +90,7 @@ public class Ordeno extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jButton4 = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        jTextFieldAreteConsulta = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
@@ -252,27 +252,25 @@ public class Ordeno extends javax.swing.JPanel {
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton4.setText("Buscar");
+        jButton4.setText("Consultar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, -1, -1));
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel19.setText("Consulta individual de ordeño");
         jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(321, 67, -1, -1));
-        jPanel2.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 130, 176, -1));
+        jPanel2.add(jTextFieldAreteConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 130, 176, -1));
 
         jLabel3.setText("Arete de ganado");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, -1, -1));
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
                 "Fecha de ordeño", "Cantidad", "Jornada"
@@ -288,7 +286,7 @@ public class Ordeno extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(jTable3);
 
-        jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, -1, 160));
+        jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, -1, 280));
 
         jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estampado.jpg"))); // NOI18N
         jLabel30.setText("jLabel12");
@@ -470,6 +468,38 @@ public class Ordeno extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        String arete = jTextFieldAreteConsulta.getText();
+        DefaultTableModel tmodel = (DefaultTableModel) jTable3.getModel();
+        tmodel.setRowCount(0);
+        if (!Validacion.num(arete)) {
+            JOptionPane.showMessageDialog(null, "Formato de arete erróneo’", "Error Message", JOptionPane.ERROR_MESSAGE);
+        }
+
+        String sql = "select o.FECHAORDENO,o.JORNADA, o.CANTIDADLECHE from ORDENO o join HISTORIALORDENO h on\n"
+                + "o.FECHAORDENO=h.FECHAORDENO join GANADO g on\n"
+                + "h.ARETE=g.ARETE where g.arete=" + arete;
+        if (arete.isEmpty()) {
+            sql = "select o.FECHAORDENO,o.JORNADA, o.CANTIDADLECHE from ORDENO o join HISTORIALORDENO h on\n"
+                    + "o.FECHAORDENO=h.FECHAORDENO join GANADO g on\n"
+                    + "h.ARETE=g.ARETE where g.arete=0";
+        }
+
+        query = Conexion.ConsultaMatriz(conec, sql);
+        if (query.isEmpty())
+            JOptionPane.showMessageDialog(null, "Arete inexistente’", "Error Message", JOptionPane.ERROR_MESSAGE);
+        else {
+            for (int i = 0; i < query.size(); i++) {
+                ArrayList<String> aux = query.get(i);
+                aux.set(i, aux.get(i).substring(0, 10));
+                Object[] objArray = aux.toArray();
+                tmodel.addRow(objArray);
+            }
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private ArrayList<ArrayList> query;
     private javax.swing.DefaultListModel model = new javax.swing.DefaultListModel();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PantallaInicial;
@@ -501,8 +531,8 @@ public class Ordeno extends javax.swing.JPanel {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTableActualiza;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextFieldArerte;
+    private javax.swing.JTextField jTextFieldAreteConsulta;
     private javax.swing.JTextField jTextFieldCantidaLeche;
     private javax.swing.JTextField jTextFieldFechaOrdeño;
     private javax.swing.JTextField jTextFieldJornada;
