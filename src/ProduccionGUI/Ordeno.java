@@ -338,7 +338,7 @@ public class Ordeno extends javax.swing.JPanel {
                 ArrayList<String> aux1 = new ArrayList<String>();
                 aux1.add(fecha);
                 aux1.add(hora);
-                aux1.add(aux.get(1).strip());
+                aux1.add(aux.get(1));
                 aux1.add(aux.get(2));
                 Object[] objArray = aux1.toArray();
                 tmodel.addRow(objArray);
