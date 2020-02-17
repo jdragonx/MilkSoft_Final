@@ -462,6 +462,10 @@ public class Alimentacion extends javax.swing.JPanel {
             String fecha = calendarPanelFechaActualiza.getSelectedDate().format(dtf1);
             String sql = "select * from ALIMENTACION where FECHAHORAALIMENTACION between '" + fecha + "' and '" + fecha + " 23:59:59'";
             ArrayList<ArrayList> query = Conexion.ConsultaMatriz(conec, sql);
+            String año = fecha.substring(0, 4);
+            String dia = fecha.substring(5, 7);
+            String mes = fecha.substring(8, 10);
+            fecha = año + "-" + mes + "-" + dia;
             for (int i = 0; i < query.size(); i++) {
                 ArrayList<String> aux = query.get(i);
                 String hora = aux.get(0).substring(11);
@@ -490,8 +494,8 @@ public class Alimentacion extends javax.swing.JPanel {
             String sql = "select * from ALIMENTACION where FECHAHORAALIMENTACION between '" + fecha + "' and '" + fecha + " 23:59:59'";
             ArrayList<ArrayList> query = Conexion.ConsultaMatriz(conec, sql);
             String año = fecha.substring(0, 4);
-            String mes = fecha.substring(5, 7);
-            String dia = fecha.substring(8, 10);
+            String dia = fecha.substring(5, 7);
+            String mes = fecha.substring(8, 10);
             fecha = año + "-" + mes + "-" + dia;
             for (int i = 0; i < query.size(); i++) {
                 ArrayList<String> aux = query.get(i);

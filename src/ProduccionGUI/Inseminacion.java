@@ -485,6 +485,7 @@ public class Inseminacion extends javax.swing.JPanel {
         else {
             for (int i = 0; i < query.size(); i++) {
                 ArrayList<String> aux = query.get(i);
+                aux.set(i, aux.get(i).substring(0,10));
                 Object[] objArray = aux.toArray();
                 tmodel.addRow(objArray);
             }
