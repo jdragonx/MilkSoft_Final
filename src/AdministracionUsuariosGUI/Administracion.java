@@ -332,8 +332,6 @@ public class Administracion extends javax.swing.JPanel {
          // CONSULTAS DE USUARIOS
          //ArrayLisT<ArrayList>=con.ConsultaMatriz(,);
             DefaultTableModel tmodel = (DefaultTableModel) jtUsers.getModel();
-            
-             
             Connection cone = getConexion("userAc", "userAc");
             ArrayList<ArrayList>users=con.ConsultaMatriz(cone,"exec selAllUsers");
             tmodel.setRowCount(0);
