@@ -1,11 +1,15 @@
 package Conexiones;
 
+import java.lang.reflect.Array;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class Conexion {
@@ -67,6 +71,27 @@ public class Conexion {
             JOptionPane.showMessageDialog(null, "Error" + e.getMessage(), "Erro de conexion", JOptionPane.ERROR_MESSAGE);
         }
         return null;
+    }
+
+    public static ArrayList<ArrayList> ConsultaMatriz(Connection conec, String sql) {
+        ArrayList<ArrayList> comp = new ArrayList<>();
+        try {
+            ResultSet query = conec.createStatement().executeQuery(sql);
+            ResultSetMetaData rsmd = query.getMetaData();
+            int columnsNumber = rsmd.getColumnCount();
+            String valCon;
+            while (query.next()) {
+                ArrayList<String> aux = new ArrayList<>();
+                for (int i = 1; i <= columnsNumber; i++) {
+                    valCon = query.getString(i);
+                    aux.add(valCon);
+                }
+                comp.add(aux);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return comp;
     }
 
 //INSERCION 
